@@ -1,0 +1,146 @@
+.login-container{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 30px;
+    //height: 100vh;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.login-block{
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.common-Err{
+    color: #e60000;
+    font-family: "Roboto", sans-serif;
+    margin: 5px;
+}
+
+.login-container h1{
+    color: #e60000;
+    font-family: 'Martian Mono', monospace;
+    margin-bottom: 15px;
+    //text-align: center;
+}
+
+.logIn-btn input{
+    font-size: 18px;
+    height: 40px;
+    border: none;
+    color: white;
+    //width: 100px;
+    padding: 0px 30px;
+    border-radius: 20px;
+    background: linear-gradient(146deg, rgba(19,78,94,1) 0%, rgba(113,178,128,1) 97%);
+}
+
+.input-block select{
+    background-color: white;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    height: 45px;
+    padding: 10px;
+    width: 322px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    
+}
+
+.grid-container .input-block{
+    margin: 0px;
+}
+
+.password-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 10px 0px;
+}
+
+.password-block .input-block{
+ margin: 0px;
+}
+
+.signIn-link{
+    //margin-top: px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signIn-link span{
+    color: rgba(19,78,94,1)
+}
+
+.signIn-link span:hover{
+    text-decoration: underline
+}
+
+.log-btn:hover{
+    outline: 3px solid #b3e6ff;
+}
+
+
+.login-form-block{
+    padding: 5px 10px 0px 10px;
+}
+
+.logIn-btn{
+    margin: 20px 0px;
+}
+
+.create-pass-text{
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .password-block{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    
+    .login-container h1{
+        font-size: 24px;
+    }
+
+    .login-container h2{
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    
+    .login-block{
+        width: 280px;
+    }
+
+    .login-block input{
+        width: 240px;
+    }
+
+    .login-block select{
+        width: 262px;
+    }
+}

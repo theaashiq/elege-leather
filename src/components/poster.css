@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Fira+Sans:wght@300&family=Martian+Mono&family=Montserrat&family=Mooli&family=Young+Serif&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration:none;
+}
+
+.poster{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+}
+
+.poster img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.banner{
+    display: block;
+    height: 95vh;
+    filter: brightness(40%)
+}
+
+.info-container{
+    position: absolute;
+    top:0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poster-brand{
+    display: inline-block;
+    background-color: #cc0000;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 60px;
+    font-size: 48px;
+    font-family: 'Martian Mono', monospace;
+}
+
+
+.btn-shop {
+    margin-top: 100px;
+    padding: 5px 15px;
+    font-size: 26px;
+    color: white;
+    font-family: 'Montserrat', sans-serif; 
+    border-radius: 25px;
+    cursor: pointer;
+    background: linear-gradient(146deg, rgba(19,78,94,1) 0%, rgba(113,178,128,1) 97%);
+}
+
+.poster-motive{
+    text-align: center;
+    margin: 5px ;
+    color: white;
+    font-family: 'Young Serif', serif;
+}
+
+.poster-disclaimer{
+    margin-top: 90px;
+    text-align: center;
+    padding: 5px 40px;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+}
+
+
+
+@media screen and (max-width: 760px){
+    .poster-brand{
+        font-size: 32px;
+    }
+
+    .poster-motive{
+        font-size: 14px;
+    }
+
+    .poster-disclaimer{
+        font-size: 12px;
+    }
+
+    .btn-shop{
+        font-size: 24px;
+    }
+    
+}
+
+@media screen and (max-width: 560px){
+    .poster-brand{
+        font-size: 26px;
+    }
+
+    .poster-motive{
+        font-size: 12px;
+    }
+
+    .poster-disclaimer{
+        font-size: 12px;
+    }
+
+    .btn-shop{
+        font-size: 22px;
+        
+    }
+}

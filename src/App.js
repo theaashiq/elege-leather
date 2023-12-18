@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import LandPage from "./components/landPage";
+import ProductPage from "./components/mainPage";
+import SignIn from "./components/signIn";
+import LogIn from "./components/logIn";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductView from "./components/productView";
+import AddToCart from "./components/addToCart";
+import MainPage from "./components/mainPage";
+import Products from "./components/products";
+import Header from "./components/header";
+//import Header from "./components/header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    
+    <>
+    <div className='app'>  
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<LandPage/>}/>
+          <Route path='/logIn' element={<LogIn/>}/>
+          <Route path='/signIn' element={<SignIn/>}/>
+          <Route path='/mainPage' element={<MainPage/>}>
+            <Route path='/mainPage/products' element={<Products />}>
+            <Route path='/mainPage/products/productView' element={<ProductView />} />
+            </Route>
+            <Route path='/mainPage/addToCart' element={<AddToCart />} />
+          </Route>
+        </Routes>
+        </Router>
     </div>
+    
+    </>
   );
 }
 

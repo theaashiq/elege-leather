@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans&family=Roboto:wght@300&display=swap");
+
+.sign-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.sign-block {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  width: 400px;
+}
+
+.input-block p {
+  color: #e60000;
+  margin-top: 6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 20px;
+  width: 250px;
+}
+
+.sign-container h1 {
+  color: #e60000;
+  font-family: "Martian Mono", monospace;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.sign-block h2, h4 {
+  color: #262626;
+  font-family: "Open Sans", sans-serif;
+}
+
+.error-block input {
+    outline: 2px solid #ff8080;
+    //border: none;
+}
+
+.input-block input, select {
+  background-color: white;
+  border: 1px solid #999999;
+  border-radius: 2px;
+  height: 20px;
+  padding: 10px;
+  width: 300px;
+  font-size: 18px;
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-block {
+  margin: 20px 0px;
+}
+
+.input-block input:focus {
+  outline: 2px solid #d6e0f5;
+}
+
+.submit-btn input {
+  font-size: 18px;
+  height: 40px;
+  border: none;
+  color: white;
+  width: 100px;
+  border-radius: 20px;
+  background: linear-gradient(
+    146deg,
+    rgba(19, 78, 94, 1) 0%,
+    rgba(113, 178, 128, 1) 97%
+  );
+}
+
+.submit-btn input:hover, .create-account p:hover{
+    outline: 3px solid #d6e0f5;
+}
+
+.create-account {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.create-account h4 {
+  font-family: "Open Sans", sans-serif;
+}
+
+.create-account p {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+p span {
+  color: #e60000;
+}
+
+
+@media screen and (max-width: 500px) {
+  .sign-container h1{
+    font-size: 24px;
+  }
+  
+  .sign-block{
+    width: 270px;
+  } 
+
+  .sign-block input{
+    width: 220px;
+  }
+}
