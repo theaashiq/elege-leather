@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/elege-leather/static/css/main.78346a9d.css",
-    "main.js": "/elege-leather/static/js/main.d5cd62cd.js",
+    "main.js": "/elege-leather/static/js/main.151bc250.js",
     "static/media/carosel3.jpg": "/elege-leather/static/media/carosel3.28e21c8a8479a9076562.jpg",
     "static/media/banner2.jpg": "/elege-leather/static/media/banner2.f9f6b15f159ebf83dd2a.jpg",
     "static/media/carosel1.jpg": "/elege-leather/static/media/carosel1.cd95fb26e7c2c91bb864.jpg",
@@ -36,10 +36,10 @@
     "static/media/belt1.avif": "/elege-leather/static/media/belt1.77934532f1fa4caf22b5.avif",
     "index.html": "/elege-leather/index.html",
     "main.78346a9d.css.map": "/elege-leather/static/css/main.78346a9d.css.map",
-    "main.d5cd62cd.js.map": "/elege-leather/static/js/main.d5cd62cd.js.map"
+    "main.151bc250.js.map": "/elege-leather/static/js/main.151bc250.js.map"
   },
   "entrypoints": [
     "static/css/main.78346a9d.css",
-    "static/js/main.d5cd62cd.js"
+    "static/js/main.151bc250.js"
   ]
 }
