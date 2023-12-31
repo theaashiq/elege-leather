@@ -1,0 +1,81 @@
+.modal{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    place-items:center;
+
+    
+}
+
+.modal-container{
+    background-color: #fff;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
+}
+
+.modal-sign-btn{
+    border: 2px solid #6f92dc;
+    width: fit-content;
+    padding: 2px 10px;
+    border-radius: 5px;
+    color: #1e3b7b;
+    font-family: Poppins;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.modal-sign-btn:hover{
+    color: #fff;
+    background-color: #6f92dc;
+}
+
+.modal-container-content{
+    margin: 15px 0px;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: bold;
+    width: 500px;
+    color: #333333;
+}
+
+.modal-header p{
+    color: #cc0000;
+    display: grid;
+    place-item: center;
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1323px) {
+
+}
+
+@media screen and (max-width: 950px) {
+  .modal-container-content{
+    width: 300px;
+  }   
+    
+}
+
+@media screen and (max-width: 578px) {
+    .modal-container{
+        width:300px
+    }
+
+    .modal-container-content{
+        font-size: 14px;
+    }
+
+    .modal-sign-btn{
+        font-size: 14px;
+    }
+}

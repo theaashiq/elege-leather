@@ -120,7 +120,6 @@ const validateForm = () => {
   } else {
     setCPasswordErrMsg('')
    }
-
   return success
 }
 

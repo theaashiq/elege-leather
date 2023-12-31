@@ -11,7 +11,7 @@ header{
     justify-content: flex-end;
     align-items: center;
     background-color: #d6e0f5;
-    height: 70px;
+    height: 10vh;
     width: 100%;
 }
 
@@ -30,15 +30,15 @@ header{
 
 
 @media screen and (max-width: 780px){
-    header{
-        height: 50px;
-    }
+    /* header{
+        height: 10vh;
+    } */
 }
 
 @media screen and (max-width: 560px){
-    header{
+    /* header{
         height: 40px;
-    }
+    } */
 
     .item{
         margin: 10px;

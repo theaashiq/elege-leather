@@ -8,8 +8,12 @@ const LandPage = () => {
   return (
     <>
       <div className='landPage-container'>        
-        <Landheader/>
-        <Banner/>
+        <div className='container-landheader'>
+          <Landheader/>
+        </div>
+        <div className='container-banner'>
+          <Banner/>  
+        </div>
       </div>  
     </>
   )

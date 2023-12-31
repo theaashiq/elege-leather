@@ -47,8 +47,8 @@ nav {
 }
 
 .search-bar{
-    border: 2px solid #5b80d7;
-    padding: 5px 15px;
+    //border: 2px solid #5b80d7;
+    padding: 8px 15px;
     border-radius: 20px;
     background-color: #eaeffa;
     color: #5b80d7;
@@ -204,6 +204,7 @@ nav {
     .nav-items .items{
         border-color: #eaeffa;
         padding: 10px;
+        font-size: 14px;
     }
 
     .search-bar input{
@@ -222,7 +223,7 @@ nav {
         font-size: 14px;
     }
 
-    .b-b {
+    .b-b{
         width: 100px;
         font-size: 14px;
     }
@@ -230,6 +231,10 @@ nav {
     .nav-items{
         display:flex;
         justify-content: center;
+    }
+
+    .nav-items .items{
+        font-size: 12px;
     }
 
     .search-bar input{
@@ -245,19 +250,26 @@ nav {
     .shopping-bar, .login-btn{
         flex-direction:column;
         justify-content: center;
+        align-items: center;
     }
 
     .shopping-bar p, .login-btn p{
-        margin-top: 5px;
+        margin: 0px;
+        width: 40px;
+        text-align: center;
         font-size: 12px
     }
     
     .items{
         font-size: 14px;
     }
+
+    .logOut-btn{
+        padding: 0px;
+    }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 573px){
     /* nav{
         //border: 1px solid;
         justify-content: space-between;
@@ -266,7 +278,7 @@ nav {
     .brand-name{
         font-size: 14px;
         width: 68px;
-        /* margin-left: 5%; */
+        margin-left: 5%;
         padding: 5px;
         //border: 1px solid;
     }
@@ -285,7 +297,7 @@ nav {
     }
 
     .sm-nav-items{
-        margin-top: 34px;
+        margin-top: 80px;
         display: flex;
         flex-direction: column;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -306,7 +318,7 @@ nav {
 
     .category-button div{
         padding: 5px;
-        //padding-top: 5px;
+        padding-top: 55px;
         display: flex;
         align-items: center;
         font-family: 'Mooli', sans-serif;
@@ -315,38 +327,55 @@ nav {
         cursor: pointer;
     }
 
+    .search-bar{
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%); 
+        margin-left: 0;
+        background-color: #fff;
+        width: 80%;
+        height: 30px;
+    }
+
     .search-bar input{
+        background-color: transparent;
+        width: 90%
+    }
+    /* .search-bar input{
         width: 0;
         padding: 0;
         margin: 0;
         transition: 0.8s;
-    }
+    } */
 
-    .search-bar{
-        height: 32px;
-        border: none;
-    }
+    /* .search-bar{ */
+        //margin-left: 50px;
+        /* position: absolute;
+        left: 40%;
+        z-index: 100; */
+    /* } */
+    
 
     /* .search-bar:hover{
        position: relative;
        
     } */
 
-    .search-bar:hover input, 
+    /* .search-bar:hover input, 
     .search-bar input:focus{
         display: flex;
-        width: 160px;
+        width: 140px;
         padding-left: 5px;
     }
 
      .search-bar:hover + .side-block{
-        display: none; 
-    } 
-
-    .search-bar input:focus  nav:has(.side-items){
         display: none;
+    } 
+     */
+    .login-btn{
+        width: fit-content;
     }
-
     
     
 /*
@@ -354,21 +383,22 @@ nav {
         display: none;
       } */
       
-    .brand-name, 
-    .search-bar, 
-    .logOut-btn, 
-    .signIn, 
-    .shopping-bar{
-        margin: 0px 15px;
-    }  
+
+    
 
     nav{
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
-    .side-items{
-        width: 100%;
-        justify-content: flex-end
+    .side-block{
+        justify-content: flex-end;
+        margin: 0px;
+        margin-left: auto;
+        padding: 0px 10px;
+        /* transition: all 0.8s;
+        transition: max-height 0.3s ease, opacity 0.3s ease; */
+        /* transition: max-height 1.8s ease, opacity 0.3s ease;  */
+        //border: 1px solid;
     }
     
     /* .search-bar input:focus{

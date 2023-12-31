@@ -26,8 +26,6 @@ const handleResize = () => {
   setScreenSize(newScreenSize)
 }
 
-
-
 useEffect(() => {
   setScreenSize(window.innerWidth)
   window.addEventListener('resize', handleResize)
@@ -63,6 +61,12 @@ const handleSearchBarBlur = () => {
     } 
   };
 
+const handleNavBar = () => {
+  if(screenSize <= 450) {
+    setIsSearchBarFocused(true);
+  }
+}  
+
 useEffect(() => {
   if(screenSize < 450){ 
     setIsSearchBarFocused(false)
@@ -71,7 +75,7 @@ useEffect(() => {
 
 return (
     <>
-      <nav>
+      <nav className='navBar'>
           <div className='brand-name'>
               Elege Leather            
           </div>

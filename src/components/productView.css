@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@100;300&display=swap');
+
+
+.productView-container{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    //border: 1px solid;
+}
+
+.productView-image-block{
+    padding: 10px;
+    //border: 1px solid;
+}
+
+.productView-image-block img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.productView-details-block{
+    //border: 1px solid;
+    padding: 5px;
+    font-family: Montserrat;
+}
+
+.productView-details-block h2{
+    font-size: 24px;
+}
+
+.productView-discountPercentage{
+    font-size: 18px;
+    margin-top: 5px;
+    color: #e60000;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.productView-details{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.productView-inStock{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #007600;
+    margin-top: 5px;
+}
+
+.productView-rating{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0px;
+}
+
+.productView-dealOfDay{
+    padding: 5px;
+    background-color:#cc0c39;
+    font-size: 14px;
+    color: #fff;
+    width: fit-content;
+    //border-radius: 5px;
+    margin-top: 5px;
+}
+
+.productView-price{
+    margin-top: 0px;
+    font-size: 24px;
+}
+
+.productView-actualPrice{
+    color: grey;
+    font-size: 24px;
+    text-decoration: line-through;
+    text-decoration-color: #e60000;
+}
+
+.productView-addToCart-btn, .productView-buy-btn{
+    text-align: center;
+    padding: 10px;
+    color:  #333333;
+    font-size: 18px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.productView-buy-btn:hover{
+    background-color:#ffa41c;
+}
+
+.productView-addToCart-btn:hover{
+    border-color:#ffa41c;
+}
+
+.productView-buy-btn {
+    background-color: #ffd814;
+}
+
+.productView-addToCart-btn{
+    border: 3px solid #ffd814;
+}
+
+.producView-detailsGrids{
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 5px 0px;
+}
+
+.productView-detailsGrid-2{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif
+}
+
+.productView-detailsGrid-2 div{
+    background-color: #f2f2f2;
+    padding: 5px;
+    margin-top: 5px;
+    //width: 250px;
+}
+
+.productsInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    //border: 1px solid;
+    text-align: center;
+    width:100px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1323px) {
+    .productView-container{
+        margin-top: 110px
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .productView-container{
+        grid-template-columns: 55% 45%;
+    }
+
+    .productView-details-block h2{
+        font-size: 20px;
+    }
+    
+    .productView-addToCart-btn, .productView-buy-btn{
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    /* .producView-detailsGrids{
+        grid-template-columns: 100%
+    } */
+}
+
+@media screen and (max-width: 578px) {
+    .productView-container{
+        margin-top: 155px;
+        grid-template-columns: 100%
+    }
+
+    .productView-details-block h2{
+        font-size: 18px;
+    }
+    
+    .productView-addToCart-btn, .productView-buy-btn{
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .productView-image-block img{
+        height: 300px
+    }
+
+    .productView-details{
+        font-size: 14px;
+    }
+
+    .productView-addToCart-btn{
+       
+    }
+
+    .productsInfo{
+        font-size: 10px;
+    }
+}

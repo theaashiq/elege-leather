@@ -26,7 +26,6 @@ export const UserDetailsApi = () => {
 
 export const logout = () => {
     removeUserData()
-    console.log('Aashiq')
 }
 
 export const isAuthenticated = () => {
