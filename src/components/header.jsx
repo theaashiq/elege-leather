@@ -10,8 +10,9 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import './header.css'
-import { logout } from './services/authentication';
+import { isAuthenticated, logout } from './services/authentication';
 import { Close } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 
 const Header = ({name, email, localId}) => {
@@ -73,6 +74,16 @@ useEffect(() => {
   }
 },[screenSize])
 
+const navigate = useNavigate()
+
+const handleCartPage = () => {
+  if(isAuthenticated()){
+    navigate('/mainPage/addToCart')
+  } else {
+    navigate('/signIn')
+  }
+}
+
 return (
     <>
       <nav className='navBar'>
@@ -126,7 +137,7 @@ return (
                </div>
              </Link> 
              )} 
-             <div className='shopping-bar'>
+             <div className='shopping-bar' onClick={handleCartPage}>
                <LocalMallIcon sx={{fontSize: 35, 
                                  '@media(max-width:768px)':{fontSize: 25} }}/>
                <p>Cart</p>

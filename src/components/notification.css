@@ -55,6 +55,12 @@
     border-radius: 20px;
 }
 
+.my-toast-container{
+        width: fit-content;
+        height: fit-content;
+        borderRadius: 20px;
+}
+
 @media screen and (max-width: 1323px) {
 
 }

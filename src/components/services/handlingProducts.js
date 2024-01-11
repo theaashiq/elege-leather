@@ -1,5 +1,3 @@
-export const productView = (productId) => {
-    let viewProduct = productId
-    console.log(viewProduct)
-    return viewProduct
-}
+// import React, { useState } from "react";
+
+// export const 

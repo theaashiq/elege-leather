@@ -9,6 +9,8 @@ import MainPage from "./components/mainPage";
 import Products from "./components/products";
 import Header from "./components/header";
 //import Header from "./components/header";
+//import { AddCartContext } from "./components/services/addtocartContext";
+import { AddCartItems } from "./components/services/addtocartContext";
 
 function App() {
   return (
@@ -21,7 +23,11 @@ function App() {
           <Route exact path='/' element={<LandPage/>}/>
           <Route path='/logIn' element={<LogIn/>}/>
           <Route path='/signIn' element={<SignIn/>}/>
-          <Route path='/mainPage' element={<MainPage/>}>
+          <Route path='/mainPage' element={
+                                            <AddCartItems>
+                                              <MainPage/>
+                                            </AddCartItems>
+                                          }>
             <Route path='/mainPage/products' element={<Products />}/>
             <Route path='/mainPage/productView/:productId' element={<ProductView/>} />
             <Route path='/mainPage/addToCart' element={<AddToCart />} />

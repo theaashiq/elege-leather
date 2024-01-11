@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { createContext, useContext } from 'react'
 import './notification.css'
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 export const Modal = ({close}) => {
+    
     return (
         <>
             <div className='modal'>
@@ -29,5 +32,43 @@ export const Modal = ({close}) => {
                 </div>
             </div>
         </>
+    )
+}
+
+const NotificationContext = createContext()
+console.log(NotificationContext)
+
+export const useNotification = () => {
+    const context = useContext(NotificationContext)
+    if(!context) {
+        throw new Error('useNotification must be used within a NotificationProvider')
+    }
+    return context;
+}
+
+export const PopUpNotificationProvider = ({ children }) => {
+    const notify = (message) => {
+        toast.success(message)
+    }
+    return (
+        <NotificationContext.Provider value={{ notify }}>
+            
+                <ToastContainer
+                    position='top-center' 
+                    hideProgressBar 
+                    autoClose={1000} 
+                    closeButton={false}
+                    className="my-toast-container"
+                    
+                    style={{
+                        width:'200px',
+                        height: '10px',
+                        textAlign: 'center',
+                        borderRadius: '20px',
+                        fontFamily:'Open sans'
+                    }}
+                />
+            {children}
+        </NotificationContext.Provider>
     )
 }
