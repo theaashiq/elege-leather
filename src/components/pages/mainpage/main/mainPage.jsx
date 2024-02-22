@@ -10,9 +10,11 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import Footer from './footer'
 import './mainPage.css'
-import { UserDetailsApi } from './services/authentication'
-import { getUserData } from './services/localStorage'
-import { logout } from './services/authentication';
+import { UserDetailsApi } from '../../../services/authentication';
+//import { UserDetailsApi } from "../../services/authentication"
+//import { UserDetailsApi } from './services/authentication'
+import { getUserData } from '../../../services/localStorage'
+import { logout } from '../../../services/authentication';
 
 const MainPage = ({children}) => {
 const [user, setUser] = useState({name:"", email:"", localId:""})

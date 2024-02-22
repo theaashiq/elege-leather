@@ -10,7 +10,7 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import './header.css'
-import { isAuthenticated, logout } from './services/authentication';
+import { isAuthenticated, logout } from '../../../services/authentication';
 import { Close } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 

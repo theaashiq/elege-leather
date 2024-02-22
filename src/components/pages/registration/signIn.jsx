@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import './signIn.css'
 import { Link } from 'react-router-dom'
-import { LoginApi, isAuthenticated } from './services/authentication'
-import { storeUserData } from './services/localStorage'
+import { LoginApi, isAuthenticated } from '../../services/authentication'
+import { storeUserData } from '../../services/localStorage'
 import { useNavigate } from 'react-router-dom'
 import {BarLoader} from 'react-spinners'
 

@@ -4,11 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css";
 import { Autoplay, Navigation } from 'swiper/modules';
 import "swiper/css/navigation";
-import carousel1 from '../images/carosel1.jpg'
-import carousel2 from '../images/carosel2.webp'
-import carousel3 from '../images/carosel3.jpg'
-import carousel4 from '../images/carosel4.webp'
-import carousel5 from '../images/carosel5.webp'
+import carousel1 from '../../../../images/carosel1.jpg'
+import carousel2 from '../../../../images/carosel2.webp'
+import carousel3 from '../../../../images/carosel3.jpg'
+import carousel4 from '../../../../images/carosel4.webp'
+import carousel5 from '../../../../images/carosel5.webp'
 
 const Carousel = () => {
   return (

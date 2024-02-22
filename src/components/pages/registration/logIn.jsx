@@ -3,9 +3,9 @@ import './logIn.css'
 
 //import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { RegisterApi, isAuthenticated } from './services/authentication'
+import { RegisterApi, isAuthenticated } from '../../services/authentication'
 import { BarLoader } from 'react-spinners'
-import { storeUserData } from './services/localStorage'
+import { storeUserData } from '../../services/localStorage'
 //import SignIn from './signIn'
 
 const LogIn = () => {

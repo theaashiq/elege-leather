@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './productView.css'
 import { useParams } from 'react-router-dom'
-import data from './data'
+import data from '../../../services/data'
+//import data from './data'
 import './productView.css'
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
@@ -10,10 +11,10 @@ import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import PaidRoundedIcon from '@mui/icons-material/PaidRounded';
 import PetsRoundedIcon from '@mui/icons-material/PetsRounded';
-import { isAuthenticated } from './services/authentication'
-import { Modal } from './notification'
-import { useNotification } from './notification'
-import { AddCartContext } from './services/addtocartContext'
+import { isAuthenticated } from '../../../services/authentication'
+import { Modal } from '../../../services/notification'
+import { useNotification } from '../../../services/notification'
+import { AddCartContext } from '../cart/addtocartContext'
 
 const ProductView = () => {
 

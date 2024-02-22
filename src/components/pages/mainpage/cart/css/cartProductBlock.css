@@ -1,0 +1,324 @@
+.CartProductBlock{
+    margin-top: 35px;
+}
+.CartProductBlock-container{
+    font-family: Montserrat;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    margin: 10px;
+    //justify-content: space-around;
+    border-radius: 10px;
+    padding: 10px 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    //box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.CartProductBlock-container img{
+    width: 160px;
+    height: 160px;
+    margin: 0px 20px;
+    padding: 5px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.CartProductBlock-QtyController div{
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    margin: 0px 5px;
+    border: 1px solid;
+}
+
+.CartProductBlock-QtyBlock{
+    display: flex;
+}
+
+.CartProductBlock-Qty{
+    margin-right: 10px;
+    background-color: #e6e6e6;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 3px;
+    //box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.CartProductBlock-blockDetails-bottom{
+    display: flex;
+    align-items: center;
+}
+
+.CartProductBlock-QtyBlock span{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    background-color: #e6e6e6;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.CartProductBlock-QtyController{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.CartProductBlock-delete{
+    margin-left: 50px;
+    color: #e60000;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.CartProductBlock-container-checkBox{
+    margin-left: 10px;
+    //border: 1px solid;
+    display: grid;
+    place-item: center;
+}
+
+.CartProductBlock-container > div:last-child{
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.CartProductBlock-rating {
+    color: #e60000;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+
+.CartProductBlock-rating span{
+    color: #000;
+}
+
+.CartProductBlock-inStock{
+    color: #007600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.CartProductBlock-EligibleShipping{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.CartProductBlock-blockDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.CartProductBlock-container-priceBlock{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    //border: 1px solid;
+}
+
+.CartProductBlock-container-price{
+    font-family: 'Poppins', sans-serif;
+}
+
+.CartProductBlock-container-discount{
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #CC0C39;
+    padding: 2px 15px;
+    font-size: 12px;
+    width: 50px;
+    display: grid;
+    place-item: center;
+    margin-left: auto;
+    margin-bottom: 5px;
+}
+
+.CartProductBlock-container-Limitedtimedeal{
+    color: #CC0C39;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.CartProductBlock-container-priceBlock > div:last-child {
+    margin-top: auto;
+}
+
+.CartProductBlock-QtyData{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.CartProductBlock-container-OfferPriceData{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.CartProductBlock-container-priceData{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #666666;
+}
+
+.CartProductBlock-container-priceData span{
+    color: #666666;
+    text-decoration: line-through;
+}
+
+@media screen and (max-width: 1350px) {
+    /* .CartProductBlock{
+        margin-top: 10px;
+    } */
+
+}
+
+@media screen and (max-width: 950px) {
+    /* .CartProductBlock-container{
+        width: 100%;
+        padding: 20px
+    } */
+
+    .CartProductBlock-container img{
+        width: 90px;
+        height: 90px;
+        //border: 1px solid;
+    }
+
+    .CartProductBlock-container{
+        margin: 4px 10px;
+        width: 98%;
+    }
+
+    .CartProductBlock-blockDetails h3, 
+    .CartProductBlock-container-OfferPriceData{
+        font-size: 18px;
+    }
+
+    .CartProductBlock-rating, 
+    .CartProductBlock-inStock{
+        font-size: 14px;
+    }
+
+    .CartProductBlock-EligibleShipping, 
+    .CartProductBlock-Qty,
+    .CartProductBlock-container-priceData{
+        font-size: 12px;
+    }
+
+    .CartProductBlock-QtyController span{
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .CartProductBlock{
+        margin-top: 34px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .CartProductBlock-delete, 
+    .CartProductBlock-container-price{
+        font-size: 14px;
+    }
+
+    .CartProductBlock-container-Limitedtimedeal{
+        font-size: 12px;
+        width: 110px
+    }
+    /* .CartProductBlock{
+        margin-top: 10px;
+    }
+} */
+    /* .CartProductBlock{
+        margin-top: 45px
+    } */
+
+}
+
+@media screen and (max-width: 578px) {
+    .CartProductBlock-container img{
+        width: 60px;
+        height: 60px;
+        //border: 1px solid;
+    }
+
+    .CartProductBlock{
+        //margin-top: 150px;
+        display: flex;
+        //flex-direction: column;
+        align-items: center;
+    }
+    .CartProductBlock-blockDetails h3, 
+    .CartProductBlock-container-OfferPriceData{
+        font-size: 14px;
+    }
+
+    .CartProductBlock-rating, 
+    .CartProductBlock-inStock{
+        font-size: 12px;
+    }
+
+    .CartProductBlock-EligibleShipping, 
+    .CartProductBlock-Qty,
+    .CartProductBlock-container-priceData{
+        font-size: 10px;
+    }
+
+    .CartProductBlock-QtyController span{
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .CartProductBlock{
+        margin-top: 34px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .CartProductBlock-delete, 
+    .CartProductBlock-container-price{
+        font-size: 14px;
+    }
+
+    .CartProductBlock-container-Limitedtimedeal{
+        font-size: 10px;
+        width: 100px
+    }
+
+    .CartProductBlock-delete{
+        margin-left: 30px;
+    }
+
+    .CartProductBlock-container-discount{
+        font-size: 10px;
+    }
+     
+    /* 
+/* 
+    .CartProductBlock-container{
+        width: 100%;
+        height: 50px;
+        margin-right: 50px;
+    } */
+
+
+}
+

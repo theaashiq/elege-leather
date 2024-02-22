@@ -1,7 +1,8 @@
 import React from 'react'
 import './poster.css'
 import { NavLink } from 'react-router-dom'
-import banner from '../images/banner2.jpg'
+// import banner from '../images/banner2.jpg'
+import banner from '../../../images/banner2.jpg'
 
 const Banner = () => {
   return (
