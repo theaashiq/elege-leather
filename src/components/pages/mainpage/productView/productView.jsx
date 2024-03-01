@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './productView.css'
 import { useParams } from 'react-router-dom'
 import data from '../../../services/data'
@@ -21,7 +21,7 @@ const ProductView = () => {
 const [modalToggle, setModalToggle] = useState(false)  
 
 const { productId } = useParams()
-const foundProduct = data.find(currElem => currElem.id == productId) 
+const foundProduct = data.find(currElem => currElem.id === productId) 
 
 const discount = foundProduct.price - foundProduct.offer_price
 const discountPercentage = (discount/foundProduct.price)*100
@@ -81,35 +81,24 @@ const { notify } = useNotification()
 const { cartItems, setCartItems } = useContext(AddCartContext)
 
 const handleAddToCart = () => {
-const checkExist = cartItems.some((obj) => obj.id === foundProduct.id)
-
+  const checkExist = cartItems.some((obj) => obj === foundProduct.id)
   if(isAuthenticated()){
-    if(checkExist){
-      notify('Already Added')
+      if(checkExist){
+        notify('Already Added')
+      } else {
+      setCartItems([...cartItems, foundProduct.id,])
+      notify("Added to cart")
+      }
     } else {
-    setCartItems([...cartItems, { 
-      id:foundProduct.id, 
-      name:foundProduct.product_name, 
-      price:foundProduct.price,
-      offerPrice:foundProduct.offer_price,
-      image:foundProduct.image,
-      rating:foundProduct.rating
-    }])
-    notify("Added to cart")
+      setModalToggle(true)
     }
-    console.log(cartItems)
-  } else {
-    setModalToggle(true)
-    console.log('Please logIn first')
-  }
 }
 
 
 
 return (
   <>
-    
-      {modalToggle && <Modal close={setModalToggle}/>}
+    {modalToggle && <Modal close={setModalToggle}/>}
         <div className='productView-container'>
           <div className='productView-image-block'>
             <img 

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { AddCartContext } from './addtocartContext';
 import data from '../../../services/data'
 import './css/cartProductGridBlock.css'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -23,8 +24,15 @@ const fetchData = () => {
   setProducts(productData)
 }
 
-const handleAddToCart = ({details}) => {
+const { cartItems, setCartItems } = useContext(AddCartContext)
 
+const handleAddToCart = (id) => {
+  const checkExist = cartItems.includes(id)  
+  if(!checkExist){
+    setCartItems([...cartItems, id]) 
+    console.log(cartItems, 'ITEMS')
+  }
+  
 }
 
 console.log(products, 'Products')
@@ -49,12 +57,7 @@ console.log(products, 'Products')
                   <p style={{fontSize:'14px'}}>M.R.P <span>{obj.offer_price}</span></p>
                 </div>
                 <div className="cartProductGridBlock-btn">
-                  <p onClick={() => handleAddToCart(obj.image,
-                                                    obj.product_name,
-                                                    obj.offer_price,
-                                                    obj.rating,
-                                                    obj.price,
-                                                    obj.id)}>Add to cart</p>
+                  <p onClick={() => handleAddToCart(obj.id)}>Add to cart</p>
                 </div>
               </div>
           </div>

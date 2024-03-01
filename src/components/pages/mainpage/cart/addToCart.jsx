@@ -49,12 +49,15 @@ const AddToCart = () => {
                   </tr>
                 </table>
               </div> */}
-              <div className='addToCart-totalAmount'>
-                Total amount: 8550
+              <div className='addToCart-totalAmountBlock'>
+                <div className='addToCart-totalAmount'>
+                  Total amount: 8550
+                </div>
+                <div className='addToCart-proccedToBuy'>
+                   <p>Proceed to Buy.</p>
+                </div>
               </div>
-              <div className='addToCart-proccedToBuy'>
-                 <p>Procced to Buy</p>
-              </div>
+            <div className='addToCart-gridBox'>
               <hr 
                 style={{
                   width: '350px', 
@@ -63,8 +66,7 @@ const AddToCart = () => {
                   background: '#bfbfbf',
                   //color: 'red',
                   marginTop: '25px',}}/>
-              <div className='addToCart-gridBox'>
-                  <CartProductGridBlock/>
+                <CartProductGridBlock/>
               </div>
           </div>
         </div> 

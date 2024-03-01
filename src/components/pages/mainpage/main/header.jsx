@@ -84,10 +84,14 @@ const handleCartPage = () => {
   }
 }
 
+const handleHomePage = () => {
+  navigate('/mainPage/products')
+}
+
 return (
     <>
       <nav className='navBar'>
-          <div className='brand-name'>
+          <div className='brand-name' onClick={handleHomePage}>
               Elege Leather            
           </div>
           <div className={category ? 'sm-nav-items nav-items':'nav-items'}>

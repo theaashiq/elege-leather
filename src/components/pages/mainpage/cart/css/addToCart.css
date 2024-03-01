@@ -31,7 +31,6 @@
 
 .addToCart-cart-block{
     width: 70%;
-    
 }
 
 .addTocart-ContinueShopping-btn p{
@@ -128,19 +127,19 @@
 
 }
 
-@media screen and (max-width: 950px) {
+/* @media screen and (max-width: 950px) {
     /* .cart-container{
         margin-top: 100px;
     } */
 
     
-    .no-items-in-cart{
+    /* .no-items-in-cart{
         font-size: 36px
     }  
     
-}
+}  */
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1250px) {
     .no-items-in-cart{
         font-size: 26px
     }   
@@ -159,16 +158,55 @@
     .addToCart-yourOrder-container{
         height: 100px;
         width: 100%;
-        background-color: red;
+        background-color: #fff;
         margin: 0;
         bottom: 0;
-        //background-color: #fff
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
-}
 
-@media screen and (max-width: 950px) {
+    .addToCart-yourOrder-container > div:first-child {
+        margin-top: 5px;
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .addToCart-totalAmountBlock{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        //border: 1px solid;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .addToCart-totalAmount{
+        font-size: 16px;
+        margin: 0px;
+    }
+
+    .addToCart-proccedToBuy{
+        font-size: 14px;
+        padding: 10px;
+        width: 120px;
+        margin: 0px;
+
+    }
+
+    .addToCart-gridBox{
+        display: none;
+    }
+
     .cart-container{
         margin-top: 122px;
     }
 
 }
+/* 
+@media screen and (max-width: 950px) {
+
+
+
+    .addToCart-yourOrder-container{
+
+    }
+} */
