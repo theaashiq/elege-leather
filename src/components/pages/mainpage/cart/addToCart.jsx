@@ -5,7 +5,11 @@ import { AddCartContext } from './addtocartContext'
 import CartProductGridBlock from './cartProductGridBlock'
 
 const AddToCart = () => {
-  const { cartItems } = useContext(AddCartContext)
+  const { cartItems, 
+          deleteProductDetails,
+          setDeleteProductDetails,
+          setDeleteConformationModalToggle,
+          deleteConformationModalToggle, } = useContext(AddCartContext)
   
 
   return (

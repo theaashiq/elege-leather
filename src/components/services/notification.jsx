@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import { Translate } from '@mui/icons-material';
 
 export const Modal = ({close}) => {
     
@@ -50,8 +51,16 @@ export const PopUpNotificationProvider = ({ children }) => {
     const notify = (message) => {
         toast.success(message)
     }
+
+    const notifyWarning = (message) => {
+        toast.warning(message)
+    }
+
+    const notifyError = (message) => {
+        toast.error(message)
+    }
     return (
-        <NotificationContext.Provider value={{ notify }}>
+        <NotificationContext.Provider value={{ notify, notifyError, notifyWarning }}>
             
                 <ToastContainer
                     position='top-center' 
@@ -59,11 +68,16 @@ export const PopUpNotificationProvider = ({ children }) => {
                     autoClose={1000} 
                     closeButton={false}
                     className="my-toast-container"
-                    
                     style={{
-                        width:'200px',
+                        maxWidth: '220px',
                         height: '10px',
                         textAlign: 'center',
+                        postion: 'absolute',
+                        top: '10px',
+                        margin: 'auto',
+                        left: 0,
+                        right: 0,
+                        transform: 'translateY(-50%)',
                         borderRadius: '20px',
                         fontFamily:'Open sans'
                     }}

@@ -21,7 +21,7 @@ const ProductView = () => {
 const [modalToggle, setModalToggle] = useState(false)  
 
 const { productId } = useParams()
-const foundProduct = data.find(currElem => currElem.id === productId) 
+const foundProduct = data.find(currElem => parseFloat(currElem.id) === parseFloat(productId)) 
 
 const discount = foundProduct.price - foundProduct.offer_price
 const discountPercentage = (discount/foundProduct.price)*100
