@@ -104,8 +104,6 @@ const handleProductQty = (state, _id) => {
   setSelectedItems(updatedCartDetails)
 }
 
-
-
 const handleChecked = (id) => {
   console.log(proceedToBuyIds.includes(id), 'State')
   if(proceedToBuyIds.includes(id)){
@@ -130,6 +128,7 @@ console.log(proceedToBuyIds, 'IDSSSSS')
                 <div className='CartProductBlock-container-checkBox'>  
                   <input
                     type="checkbox" 
+                    id='cartProductBlock-checkbox'
                     onChange={() => handleChecked(obj.id)}/>
                 </div>
                 <div style={{display:'flex', height:'100%', alignItems:'center'}}>

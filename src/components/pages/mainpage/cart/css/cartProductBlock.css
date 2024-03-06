@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
 .CartProductBlock {
   margin-top: 35px;
   padding-bottom: 65px;
@@ -237,6 +239,42 @@
   color: #fff;
 }
 
+.CartProductBlock-container input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px; 
+  height: 20px;
+  margin: 0px 0px 140px 5px;
+  //background-color: #f2f2f2; 
+  border: 2px solid #006600;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.CartProductBlock-container input[type='checkbox']:after {
+  font-family:'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f00c';
+  font-size: 16px;
+  color: white;
+  display: inline-block
+}
+
+/* .CartProductBlock-container input[type='checkbox']:hover {
+  background-color: #e6e6e6;
+  color: #e6e6e6;
+
+} */
+
+.CartProductBlock-container input[type='checkbox']:checked{
+ background-color: #006600
+}
+
+
+
 @media screen and (max-width: 1350px) {
   /* .CartProductBlock{
         margin-top: 10px;
@@ -324,6 +362,7 @@
     width: 90px;
     height: 100px;
     margin: 0px 10px 100px 28px;
+    padding-left: 15px;
     //margin: 0px 10px;
     //margin-bottom: 100px;
     //border: 1px solid;
@@ -383,6 +422,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    
     //align-items: center;
     //justify-content: space-between;
   }
@@ -413,6 +453,7 @@
   .CartProductBlock-container {
     padding: 5px 0px 5px 0px;
     margin: 2px 0px;
+    /* border: 1px solid; */
   }
 
   /* 
