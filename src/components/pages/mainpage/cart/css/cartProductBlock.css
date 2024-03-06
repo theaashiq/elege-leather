@@ -88,9 +88,9 @@
   cursor: pointer;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
-  padding: 4px 8px;
-  border-radius: 5px;
-  border: 1px solid #fff;
+  //padding: 4px 8px;
+  //border-radius: 5px;
+  //border: 1px solid #fff;
 }
 
 .CartProductBlock-container-checkBox {
@@ -246,7 +246,7 @@
   height: 20px;
   margin: 0px 0px 140px 5px;
   //background-color: #f2f2f2; 
-  border: 2px solid #006600;
+  border: 1px solid #006600;
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -362,7 +362,7 @@
     width: 90px;
     height: 100px;
     margin: 0px 10px 100px 28px;
-    padding-left: 15px;
+    padding-left: 10px;
     //margin: 0px 10px;
     //margin-bottom: 100px;
     //border: 1px solid;

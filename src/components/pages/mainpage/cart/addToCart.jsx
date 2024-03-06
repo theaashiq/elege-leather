@@ -1,20 +1,17 @@
 import React, { useContext } from 'react'
 import './css/addToCart.css'
 import CartProductBlock from './cartProductBlock'
-import { AddCartContext } from './addtocartContext'
+import  { AddCartContext }  from './addtocartContext'
 import CartProductGridBlock from './cartProductGridBlock'
 
 const AddToCart = () => {
   const { cartItems, 
-          deleteProductDetails,
-          setDeleteProductDetails,
-          setDeleteConformationModalToggle,
-          deleteConformationModalToggle, } = useContext(AddCartContext)
+          proceedToBuyIds, } = useContext(AddCartContext)
   
 
   return (
     <>
-      {cartItems.length === 0 ? (
+      {cartItems.length <= 0 ? (
         <div className='no-items-in-cart'>
           <p>Your cart is currently empty</p>
         </div> ) : (
@@ -24,7 +21,7 @@ const AddToCart = () => {
           </div>
           <div className='addToCart-yourOrder-container'>
             <div>
-               6 items has been selected
+               {proceedToBuyIds.length} items has been selected
             </div>
               {/* <div>
                 <p>Your Orders</p>

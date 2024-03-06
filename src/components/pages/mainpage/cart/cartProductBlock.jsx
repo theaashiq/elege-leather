@@ -106,11 +106,14 @@ const handleProductQty = (state, _id) => {
 
 const handleChecked = (id) => {
   console.log(proceedToBuyIds.includes(id), 'State')
-  if(proceedToBuyIds.includes(id)){
-    const selectedItems = [...proceedToBuyIds]
-    selectedItems.push(id)
-    setProceedToBuyIds(selectedItems) 
-  }
+  if(!proceedToBuyIds.includes(id)){
+      const selectedItems = [...proceedToBuyIds, id]
+      setProceedToBuyIds(selectedItems) 
+    }
+  else{
+    const updatedItems = proceedToBuyIds.filter(item => item !== id)
+    setProceedToBuyIds(updatedItems) 
+  }  
 }
 
 console.log(proceedToBuyIds, 'IDSSSSS')
@@ -122,13 +125,17 @@ console.log(proceedToBuyIds, 'IDSSSSS')
           return (
             <>
               <div
-                 style={{display: 'flex', alignItems:'center'}}
-                className='CartProductBlock-container'
+                style={{
+                  display: 'flex', 
+                  alignItems:'center',
+                  border: proceedToBuyIds.includes(obj.id)  ? '2px solid green' : '2px solid #fff'}}
+                className='CartProductBlock-container' 
                 key={obj.id}>
                 <div className='CartProductBlock-container-checkBox'>  
                   <input
                     type="checkbox" 
                     id='cartProductBlock-checkbox'
+                    checked={proceedToBuyIds.includes(obj.id)}
                     onChange={() => handleChecked(obj.id)}/>
                 </div>
                 <div style={{display:'flex', height:'100%', alignItems:'center'}}>
