@@ -6,25 +6,22 @@ export const AddCartContext = createContext()
 export const AddCartItems = ({children}) => {
     const [cartItems, setCartItems] = useState([])
     const [proceedToBuyIds, setProceedToBuyIds] = useState([])
+    const [buyItems, setBuyItems] = useState([])
+    const [total, setTotal] = useState({
+        total_amount: '',
+        total_discount: '',
+    })
 
-    const fetchBuyingDetails = () => {
-        if(proceedToBuyIds.length > 0){
-            const buyingItems = data.filter(obj => proceedToBuyIds.includes(obj.id));
-            }
-        }
-     
-        
-    useEffect(() => {
-        fetchBuyingDetails()
-    },[proceedToBuyIds])
-
-    return (
+  return (
         <AddCartContext.Provider 
             value={{
                 cartItems,
                 setCartItems,
+                buyItems, 
+                setBuyItems,
                 proceedToBuyIds, 
-                setProceedToBuyIds
+                setProceedToBuyIds,
+                total, setTotal
             }}>
           {children}      
         </AddCartContext.Provider>

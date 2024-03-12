@@ -136,8 +136,8 @@ const data = [
     id: 1,
     product_name: "Men Brown Textured Leather Wallet",
     category: "wallet",
-    price: 1799,
-    offer_price: 2499,
+    price: 2799,
+    offer_price: 1499,
     image: wallet1,
     product_details: "Sleek folio design for executive style and functionality. Elevate your executive style with our Men Brown Textured Leather Wallet. The sleek folio design not only adds a touch of sophistication but also provides functionality for organized professionals. Make a statement with this wallet that seamlessly combines style and practicality.",
     rating: 4.5, // Add the rating property

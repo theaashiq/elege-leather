@@ -10,8 +10,9 @@ const CartProductBlock = () => {
 const { 
   cartItems, 
   setCartItems, 
-  proceedToBuyIds, 
-  setProceedToBuyIds } = useContext(AddCartContext)
+  buyItems, 
+  setBuyItems,
+  total, setTotal, } = useContext(AddCartContext) 
   
 const { notify, notifyWarning } = useNotification()
 
@@ -104,21 +105,51 @@ const handleProductQty = (state, _id) => {
   setSelectedItems(updatedCartDetails)
 }
 
+const [proceedToBuyIds, setProceedToBuyIds] = useState([])
+
 const handleChecked = (id) => {
-  console.log(proceedToBuyIds.includes(id), 'State')
   if(!proceedToBuyIds.includes(id)){
       const selectedItems = [...proceedToBuyIds, id]
-      setProceedToBuyIds(selectedItems) 
+      setProceedToBuyIds(selectedItems)
     }
   else{
-    const updatedItems = proceedToBuyIds.filter(item => item !== id)
-    setProceedToBuyIds(updatedItems) 
+    const updatedIds = proceedToBuyIds.filter(item => item !== id)
+    setProceedToBuyIds(updatedIds)
   }  
 }
 
-console.log(proceedToBuyIds, 'IDSSSSS')
+useEffect(() => {
+  fetchBuyingItemsData()
+},[proceedToBuyIds, selectedItems])
 
-  return (
+
+const fetchBuyingItemsData = () => {
+  const buyItemsDetails = proceedToBuyIds.map((_id) => {
+    const items = selectedItems.filter((item) => item.id === _id)
+    console.log(items, 'Items')
+      return items.map((_item) => ({
+        ..._item,
+        total_amount:  _item.offer_price * _item.quantity,
+        savedUpTo: _item.price * _item.quantity - _item.offer_price * _item.quantity 
+      }))
+    }).flat()
+  setBuyItems(buyItemsDetails)
+}
+
+//console.log(selectedItems, 'Selected')
+console.log(buyItems, "buy Items")
+  
+useEffect(() => {
+  const overallTotalAmount = buyItems.reduce((total, item) => total + item.total_amount, 0)
+  const overallSavedUpTo = buyItems.reduce((total, item) => total + item.savedUpTo, 0)
+  setTotal({
+      total_amount: overallTotalAmount,
+      total_discount: overallSavedUpTo,
+  })
+},[buyItems])
+
+console.log(total, 'Total Amount')
+return (
     <>
       <div className='CartProductBlock'>
         {selectedItems.map((obj, index) => {

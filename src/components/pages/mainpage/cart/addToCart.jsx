@@ -5,8 +5,7 @@ import  { AddCartContext }  from './addtocartContext'
 import CartProductGridBlock from './cartProductGridBlock'
 
 const AddToCart = () => {
-  const { cartItems, 
-          proceedToBuyIds, } = useContext(AddCartContext)
+  const { cartItems, buyItems, total, setTotal } = useContext(AddCartContext)
   
 
   return (
@@ -21,7 +20,7 @@ const AddToCart = () => {
           </div>
           <div className='addToCart-yourOrder-container'>
             <div>
-               {proceedToBuyIds.length} items has been selected
+              {buyItems.length} items has been selected
             </div>
               {/* <div>
                 <p>Your Orders</p>
@@ -52,11 +51,11 @@ const AddToCart = () => {
               </div> */}
               <div className='addToCart-totalAmountBlock'>
                 <div className='addToCart-totalAmount'>
-                  Total amount: 8550
+                  Total amount: {total.total_amount}
                 </div>
-                <div className='addToCart-proccedToBuy'>
-                   <p>Proceed to Buy.</p>
-                </div>
+                <button className='addToCart-proccedToBuy'>
+                   Proceed to Buy
+                </button>
               </div>
             <div className='addToCart-gridBox'>
               <hr 

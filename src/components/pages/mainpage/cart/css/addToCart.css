@@ -109,6 +109,7 @@
     font-family: 'Poppins', sans-serif;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     cursor: pointer;
+    border: none;
 }
 
 .addToCart-proccedToBuy:hover{
@@ -189,7 +190,8 @@
         padding: 10px;
         width: 120px;
         margin: 0px;
-
+      
+        /* outline: none; */
     }
 
     .addToCart-gridBox{
