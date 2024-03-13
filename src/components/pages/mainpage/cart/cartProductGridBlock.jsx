@@ -54,7 +54,7 @@ console.log(products, 'Products')
               <div className='cartProductGridBlock-details'>
                 <div>
                   <p style={{fontSize:'14px'}}>{obj.product_name}</p>
-                  <p style={{fontSize:'14px'}}>{obj.rating}</p>
+                  <p style={{fontSize:'12px'}}>Rating: <span>{obj.rating}</span></p>
                   <p style={{fontSize:'14px'}}><span><FormatPrice price={obj.offer_price}/></span></p>
                 </div>
                 <div className="cartProductGridBlock-btn">

@@ -71,7 +71,8 @@ const AddToCart = () => {
               </div> */}
               <div className='addToCart-totalAmountBlock'>
                 <div className='addToCart-totalAmount'>
-                 Total amount: <FormatPrice price={total.total_amount}/>
+                 Total amount 
+                 <div style={{display:'flex',width:'100%',justifyContent: 'center'}}><FormatPrice price={total.total_amount}/></div>
                 </div>
                 <button disabled={!proceedToggle} className='addToCart-proccedToBuy'>
                    Proceed to Buy
@@ -85,7 +86,7 @@ const AddToCart = () => {
                   height: '1px',
                   background: '#bfbfbf',
                   //color: 'red',
-                  marginTop: '25px',}}/>
+                  marginTop: '15px',}}/>
                 <CartProductGridBlock/>
               </div>
           </div>
