@@ -79,6 +79,8 @@
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
+    width: fit-content;
+    //border: 1px solid;
 }
 
 .addToCart-yourOrder-table th, td{
@@ -119,6 +121,17 @@
 .cart-container{
     display: flex;
 } */
+.addToCart-totalAmountBlock{
+    display: flex;
+    flex-direction: column;
+    //border: 1px solid;
+    align-items: center;
+    justify-content: space-around;
+    //border: 1px solid;
+    width: 100%;
+    margin-top: 10px;
+
+}
 
 @media screen and (max-width: 1323px) {
     /* .cart-container{
@@ -140,6 +153,8 @@
     
 }  */
 
+
+
 @media screen and (max-width: 1250px) {
     .no-items-in-cart{
         font-size: 26px
@@ -157,7 +172,7 @@
     }
 
     .addToCart-yourOrder-container{
-        height: 100px;
+        height: 120px;
         width: 100%;
         background-color: #fff;
         margin: 0;
@@ -173,11 +188,12 @@
 
     .addToCart-totalAmountBlock{
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: space-around;
         //border: 1px solid;
         width: 100%;
-        margin-top: 10px;
+        margin: 10px;
     }
 
     .addToCart-totalAmount{

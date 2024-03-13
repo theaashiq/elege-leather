@@ -4,6 +4,7 @@ import data from '../../../services/data'
 import './css/cartProductGridBlock.css'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import { FormatPrice } from '../../../services/formatPrice';
 
 const CartProductGridBlock = () => {
 
@@ -54,7 +55,7 @@ console.log(products, 'Products')
                 <div>
                   <p style={{fontSize:'14px'}}>{obj.product_name}</p>
                   <p style={{fontSize:'14px'}}>{obj.rating}</p>
-                  <p style={{fontSize:'14px'}}>M.R.P <span>{obj.offer_price}</span></p>
+                  <p style={{fontSize:'14px'}}><span><FormatPrice price={obj.offer_price}/></span></p>
                 </div>
                 <div className="cartProductGridBlock-btn">
                   <p onClick={() => handleAddToCart(obj.id)}>Add to cart</p>

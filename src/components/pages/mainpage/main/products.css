@@ -30,6 +30,7 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .product img{
@@ -60,12 +61,15 @@ section{
 
 .price{
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 22px;
     color: #333;
+    //font-weight: bold;
+    //cursor: pointer;
 }
 
 .actual-price{
-    font-size: 14px;
+    font-size: 12px;
+    margin-right: 5px;
     color: #a6a6a6;
     text-decoration: line-through;
     text-decoration-color: #e60000;
@@ -75,11 +79,15 @@ section{
   display: flex;
   align-items: center;
   background-color: #ffd814;
-  padding: 5px 8px;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  //font-size: 14px;
 }
 
+.product-view-btn p:hover{
+    background-color: #ffa41c
+}
 .product-view-btn-icon{
     color: #000033;
     margin: 3px 2px 0px 0px;
@@ -87,7 +95,7 @@ section{
 
 .product-view-btn-name{
     color: #000033;
-    font-size: 14px;
+    font-size: 16px;
     font-family: Montserrat;;
 }
 
@@ -99,7 +107,7 @@ section{
 
     .product-view-btn-name{
         font-size: 12px;
-        margin-left: 5px;
+        //margin-left: 5px;
     }
     
 }
@@ -133,8 +141,11 @@ section{
     }
 
     .product-view-btn{
-        margin-top: 15px;
-        width:100%;
+        /* margin-top: 15px; */
+        /* width; */
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
     }
 
     .product-view-btn-icon{
@@ -151,11 +162,11 @@ section{
     }
     
     .price{
-        font-size: 14px;
+        font-size: 16px;
     }
     
     .actual-price{
-        font-size: 12px;
+        font-size: 11px;
     }
     
 }
@@ -170,4 +181,7 @@ section{
         gap: 50px;
     }
 
+    .product-view-btn{
+        display: none;
+    }
 }

@@ -1,13 +1,33 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import './css/addToCart.css'
 import CartProductBlock from './cartProductBlock'
 import  { AddCartContext }  from './addtocartContext'
 import CartProductGridBlock from './cartProductGridBlock'
+import { FormatPrice } from '../../../services/formatPrice'
 
 const AddToCart = () => {
   const { cartItems, buyItems, total, setTotal } = useContext(AddCartContext)
   
+  const [ proceedToggle, setProceedToggle ] = useState(false)
 
+  useEffect(() => {
+    if(total.total_amount !== 0){
+      setProceedToggle(true)  
+    } else {
+      setProceedToggle(false)
+    }
+    
+  },[total])
+
+  const number = 123456.789;
+
+// console.log(
+//   new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(
+//     number,
+//   ),
+// );
+
+  console.log(total.total_amount !== 0, 'State')
   return (
     <>
       {cartItems.length <= 0 ? (
@@ -51,9 +71,9 @@ const AddToCart = () => {
               </div> */}
               <div className='addToCart-totalAmountBlock'>
                 <div className='addToCart-totalAmount'>
-                  Total amount: {total.total_amount}
+                 Total amount: <FormatPrice price={total.total_amount}/>
                 </div>
-                <button className='addToCart-proccedToBuy'>
+                <button disabled={!proceedToggle} className='addToCart-proccedToBuy'>
                    Proceed to Buy
                 </button>
               </div>

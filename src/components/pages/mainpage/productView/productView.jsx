@@ -15,6 +15,7 @@ import { isAuthenticated } from '../../../services/authentication'
 import { Modal } from '../../../services/notification'
 import { useNotification } from '../../../services/notification'
 import { AddCartContext } from '../cart/addtocartContext'
+import { FormatPrice } from '../../../services/formatPrice'
 
 const ProductView = () => {
 
@@ -119,11 +120,10 @@ return (
               <div className='producView-detailsGrids'>
                 <div classname='productView-detailsGrid-1'>
                   <p className='productView-dealOfDay'>Deal of the day</p>
-                  <p className='productView-discountPercentage'>-{roundDiscountPercentage}% offer</p>
+                  <p className='productView-discountPercentage'>{roundDiscountPercentage}% offer</p>
                   <p className='productView-price'>
-                    MRP 
-                    <span className='productView-actualPrice'> {foundProduct.price}</span>
-                    <span> {foundProduct.offer_price}</span>
+                    <span style={{fontSize:'14px', marginRight:'5px'}} className='productView-actualPrice'>M.R.P {foundProduct.price}</span>
+                    <span style={{fontWeight:'bold'}}><FormatPrice price={foundProduct.offer_price}/></span>
                   </p>
                   <p style={{
                     marginBottom: '0px',

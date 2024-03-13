@@ -3,6 +3,7 @@ import { AddCartContext } from './addtocartContext'
 import data from '../../../services/data'
 import './css/cartProductBlock.css' 
 import { useNotification } from '../../../services/notification'
+import { FormatPrice } from '../../../services/formatPrice'
 
 
 const CartProductBlock = () => {
@@ -210,7 +211,7 @@ return (
                         Price
                       </p>
                       <p className='CartProductBlock-container-OfferPriceData'>
-                        {obj.offer_price}
+                        <FormatPrice price={obj.offer_price}/>
                       </p>
                       <p className='CartProductBlock-container-priceData'>
                         M.R.P: <span>{obj.price}</span>
