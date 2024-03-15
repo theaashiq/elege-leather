@@ -141,15 +141,13 @@ return (
                </div>
              </Link> 
              )} 
-             <div className='shopping-bar' onClick={handleCartPage}>
-               <LocalMallIcon sx={{fontSize: 35, 
+              <div className='shopping-bar' onClick={handleCartPage}>
+                <LocalMallIcon sx={{fontSize: 35, 
                                  '@media(max-width:768px)':{fontSize: 25} }}/>
-               <p>Cart</p>
-             </div>
-          </div>
-
+              </div>
+            </div>
           </div> )}
-          </div>
+        </div>
           
         </nav>
     </>

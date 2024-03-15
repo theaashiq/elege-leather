@@ -8,6 +8,7 @@ import MainPage from "./components/pages/mainpage/main/mainPage";
 import Products from "./components/pages/mainpage/main/products";
 import AddToCart from "./components/pages/mainpage/cart/addToCart";
 import { AddCartItems } from "./components/pages/mainpage/cart/addtocartContext";
+import Checkout from "./components/pages/mainpage/checkout/checkout";
 // import { AddCartItems } from "./components/pages/mainpage/cart/addtocartContext";
 // import { AddCartItems } from "./components/pages/cart/addtocartContext"
 
@@ -29,6 +30,7 @@ function App() {
               <Route path='/mainPage/productView/:productId' element={<ProductView/>} />
               <Route path='/mainPage/addToCart' element={<AddToCart/>} />
             </Route>
+            <Route path='/checkout' element={<Checkout/>}/>
           </Routes>
         </BrowserRouter>
       </div>

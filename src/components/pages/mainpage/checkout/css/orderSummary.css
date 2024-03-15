@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.orderSummary-container{
+    background-color: #fff;
+    margin: 10px;
+    font-family: 'lexend'
+}
+
+.orderSummary-heading{
+    font-size: 24px;
+    padding: 5px;
+    background-color: #c1fec1;
+    border: 1px solid #03f003;
+}
+
+.orderSummary-container-item {
+    display: flex;
+    border-bottom: 1px solid #e6e6e6;
+    //justify-content: space-around;
+}
+
+.orderSummary-container-itemlist{
+  
+}
+
+.orderSummary-container-item img {
+    width : 180px;
+    object-fit: cover;
+    //border: 1px solid;
+}
+
+.orderSummary-container-item-blockA{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //justify-content: space-between;
+}
+
+.orderSummary-qty{
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 0px 6px;
+    margin-top: 5px;
+    color: #404040;
+    background-color: #d9d9d9;
+}
+
+.orderSummary-name {
+    width: 180px;
+    //border: 1px solid;
+}
+
+.orderSummary-cat, 
+.orderSummary-seller,
+.orderSummary-delivery{
+    color: #666666;
+}
+
+.orderSummary-container-item-blockB{
+    display: flex;
+    width: 100%
+}
+
+.orderSummary-remove{
+    color: #CC0000;
+    border: 1px solid #CC0000;
+    width: fit-content;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.orderSummary-remove:hover {
+    background-color: #CC0000;
+    color: #fff;
+}
+
+@media screen and (width <= 980px) {
+    .orderSummary-container{
+        margin: 5px 10px;
+    }
+
+    .orderSummary-heading{
+        font-size: 18px;
+    }
+    
+}
+
+@media screen and (width <= 550px) {
+    .orderSummary-container-item img {
+        width : 100px;
+        height: 100px;
+        margin: 5px 20px;
+    }
+
+    .orderSummary-container-item{
+        padding: 10px 0px;
+    }
+
+    .orderSummary-cat, 
+    .orderSummary-seller,
+    .orderSummary-delivery {
+        font-size: 12px;
+    }
+
+    .orderSummary-name{
+        //border: 1px solid ;
+        width: 95%;
+    }
+    .orderSummary-price,
+    .orderSummary-name, 
+    .orderSummary-remove,
+    .orderSummary-qty {
+        font-size: 14px;
+    }
+
+    .orderSummary-container-item-blockB{
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left
+    }
+
+    .orderSummary-delivery span{
+        display: block;
+        color: #666666;
+    }
+
+    .orderSummary-remove{
+
+    }
+
+    .orderSummary-remove, 
+    .orderSummary-delivery{
+        text-align: right;
+        padding: 0px 10px;
+        //padding-right: 5px;
+        //border: 1px solid;
+    }
+
+}

@@ -83,6 +83,7 @@
     //border: 1px solid;
 }
 
+/* 
 .addToCart-yourOrder-table th, td{
     border-bottom: 1px solid #8c8c8c;
     border-right: 1px solid #8c8c8c;
@@ -97,7 +98,7 @@
 .addToCart-table tr th:last-child, 
 .addToCart-table tr td:last-child{
     border-right: none;
-}
+} */
 
 .addToCart-proccedToBuy{
     background-color: #ffd814;
