@@ -7,58 +7,64 @@
 }
 
 .orderSummary-heading{
-    font-size: 24px;
-    padding: 5px;
+    font-size: 16px;
+    padding: 5px 10px;
     background-color: #c1fec1;
-    border: 1px solid #03f003;
+    border: 1px solid #017001;
+    color: #017001;
 }
 
 .orderSummary-container-item {
     display: flex;
     border-bottom: 1px solid #e6e6e6;
+    padding: 10px 0px;
     //justify-content: space-around;
 }
 
-.orderSummary-container-itemlist{
-  
-}
 
 .orderSummary-container-item img {
-    width : 180px;
+    width : 120px;
+    height: 120px;
     object-fit: cover;
-    //border: 1px solid;
+    margin: 0px 20px;
+}
+
+.orderSummary-name {
+    font-size: 16px;
+    width: 100%;
 }
 
 .orderSummary-container-item-blockA{
     display: flex;
     flex-direction: column;
     align-items: center;
-    //justify-content: space-between;
 }
 
 .orderSummary-qty{
     font-size: 14px;
     border-radius: 8px;
     padding: 0px 6px;
-    margin-top: 5px;
+    margin-top: 15px;
     color: #404040;
     background-color: #d9d9d9;
-}
-
-.orderSummary-name {
-    width: 180px;
-    //border: 1px solid;
 }
 
 .orderSummary-cat, 
 .orderSummary-seller,
 .orderSummary-delivery{
     color: #666666;
+    font-size: 14px;
 }
 
 .orderSummary-container-item-blockB{
     display: flex;
+    justify-content: space-between;
     width: 100%
+}
+
+.orderSummary-savedUpTo{
+ font-size: 14px;
+ color: #666666;
 }
 
 .orderSummary-remove{
@@ -66,7 +72,9 @@
     border: 1px solid #CC0000;
     width: fit-content;
     border-radius: 4px;
+    padding: 0px 5px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .orderSummary-remove:hover {
@@ -74,22 +82,87 @@
     color: #fff;
 }
 
+.orderSummary-price {
+    font-size: 18px;
+    margin: 5px 0px
+}
+
+.orderSummary-delivery span{
+    color: #666666;
+}
+
+.orderSummary-blockB-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.orderSummary-remove{
+    margin-left: auto;
+    padding: 0px 5px
+}
+
 @media screen and (width <= 980px) {
+    .orderSummary-qty{
+        font-size: 16px;
+        border-radius: 8px;
+        padding: 0px 6px;
+        margin-top: 15px;
+        color: #404040;
+        background-color: #d9d9d9;
+    }
+
+    .orderSummary-savedUpTo{
+        font-size: 12px;
+    }
+       
     .orderSummary-container{
         margin: 5px 10px;
+    }
+
+    .orderSummary-delivery span{
+        display: block;
+    }
+
+    .orderSummary-name {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .orderSummary-cat,
+    .orderSummary-seller,
+    .orderSummary-delivery{
+        font-size: 12px;
+    }
+
+    .orderSummary-container img{
+        width: 100px; 
+        height: 100px;
+        margin: 0px 25px;
     }
 
     .orderSummary-heading{
         font-size: 18px;
     }
+
+    .orderSummary-container-item{
+        padding: 10px 0px;
+    }
     
 }
 
 @media screen and (width <= 550px) {
+    .orderSummary-heading{
+        font-size: 16px;
+    }
+    
     .orderSummary-container-item img {
-        width : 100px;
-        height: 100px;
         margin: 5px 20px;
+    }
+
+    .orderSummary-price {
+        margin: 2px 0px
     }
 
     .orderSummary-container-item{
@@ -98,6 +171,7 @@
 
     .orderSummary-cat, 
     .orderSummary-seller,
+    .orderSummary-remove,
     .orderSummary-delivery {
         font-size: 12px;
     }
@@ -108,7 +182,6 @@
     }
     .orderSummary-price,
     .orderSummary-name, 
-    .orderSummary-remove,
     .orderSummary-qty {
         font-size: 14px;
     }
@@ -119,21 +192,20 @@
         text-align: left
     }
 
-    .orderSummary-delivery span{
-        display: block;
-        color: #666666;
-    }
-
-    .orderSummary-remove{
-
-    }
-
-    .orderSummary-remove, 
     .orderSummary-delivery{
         text-align: right;
         padding: 0px 10px;
         //padding-right: 5px;
         //border: 1px solid;
+    }
+
+    .orderSummary-qty{
+        margin-top: 5px;
+        font-size: 14px;
+    }
+    
+    .orderSummary-remove{
+        margin: 0
     }
 
 }

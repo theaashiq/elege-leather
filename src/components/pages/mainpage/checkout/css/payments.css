@@ -1,0 +1,64 @@
+.payment-container {
+    background-color: #fff;
+    margin: 10px;
+    font-family: 'lexend'
+}
+
+.payment-heading{
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.payment-options{
+    padding: 5px 0px;
+}
+
+.payment-options div{
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.payment-options label{
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.paymentOptions-information{
+    padding: 4px 2px 10px 10px;
+    color: #5e0c16;
+    font-size: 14px;
+}
+
+@media screen and (width <= 980px) {
+    .payment-heading{
+        font-size: 18px;
+    }
+
+    .paymentOptions-information{
+        font-size: 12px;
+    }
+
+    .payment-options label{
+        font-size: 16px;
+    }
+    
+}
+
+@media screen and (width <= 550px) {
+    .payment-options div{
+        padding:  4px 10px;
+    }
+
+    .paymentOptions-information{
+        font-size: 12px;
+    }
+
+    .payment-options label{
+        font-size: 14px;
+    }
+
+    .payment-heading{
+        font-size: 16px;
+    }
+}

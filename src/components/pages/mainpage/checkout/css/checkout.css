@@ -36,6 +36,10 @@
 }
 
 .checkout-container-blockB{
+    width: 35%;
+}
+
+.checkout-container-blockB{
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -43,7 +47,8 @@
 }
 
 @media screen and (width <= 980px){
-    .checkout-container-blockA{
+    .checkout-container-blockA, 
+    .checkout-container-blockB{
         width: 100%;
     }
 

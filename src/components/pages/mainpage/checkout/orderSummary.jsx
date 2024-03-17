@@ -55,8 +55,9 @@ const data = [{
                             <p className='orderSummary-cat'>{obj.cat}</p>
                             <p className='orderSummary-seller'>Seller: {obj.seller}</p>
                             <p className='orderSummary-price'><FormatPrice price={1000}/></p>
+                            <p className='orderSummary-savedUpTo'>Saved up to <FormatPrice price={100}/></p>
                         </div>
-                        <div>
+                        <div className='orderSummary-blockB-2'>
                             <p className='orderSummary-delivery'>Delivery by <span>Wed Mar 20</span></p>
                             <p className='orderSummary-remove'>Remove</p>
                         </div>

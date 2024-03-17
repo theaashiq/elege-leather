@@ -1,0 +1,152 @@
+.customerDetails-container {
+    background-color: #fff;
+    margin: 10px;
+    font-family: 'lexend';
+}
+
+.customerDetails-heading{
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.customerDetails-header{
+    width: 150px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.customerDetails-details p{
+    font-size: 16px;
+    padding: 2px 12px;
+}
+/* .customerDetails-container div{
+    padding: 12px 10px;
+} */
+
+/* .customerDetails-container input{
+    font-family: 'lexend';
+    border: none;
+    outline: 1px solid  #808080;
+    border-radius: 2px;
+    font-size: 18px;
+    padding: 0px 4px;
+} */
+
+.customerDetails-container button{
+    margin: 8px 12px 8px auto;
+    font-family: 'lexend';
+    background-color: #d6e0f5;
+    color: #193167;
+    width: 100px;
+    font-size: 16px;
+    border: none;
+    padding: 4px;
+}
+
+
+
+.customerDetails-detailsInput input{
+    border: none;
+    font-family: lexend;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 2px
+}
+
+.customerDetails-detailsInput div{
+    border: 1px solid #708f8c;
+    //border-radius: 5px;
+    width: 40%;
+    color: #708f8c;
+    margin: 5px 12px;
+    font-size: 14px;
+    padding: 2px 4px
+}
+
+/* padding: 6px 8px;
+border: 1px solid #e6e6e6;
+background-color: #fff;
+width: 82%;
+margin: 10px;
+border-radius: 5px;
+color: #595959; */
+.customerDetails-detailsInput input:focus{
+    outline: none;
+}
+
+/* .customerDetails-container span{
+    font-size: 16px;
+} */
+
+@media screen and (width <= 980px){
+    .customerDetails-heading{
+        font-size: 18px;
+        padding: 5px 10px;
+        margin-bottom: 6px;
+    }
+
+    .customerDetails-header{
+        width: 100px;
+        display: inline-block;
+        font-size: 16px
+    }
+
+    /* .customerDetails-container div{
+        padding: 5px 10px;
+    } */
+
+    .customerDetails-container button{
+        padding: 4px;
+        width: 80px;
+        font-size: 16px
+    }
+
+    .customerDetails-container input{
+        //font-size: 16px;
+        padding: 1px 4px;
+    }
+
+    .customerDetails-container span{
+        font-size: 16px;
+    }
+
+    .customerDetails-detailsInput div{
+        width: 50%;
+    }
+
+}
+
+@media screen and (width <= 550px){
+    .customerDetails-header,
+    .customerDetails-details p{
+        font-size: 14px
+    }
+    
+    .customerDetails-header{
+        width: 85px;
+    }
+    
+    /* .customerDetails-container input{
+        padding: 1px 4px;
+        font-size: 14px;
+    } */
+
+    .customerDetails-heading{
+        font-size: 16px;
+    }
+
+    .customerDetails-detailsInput div{
+        width: 70%;
+    }
+
+    .customerDetails-detailsInput input{
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .customerDetails-container button{
+        font-size: 12px;
+    }
+}

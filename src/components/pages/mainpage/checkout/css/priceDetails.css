@@ -1,0 +1,153 @@
+.priceDetails-container{
+    background-color: #fff;
+    font-family: 'lexend';
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.priceDetails-heading {
+    text-align: center;
+    color: #404040;
+    width: 100%;
+    font-weight: 500;
+    border-bottom: 1px solid #bfbfbf;
+    font-size: 18px;
+    padding: 14px 0px;
+    
+}
+
+.priceDetails-list{
+    display: flex;
+    color: #595959;
+    justify-content: space-between;
+    //width: 100%;
+    padding: 12px 20px;
+    //border: 1px solid;
+}
+
+.priceDetails-listBlock div:last-child {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    color: #017001;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* .priceDetails-container table{
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.priceDetails-container th, td{
+    text-align:left;
+    padding: 14px;
+    color: #595959;
+    font-size: 16px;
+}
+
+.priceDetails-table tr:last-child td,
+.priceDetails-table tr:last-child th{
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 18px 14px;
+    font-size: 18px;
+    font-weight: 500
+} */
+
+.priceDetails-totalSaving{
+    padding: 10px 20px;
+    margin-right: auto;
+    font-size: 12px;
+    color: #01558d;
+    font-weight: 500;
+}
+
+.priceDetails-container button{
+    width: fit-content;
+    font-size: 16px;
+    border: none;
+    color: #660000;
+    font-weight: 500;
+    padding: 15px 40px;
+    font-family: 'lexend';
+    background-color: #ffd814;
+    margin: 10px 0px 20px 0px;
+    border-radius: 6px;
+}
+
+.priceDetails-container button:hover{
+    background-color: #ffa41c;
+}
+
+
+@media screen and (width <= 980px){
+    .priceDetails-heading {
+        font-size: 16px;
+        padding: 10px 0px;
+    }
+
+    /* .priceDetails-container th, td{
+        font-size: 16px;
+        padding: 14px 35px;
+        //text-align: center;
+    } */
+
+
+    /* .priceDetails-table tr:last-child td,
+    .priceDetails-table tr:last-child th{
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+        padding: 16px 35px;
+        font-size: 16px;
+        font-weight: 500
+    } */
+
+}
+
+@media screen and (width <= 580px){
+    .priceDetails-container{
+        //margin: 10px;
+        border-radius: 5px;
+        margin: 0px 10px 10px 10px;
+    }
+    
+    .priceDetails-list{
+        font-size: 14px;
+        padding: 6px 20px;
+    }
+
+    .priceDetails-listBlock div:last-child {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .priceDetails-heading {
+        font-size: 16px;
+    }
+    
+    .priceDetails-heading{
+        
+    }
+
+    /* .priceDetails-container th, td{
+        //padding: 8px; 
+        font-size: 14px;
+    }
+     */
+    .priceDetails-totalSaving{
+        font-size: 12px;
+        
+    }
+
+    .priceDetails-container button{
+        font-size: 16px;
+        padding: 10px 30px;
+        margin: 10px 0px 15px 0px;
+        border-radius: 6px;
+    }
+    
+}

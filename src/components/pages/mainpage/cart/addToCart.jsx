@@ -39,18 +39,45 @@ const AddToCart = () => {
             <div>
               {buyItems.length} items has been selected
             </div>
-            <div className='addToCart-totalAmountBlock'>
-              <div className='addToCart-totalAmount'>
-               Total amount 
-               <div style={{display:'flex',width:'100%',justifyContent: 'center'}}><FormatPrice price={total.total_amount}/></div>
+              {/* <div>
+                <p>Your Orders</p>
               </div>
-              <button 
-                disabled={!proceedToggle} 
-                className='addToCart-proccedToBuy'
-                onClick={() => handleCheckout()}>
-                 Proceed to Buy
-              </button>
-            </div>
+              <div className='addToCart-yourOrder-table'>
+                <table className='addToCart-table'>
+                  <tr className='addToCart-tableHeader'>
+                    <th>Items</th>
+                    <th>Amount</th>
+                  </tr>
+                  <tr>
+                    <td>Fashionable High heel Boots <span> x 1</span></td>
+                    <td>8500</td>
+                  </tr>
+                  <tr>
+                    <td>Fashionable High heel Boots <span> x 1</span></td>
+                    <td>8500</td>
+                  </tr>
+                  <tr>
+                    <td>Fashionable High heel Boots  <span> x 1</span></td>
+                    <td>8500</td>
+                  </tr>
+                  <tr>
+                    <td>Fashionable High heel Boots <span> x 1</span></td>
+                    <td>8500</td>
+                  </tr>
+                </table>
+              </div> */}
+              <div className='addToCart-totalAmountBlock'>
+                <div className='addToCart-totalAmount'>
+                 Total amount 
+                 <div style={{display:'flex',width:'100%',justifyContent: 'center'}}><FormatPrice price={total.total_amount}/></div>
+                </div>
+                <button 
+                  disabled={!proceedToggle} 
+                  className='addToCart-proccedToBuy'
+                  onClick={() => handleCheckout()}>
+                   Place Order
+                </button>
+              </div>
             <div className='addToCart-gridBox'>
               <hr 
                 style={{
