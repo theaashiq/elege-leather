@@ -46,9 +46,9 @@
 }
 
 @media screen and (width <= 550px) {
-    .payment-options div{
-        padding:  4px 10px;
-    }
+    /* .payment-options div{
+        padding:  6px 10px;
+    } */
 
     .paymentOptions-information{
         font-size: 12px;

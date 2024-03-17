@@ -18,10 +18,10 @@ const DeliveryDetails = () => {
   const [buttonToggle, setButtonToggle] = useState(false)
 
   return (
-  <React.Fragment>
+  <React.Fragment> 
       <div className='deliveryDetails-container'>
           <p style={{
-                backgroundColor:'#ff8995',
+                backgroundColor:'#ff99a3',
                 color: '#b20012',
                 border: '1px solid #b20012'}} 
           className='deliveryDetails-heading'>Delivery Details</p>

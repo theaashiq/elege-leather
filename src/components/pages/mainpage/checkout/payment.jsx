@@ -6,7 +6,7 @@ const Payment = () => {
     <React.Fragment>
         <div className='payment-container'>
             <p style={{
-                backgroundColor:'#ff8995',
+                backgroundColor:'#ff99a3',
                 color: '#b20012',
                 border: '1px solid #b20012'}}
                 className='payment-heading'>Payments</p>

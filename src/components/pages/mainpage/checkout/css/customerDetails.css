@@ -61,8 +61,9 @@
     width: 40%;
     color: #708f8c;
     margin: 5px 12px;
-    font-size: 14px;
-    padding: 2px 4px
+    font-size: 12px;
+    padding: 2px 4px;
+    font-weight: 300;  
 }
 
 /* padding: 6px 8px;
@@ -147,6 +148,6 @@ color: #595959; */
     }
 
     .customerDetails-container button{
-        font-size: 12px;
+        font-size: 14px;
     }
 }
