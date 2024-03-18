@@ -22,44 +22,44 @@
 .productView-details-block{
     //border: 1px solid;
     padding: 5px;
-    font-family: Montserrat;
+    font-weight: 300;
+    font-family: 'lexend';
 }
 
 .productView-details-block h2{
     font-size: 24px;
 }
 
-.productView-discountPercentage{
+.productView-discountPercentage {
     font-size: 16px;
     margin-top: 5px;
-    color: #ff8080;
-    font-family: 'Poppins', sans-serif;
-
+    color:  #9f2089;
+    font-family: lexend;
 }
 
 .productView-details{
-    font-family: 'Poppins', sans-serif;
+    font-family: lexend;
     margin-top: 10px;
     font-weight: 300;
     font-size: 16px;
 }
 
 .productView-inStock{
-    font-family: 'Poppins', sans-serif;
+    font-family: lexend;
     font-size: 18px;
     color: #007600;
     margin-top: 5px;
 }
 
 .productView-rating{
-    font-weight: bold;
+    //font-weight: bold;
     font-size: 18px;
     margin: 10px 0px;
 }
 
 .productView-dealOfDay{
     padding: 5px;
-    background-color:#cc0c39;
+    background-color: #cc0c39;
     font-size: 14px;
     color: #fff;
     width: fit-content;
@@ -70,6 +70,7 @@
 .productView-price{
     margin-top: 0px;
     font-size: 24px;
+    font-weight: 400;
 }
 
 .productView-actualPrice{
@@ -77,6 +78,12 @@
     font-size: 24px;
     text-decoration: line-through;
     text-decoration-color: #e60000;
+}
+
+.productView-details-name{
+    font-size: 24px;
+    font-weight: 400;
+    //color: #404040;
 }
 
 .productView-addToCart-btn, .productView-buy-btn{
@@ -87,7 +94,7 @@
     margin: 15px 5px;
     border-radius: 5px;
     font-weight: bold;
-    font-family: 'Montserrat';
+    font-family: lexend;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -95,20 +102,29 @@
    
 }
 
-.productView-buy-btn:hover{
-    background-color:#ffa41c;
-}
-
+ /* .productView-buy-btn:hover{
+    background-color: #cc0000;
+} */
+/*
 .productView-addToCart-btn:hover{
-    border-color:#ffa41c;
-}
+    border-color: #fb641b;
+    color: #fb641b
+} */
 
 .productView-buy-btn {
-    background-color: #ffd814;
+    background-color: #cc0000;
+    border: none;
+    color: #fff;
+    border-radius: 0px;
+    font-weight: 400;
 }
 
 .productView-addToCart-btn{
-    border: 3px solid #ffd814;
+    border: 2px solid #cc0000;
+    color: #cc0000;
+    background-color: #fff;
+    border-radius: 0px;
+    font-weight: 400;
 }
 
 .producView-detailsGrids{
@@ -121,7 +137,7 @@
     display: flex;
     align-items: center;
     font-size: 14px;
-    font-family: 'Poppins', sans-serif
+    font-family: lexend;
 }
 
 .productView-detailsGrid-2 div{
@@ -143,6 +159,65 @@
     font-size: 14px;
 }
 
+
+.productView-QtyController div {
+    width: 18px;
+    height: 22px;
+    //border-radius: 3px;
+    margin: 0px 5px;
+    border: 1px solid #cccccc;
+  }
+  
+.productView-QtyBlock {
+    display: flex;
+    margin-top: 6px;
+  }
+  
+  
+.productView-Qty {
+    margin-right: 10px;
+    background-color: #e6e6e6;
+    font-size: 16px;
+    //font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 3px;
+    //box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.productView-QtyBlock button {
+    font-family: lexend;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    background-color: #e6e6e6;
+    width: 20px;
+    //height: 20px;
+    font-weight: 600;
+    
+    //height: 20px;
+    //border-radius: 2px;
+    //box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      //rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+  
+.productView-QtyBlock button:hover {
+      background-color: #c6c6c6;
+}
+  
+.productView-QtyController {
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.productView-QtyData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: lexend;
+  }
+  
 @media screen and (max-width: 1323px) {
     .productView-container{
         margin-top: 110px
@@ -169,6 +244,23 @@
 }
 
 @media screen and (max-width: 578px) {
+
+    .productView-QtyBlock button {
+        font-size: 16px;
+    }
+
+    .productView-QtyController div {
+        width: 18px;
+        height: 18px;
+        font-size: 16px;
+      }
+
+    .productView-Qty {
+        font-size: 16px;
+        padding: 1px 5px;
+        border-radius: 3px;
+    }
+
     .productView-container{
         margin-top: 155px;
         grid-template-columns: 100%

@@ -102,7 +102,7 @@ const handleProductQty = (state, _id) => {
       return obj
     }
   })
-  console.log(updatedCartDetails, 'AAs')
+  //console.log(updatedCartDetails, 'AAs')
   setSelectedItems(updatedCartDetails)
 }
 

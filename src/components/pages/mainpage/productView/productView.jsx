@@ -17,11 +17,14 @@ import { useNotification } from '../../../services/notification'
 import { AddCartContext } from '../cart/addtocartContext'
 import { FormatPrice } from '../../../services/formatPrice'
 
+
 const ProductView = () => {
 
 const [modalToggle, setModalToggle] = useState(false)  
+const [prodQty, setprodQty] = useState(1)
 
 const { productId } = useParams()
+
 const foundProduct = data.find(currElem => parseFloat(currElem.id) === parseFloat(productId)) 
 
 const discount = foundProduct.price - foundProduct.offer_price
@@ -31,7 +34,6 @@ const roundDiscountPercentage = discountPercentage.toFixed(0)
 const today = new Date()
 const threeDaysLater = new Date(today)
 threeDaysLater.setDate(today.getDate() + 3)
-
 
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const dayOfWeek = daysOfWeek[threeDaysLater.getDay()]
@@ -77,17 +79,17 @@ const items = [
   }
 ]
 
-const { notify } = useNotification()
+const { notify, notifyWarning } = useNotification()
 
 const { cartItems, setCartItems } = useContext(AddCartContext)
 
 const handleAddToCart = () => {
-  const checkExist = cartItems.some((obj) => obj === foundProduct.id)
+  const checkExist = cartItems.some((obj) => obj.prodId === foundProduct.id)
   if(isAuthenticated()){
       if(checkExist){
         notify('Already Added')
       } else {
-      setCartItems([...cartItems, foundProduct.id,])
+      setCartItems([...cartItems, {prodId: foundProduct.id, prodQty: prodQty}])
       notify("Added to cart")
       }
     } else {
@@ -95,8 +97,26 @@ const handleAddToCart = () => {
     }
 }
 
+const handleProductQty = (state) => {
+  switch(state){
+    case "add":
+      if (prodQty < 10){
+        let qty = prodQty + 1
+        setprodQty(qty)
+      } else {
+        notifyWarning(`Quantity limit exceeded. You can't add more than 10`)
+      }
+      break
+    case 'min':
+      if (prodQty > 1){
+        let qty = prodQty - 1
+        setprodQty(qty)
+      }
+      break  
+  }
+}
 
-
+console.log(cartItems, 'Items')
 return (
   <>
     {modalToggle && <Modal close={setModalToggle}/>}
@@ -108,27 +128,37 @@ return (
             />
             <div style={{display:'grid',
                          gridTemplateColumns: '50% 50%',}}>
-              <div className='productView-addToCart-btn' onClick={handleAddToCart}>Add to cart</div>
-              <div className='productView-buy-btn'>Buy Now</div>
+              <button className='productView-addToCart-btn' onClick={handleAddToCart}>Add to cart</button>
+              <button className='productView-buy-btn'>Buy Now</button>
           </div>
           </div>
           <div className='productView-details-block'>
-              <h2>{foundProduct.product_name}</h2>
+              <p className='productView-details-name'>{foundProduct.product_name}</p>
               <p className='productView-details'>{foundProduct.product_details}</p>
-              <p className='productView-rating'>Rating :<span> {foundProduct.rating}</span></p>
+              <p className='productView-rating'>Rating :<span style={{fontWeight: 400}}> {foundProduct.rating}</span></p>
               <hr/>
               <div className='producView-detailsGrids'>
                 <div classname='productView-detailsGrid-1'>
                   <p className='productView-dealOfDay'>Deal of the day</p>
-                  <p className='productView-discountPercentage'>{roundDiscountPercentage}% offer</p>
+                    <div className='productView-QtyBlock'>
+                      <p className='productView-Qty'>Qty</p>
+                      <p className='productView-QtyController'>
+                        <button onClick={() => handleProductQty('min')}>-</button>
+                          <div className='productView-QtyData'>
+                            {prodQty}
+                          </div>
+                        <button onClick={() => handleProductQty('add')}>+</button>
+                      </p>
+                    </div>
                   <p className='productView-price'>
                     <span style={{fontSize:'14px', marginRight:'5px'}} className='productView-actualPrice'>M.R.P {foundProduct.price}</span>
-                    <span style={{fontWeight:'bold'}}><FormatPrice price={foundProduct.offer_price}/></span>
+                    <span><FormatPrice price={foundProduct.offer_price}/></span>
                   </p>
                   <p style={{
                     marginBottom: '0px',
                     fontSize:'12px', 
                             }}>Inclusive of all taxes</p>
+                  <p className='productView-discountPercentage'>{roundDiscountPercentage}% offer</p>          
                   <p style={{
                     color:'#007185',
                     marginTop: '5px',
@@ -165,7 +195,6 @@ return (
               </div>
           </div>
         </div>
-        
   </>
   
   )
