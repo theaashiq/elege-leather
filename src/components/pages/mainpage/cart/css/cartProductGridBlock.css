@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px 35px; */
   /* margin: 0px 0px; */
-  font-family: "Poppins", sans-serif;
+  font-family: lexend;
   max-height: 300px; 
   overflow: auto 
 }
@@ -14,9 +14,9 @@
 
 .cartProductGrid-Paragraph{
     font-size: 18px; 
-    font-weight: bold; 
+    font-weight: 400; 
     margin: 10px 0px 0px 10px;
-    font-family: "Poppins", sans-serif;
+    font-family: lexend;
 }
 /* .cartProductGridBlock-container::-webkit-scrollbar-thumb{
     background-color: #fff;
@@ -46,8 +46,9 @@
   width: 320px;
 }
 
-.cartProductGridBlock-btn p {
-  background-color: #ffd814;
+.cartProductGridBlock-btn button {
+  border: 1px solid #cc0000;
+  background-color: #fff;
   padding: 1px 10px;
   margin-bottom: 4px;
   display: flex;
@@ -56,11 +57,15 @@
   width: fit-content;
   font-size: 14px;
   cursor: pointer;
+  //border: none;
+  border-radius: 0px;
+  color: #cc0000;
+  font-family: lexend;
 }
 
-.cartProductGridBlock-btn p:hover {
+/* .cartProductGridBlock-btn p:hover {
   background-color: #ffa41c;
-}
+} */
 
 .cartProductGridBlock-details {
   display: flex;
@@ -69,5 +74,5 @@
   margin-left: 20px;
   flex-direction: column;
   justify-content: space-between;
-  font-family: "Poppins", sans-serif;
+  font-family: lexend;
 }

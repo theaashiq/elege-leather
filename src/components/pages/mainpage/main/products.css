@@ -31,6 +31,11 @@ section{
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    border: 3px solid #fff
+}
+
+.product:hover{
+    border: 3px solid #adc0eb
 }
 
 .product img{
@@ -43,24 +48,24 @@ section{
 .product-name{
     padding: 0px 10px;
     text-align: center;
-    font-family: Montserrat;
+    font-family: lexend;
     font-size: 18px;
     margin-top: 5px;
-    font-weight: bold;
-    color: #404040;
+    font-weight: 400;
+    //color: #404040;
 }
 
 .price-and-buy-button{
     margin-top: 20px;
-    font-weight: 600;
+    font-weight: 400;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     //border: 1px solid;
 }
 
 .price{
-    font-family: Montserrat;
+    font-family: lexend;
     font-size: 22px;
     color: #333;
     //font-weight: bold;

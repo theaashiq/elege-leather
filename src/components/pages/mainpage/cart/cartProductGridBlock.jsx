@@ -5,11 +5,13 @@ import './css/cartProductGridBlock.css'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { FormatPrice } from '../../../services/formatPrice';
+import { useNavigate } from 'react-router-dom';
 
 const CartProductGridBlock = () => {
 
 const [ products , setProducts ] = useState([])
 
+const navigate = useNavigate()
 useEffect(() => {
   fetchData()
 },[])
@@ -19,24 +21,25 @@ const fetchData = () => {
   for(let i = 0; i < 10; i++ ){
       const randomId = Math.floor(Math.random()*29) + 1
       idArray.push(randomId)
-      console.log(idArray, 'ARRay')
+      //console.log(idArray, 'ARRay')
   }
   const productData = data.filter(obj => idArray?.includes(obj.id))
   setProducts(productData)
 }
 
-const { cartItems, setCartItems } = useContext(AddCartContext)
+//const { cartItems, setCartItems } = useContext(AddCartContext)
 
 const handleAddToCart = (id) => {
-  const checkExist = cartItems.includes(id)  
-  if(!checkExist){
-    setCartItems([...cartItems, id]) 
-    console.log(cartItems, 'ITEMS')
-  }
+  navigate(`/mainPage/productView/${id}`)
+  // const checkExist = cartItems.some(item => item.id === id)  
+  // if(!checkExist){
+  //   setCartItems([...cartItems, {prodId: id, prodQty: 1}]) 
+  //   console.log(cartItems, 'ITEMS')
+  // }
   
 }
 
-console.log(products, 'Products')
+//console.log(products, 'Products')
 
   return (
     <>
@@ -58,13 +61,13 @@ console.log(products, 'Products')
                   <p style={{fontSize:'14px'}}><span><FormatPrice price={obj.offer_price}/></span></p>
                 </div>
                 <div className="cartProductGridBlock-btn">
-                  <p onClick={() => handleAddToCart(obj.id)}>Add to cart</p>
+                  <button onClick={() => handleAddToCart(obj.id)}>View</button>
                 </div>
               </div>
           </div>
         ))}
       </div>    
-    </>
+    </> 
 
   )
 }

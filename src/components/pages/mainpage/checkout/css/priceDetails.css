@@ -70,18 +70,18 @@
     width: fit-content;
     font-size: 16px;
     border: none;
-    color: #660000;
+    color: #fff;
     font-weight: 500;
     padding: 15px 40px;
     font-family: 'lexend';
-    background-color: #ffd814;
+    background-color: #cc0000;
     margin: 10px 0px 20px 0px;
-    border-radius: 6px;
+    border-radius: 0px;
 }
 
-.priceDetails-container button:hover{
+/* .priceDetails-container button:hover{
     background-color: #ffa41c;
-}
+} */
 
 
 @media screen and (width <= 980px){
@@ -147,7 +147,7 @@
         font-size: 16px;
         padding: 10px 30px;
         margin: 10px 0px 15px 0px;
-        border-radius: 6px;
+        border-radius: 0px;
     }
     
 }

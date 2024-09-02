@@ -59,7 +59,7 @@ const data = [{
                         </div>
                         <div className='orderSummary-blockB-2'>
                             <p className='orderSummary-delivery'>Delivery by <span>Wed Mar 20</span></p>
-                            <p className='orderSummary-remove'>Remove</p>
+                            <button className='orderSummary-remove'>Remove</button>
                         </div>
                     </div>
                 </div>                        

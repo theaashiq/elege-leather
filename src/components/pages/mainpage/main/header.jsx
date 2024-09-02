@@ -13,6 +13,9 @@ import './header.css'
 import { isAuthenticated, logout } from '../../../services/authentication';
 import { Close } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 
 const Header = ({name, email, localId}) => {
@@ -89,8 +92,9 @@ const handleHomePage = () => {
 }
 
 return (
+    
     <>
-      <nav className='navBar'>
+     {/* <nav className='navBar'>
           <div className='brand-name' onClick={handleHomePage}>
               Elege Leather            
           </div>
@@ -149,7 +153,42 @@ return (
           </div> )}
         </div>
           
-        </nav>
+        </nav> */}
+        <div>
+          <div className='header-navBlock'>
+            <div className='header-navMainSection'>
+              <div className='header-heading'>
+                Elega Leather
+              </div>
+              <div className='header-searchBlock'>
+                <input type='text' style={{width:'90%'}} placeholder='Search'/>
+                <SearchOutlinedIcon style={{marginRight:'14px'}}/>
+              </div>
+              <div className='header-mainBtns'>
+                  <Link to='/signIn'>
+                    <div className='header-loginBtn'>
+                      Login
+                    </div>
+                  </Link>
+                  <div onClick={handleCartPage} className='header-cartBtn'>
+                    <ShoppingCartOutlinedIcon className='header-cartBtnIcon'/>
+                    <div style={{marginTop:'8px'}}>Cart</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div className='header-categories'>
+            <div style={{height:'100%'}}>
+              <div><MenuOutlinedIcon/></div>
+              <div>All Categories</div>
+              <div></div>
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+
     </>
   )
 }

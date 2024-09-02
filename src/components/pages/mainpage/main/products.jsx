@@ -35,12 +35,12 @@ const handleProductView = (id) => {
                     </p>
                  </div>
                  <div className='price-and-buy-button'>
-                    <div className='product-view-btn' onClick={() => handleProductView(currElem.id)}>
+                    {/* <div className='product-view-btn' onClick={() => handleProductView(currElem.id)}>
                       <p>
-                        {/* <span className='product-view-btn-icon'><RemoveRedEyeOutlinedIcon fontSize='small'/></span> */}
+                        {/* <span className='product-view-btn-icon'><RemoveRedEyeOutlinedIcon fontSize='small'/></span> 
                         <span className='product-view-btn-name'>View</span>
                       </p>
-                    </div>
+                    </div> */}
                     <div>
                       <p className='price'>
                         <span className='actual-price'>M.R.P {currElem.price}</span>

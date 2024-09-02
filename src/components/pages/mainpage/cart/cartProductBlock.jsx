@@ -19,22 +19,28 @@ const { notify, notifyWarning } = useNotification()
 
 const [selectedItems, setSelectedItems] = useState([])
 
+console.log(cartItems, "items")
 const fetchData = () => {
-  const cart = cartItems.map((obj) => {
-    return data.filter((_obj) => parseFloat(obj) === parseFloat(_obj.id))
-  }).flat()
-  const cartItemsData = cart.map((obj) => {
-    const discount = obj.price - obj.offer_price
-    const discountPercentage = (discount/obj.price)*100
-    const roundDiscountPercentage = discountPercentage.toFixed(0)
-    return {...obj, 
+  const cartItemsData = cartItems.map((obj) => {
+    const selectedData = data.filter((_obj) => parseFloat(obj.prodId) === parseFloat(_obj.id))
+    const updatedData = selectedData.map((item) => {
+      const discount = item.price - item.offer_price
+      const discountPercentage = (discount/item.price)*100
+      const roundDiscountPercentage = discountPercentage.toFixed(0)
+      return {...item,
         discount: roundDiscountPercentage,
-        quantity: 1}
-  })
+        quantity: obj.prodQty,
+        disPrice: obj.prodQty * item.price,
+        disOffer_price: obj.prodQty * item.offer_price,
+      }
+    })
+    return updatedData
+  }).flat()
   setSelectedItems(cartItemsData)
-  console.log(selectedItems)
+  console.log(cartItemsData, 'CART')
 }
 
+console.log(selectedItems, 'Selected Items')
 useEffect(() => { 
   fetchData()
 },[cartItems])
@@ -91,10 +97,20 @@ const handleProductQty = (state, _id) => {
             notifyWarning(`Quantity limit exceeded. You can't add more than 10`)
             return obj
           } else {
-            return {...obj, quantity: obj.quantity + 1}
+            const newQuantity = obj.quantity + 1
+            return {...obj, 
+              quantity: newQuantity,
+              disPrice: newQuantity * obj.price,
+              disOffer_price: newQuantity * obj.offer_price,
+            }
           }
          case 'min':
-          return parseFloat(obj.quantity) === 1 ? obj : {...obj, quantity: obj.quantity - 1}
+          const newQuantity = parseFloat(obj.quantity) === 1 ? obj.quantity : obj.quantity - 1
+          return {...obj, 
+            quantity: newQuantity,
+            disPrice: newQuantity * obj.price,
+            disOffer_price: newQuantity * obj.offer_price,
+          }
         default :
          return obj  
       }
@@ -138,7 +154,7 @@ const fetchBuyingItemsData = () => {
 }
 
 //console.log(selectedItems, 'Selected')
-console.log(buyItems, "buy Items")
+//console.log(buyItems, "buy Items")
   
 useEffect(() => {
   const overallTotalAmount = buyItems.reduce((total, item) => total + item.total_amount, 0)
@@ -149,7 +165,7 @@ useEffect(() => {
   })
 },[buyItems])
 
-console.log(total, 'Total Amount')
+//console.log(total, 'Total Amount')
 return (
     <>
       <div className='CartProductBlock'>
@@ -176,7 +192,7 @@ return (
                 <div className='CartProduct'>
                   <div className='CartProductBlock-blockDetails'>
                     <div>
-                      <h3>{obj.product_name}</h3>
+                      <p>{obj.product_name}</p>
                       <p className='CartProductBlock-rating'><span>Rating: </span>{obj.rating}</p>
                       <p className='CartProductBlock-inStock'>In stock</p>
                       <p className='CartProductBlock-EligibleShipping'>Eligible for FREE shipping</p>
@@ -185,11 +201,11 @@ return (
                       <div className='CartProductBlock-QtyBlock'>
                         <p className='CartProductBlock-Qty'>Qty</p>
                         <p className='CartProductBlock-QtyController'>
-                          <span onClick={() => handleProductQty('min', obj.id)}>-</span>
+                          <button onClick={() => handleProductQty('min', obj.id)}>-</button>
                           <div className='CartProductBlock-QtyData'>
                             {obj.quantity}
                           </div>
-                          <span onClick={() => handleProductQty('add', obj.id)}>+</span>
+                          <button onClick={() => handleProductQty('add', obj.id)}>+</button>
                         </p>
                       </div>
                       <div
@@ -211,10 +227,10 @@ return (
                         Price
                       </p>
                       <p className='CartProductBlock-container-OfferPriceData'>
-                        <FormatPrice price={obj.offer_price}/>
+                        <FormatPrice price={obj.disOffer_price}/>
                       </p>
                       <p className='CartProductBlock-container-priceData'>
-                        M.R.P: <span>{obj.price}</span>
+                        M.R.P: <span>{obj.disPrice}</span>
                       </p>
                     </div>
                   </div>

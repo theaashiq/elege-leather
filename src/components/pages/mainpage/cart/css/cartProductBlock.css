@@ -2,12 +2,12 @@
 
 .CartProductBlock {
   margin-top: 35px;
-  padding-bottom: 65px;
+  padding-bottom: 85px;
 }
 
 .CartProductBlock-container {
   position: relative;
-  font-family: Montserrat;
+  font-family: lexend;
   background-color: #fff;
   width: 100%;
   display: flex;
@@ -32,6 +32,7 @@
 .CartProductBlock-QtyController div {
   width: 18px;
   height: 18px;
+  //font-size: 14px;
   border-radius: 3px;
   margin: 0px 5px;
   border: 1px solid;
@@ -39,6 +40,7 @@
 
 .CartProductBlock-QtyBlock {
   display: flex;
+  margin-top: 5px;
 }
 
 .CartProductBlock-Qty {
@@ -56,16 +58,17 @@
   align-items: center;
 }
 
-.CartProductBlock-QtyBlock span {
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
+.CartProductBlock-QtyBlock button {
+  font-family: lexend;
+  //font-size: 20px;
   font-weight: bold;
   color: #000;
   background-color: #e6e6e6;
   width: 20px;
-  height: 20px;
+  height: 18px;
   display: flex;
   align-items: center;
+  border: none;
   border-radius: 2px;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -87,7 +90,7 @@
   color: #cc0c39;
   cursor: pointer;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
+  font-family: lexend;
   //padding: 4px 8px;
   //border-radius: 5px;
   //border: 1px solid #fff;
@@ -107,7 +110,8 @@
 
 .CartProductBlock-rating {
   color: #e60000;
-  font-weight: bold;
+  //font-weight: bold;
+  font-size: 12px;
   margin: 5px 0px;
 }
 
@@ -117,11 +121,11 @@
 
 .CartProductBlock-inStock {
   color: #007600;
-  font-family: "Poppins", sans-serif;
+  font-family: lexend;
 }
 
 .CartProductBlock-EligibleShipping {
-  font-family: "Poppins", sans-serif;
+  font-family: lexend;
   font-size: 14px;
 }
 
@@ -139,12 +143,12 @@
 }
 
 .CartProductBlock-container-price {
-  font-family: "Poppins", sans-serif;
+  font-family: lexend;
   
 }
 
 .CartProductBlock-container-discount {
-  font-family: "Poppins", sans-serif;
+  font-family: lexend;
   color: #fff;
   background-color: #cc0c39;
   padding: 2px 15px;
@@ -170,7 +174,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  //font-family: "Poppins", sans-serif;
 }
 
 .CartProductBlock-container-OfferPriceData {
@@ -181,8 +185,7 @@
 
 .CartProductBlock-container-priceData {
   font-size: 14px;
-  font-family: "Poppins", sans-serif;
-  color: #666666;
+  
 }
 
 .CartProductBlock-container-priceData span {
@@ -398,7 +401,7 @@
   }
   .CartProductBlock-blockDetails h3,
   .CartProductBlock-container-OfferPriceData {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .CartProductBlock-rating,
@@ -417,6 +420,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .CartProductBlock-QtyData{
+    font-size: 12px;
   }
 
   .CartProduct {

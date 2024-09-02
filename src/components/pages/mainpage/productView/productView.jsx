@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './productView.css'
 import { useParams } from 'react-router-dom'
 import data from '../../../services/data'
@@ -27,9 +27,11 @@ const { productId } = useParams()
 
 const foundProduct = data.find(currElem => parseFloat(currElem.id) === parseFloat(productId)) 
 
-const discount = foundProduct.price - foundProduct.offer_price
+let discount = foundProduct.price - foundProduct.offer_price
 const discountPercentage = (discount/foundProduct.price)*100
 const roundDiscountPercentage = discountPercentage.toFixed(0)
+
+const [priceDetails, setPriceDetails] = useState({})
 
 const today = new Date()
 const threeDaysLater = new Date(today)
@@ -87,7 +89,20 @@ const handleAddToCart = () => {
   const checkExist = cartItems.some((obj) => obj.prodId === foundProduct.id)
   if(isAuthenticated()){
       if(checkExist){
-        notify('Already Added')
+        const updatedCartItems = cartItems.map((obj) => {
+          if(obj.prodId === foundProduct.id){
+              if(obj.prodQty === prodQty) {
+                notify('Already Added')
+                return obj
+              } else {
+                notify('Quantity is updated')
+                return {...obj, prodQty: prodQty}
+              }
+          } else {
+            return obj
+          }
+        }) 
+        setCartItems(updatedCartItems)
       } else {
       setCartItems([...cartItems, {prodId: foundProduct.id, prodQty: prodQty}])
       notify("Added to cart")
@@ -97,11 +112,13 @@ const handleAddToCart = () => {
     }
 }
 
+
+console.log(cartItems, 'ITEMSSS')
 const handleProductQty = (state) => {
   switch(state){
     case "add":
       if (prodQty < 10){
-        let qty = prodQty + 1
+        let qty = prodQty + 1 
         setprodQty(qty)
       } else {
         notifyWarning(`Quantity limit exceeded. You can't add more than 10`)
@@ -116,6 +133,16 @@ const handleProductQty = (state) => {
   }
 }
 
+useEffect(() => {
+  setPriceDetails({
+    offerPrice: foundProduct.offer_price * prodQty,
+    price: prodQty * foundProduct.price,
+    saveUpTo: (prodQty * foundProduct.price) - (foundProduct.offer_price * prodQty)
+})
+discount = priceDetails.price - priceDetails.offerPrice 
+},[prodQty])
+
+console.log(discount, 'Discount')
 console.log(cartItems, 'Items')
 return (
   <>
@@ -151,8 +178,8 @@ return (
                       </p>
                     </div>
                   <p className='productView-price'>
-                    <span style={{fontSize:'14px', marginRight:'5px'}} className='productView-actualPrice'>M.R.P {foundProduct.price}</span>
-                    <span><FormatPrice price={foundProduct.offer_price}/></span>
+                    <span style={{fontSize:'14px', marginRight:'5px'}} className='productView-actualPrice'>M.R.P {priceDetails.price}</span>
+                    <span><FormatPrice price={priceDetails.offerPrice}/></span>
                   </p>
                   <p style={{
                     marginBottom: '0px',
@@ -163,7 +190,7 @@ return (
                     color:'#007185',
                     marginTop: '5px',
                     }}>
-                  Save upto {discount}</p>
+                  Save upto {priceDetails.saveUpTo}</p>
                   <p className='productView-inStock'>In stock</p>
                 </div>
                 <div className='productView-detailsGrid-2'>

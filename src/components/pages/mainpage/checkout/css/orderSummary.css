@@ -71,10 +71,12 @@
     color: #CC0000;
     border: 1px solid #CC0000;
     width: fit-content;
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 0px 5px;
     cursor: pointer;
     font-size: 14px;
+    background-color: #fff;
+    font-family: lexend;
 }
 
 .orderSummary-remove:hover {

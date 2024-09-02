@@ -27,8 +27,6 @@ import accessory2 from '../../images/accessory2.jpg'
 import accessory3 from '../../images/accessory3.jpg'
 import phoneCover1 from '../../images/phoneCover1.jpg'
 import earpodCase1 from '../../images/earpodCase1.jpg'
- 
-
 
 const data = [
   {

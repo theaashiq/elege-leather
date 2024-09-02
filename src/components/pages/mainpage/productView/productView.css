@@ -218,6 +218,18 @@
     font-family: lexend;
   }
   
+  .productView-buy-btn:hover{
+    background-color: #ff0000;
+    /* color: #737373; */
+    /* font-weight: 600; */
+    
+  }
+
+  .productView-addToCart-btn:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #fff
+  }
 @media screen and (max-width: 1323px) {
     .productView-container{
         margin-top: 110px
