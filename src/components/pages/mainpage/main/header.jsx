@@ -16,6 +16,14 @@ import { useNavigate } from 'react-router-dom';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import wallet from '../../../../images/category/wallet.jpg'
+import bag from '../../../../images/category/bag.jpg'
+import belt from '../../../../images/category/belt.jpg'
+import shoe from '../../../../images/category/shoe.jpg'
+import jacket from '../../../../images/category/jacket.jpg'
+import accessories from '../../../../images/category/accessories.jpg'
+import allCat from '../../../../images/category/allCat.jpg'
+
 
 
 const Header = ({name, email, localId}) => {
@@ -90,6 +98,56 @@ const handleCartPage = () => {
 const handleHomePage = () => {
   navigate('/mainPage/products')
 }
+
+
+const [categoryToggle, setCategoryToogle] = useState(false)
+const [showImages, setShowImages] = useState(false);
+
+console.log(categoryToggle, 'To')
+const categories = [
+  {
+    cat: "Wallet",
+    pic: wallet
+  },
+  {
+    cat: "Belt",
+    pic: belt
+  },
+  {
+    cat: "Shoe",
+    pic: shoe
+  },
+  {
+    cat: "Jacket",
+    pic: jacket
+  },
+  {
+    cat: "Bag",
+    pic: bag
+  },
+  {
+    cat: "Accessories",
+    pic: accessories
+  },
+  {
+    cat: "All Categories",
+    pic: allCat
+  },
+]
+
+useEffect(() => {
+  let timer;
+  if (categoryToggle) {
+    // Delay rendering images by 2 seconds
+    timer = setTimeout(() => {
+      setShowImages(true);
+    }, 1000);
+  } else {
+    setShowImages(false); // Hide images if the category component is hidden
+  }
+
+  return () => clearTimeout(timer); // Cleanup the timer
+}, [categoryToggle]);
 
 return (
     
@@ -178,13 +236,25 @@ return (
             </div>
           </div>
           <div className='header-categories'>
-            <div style={{height:'100%'}}>
-              <div><MenuOutlinedIcon/></div>
-              <div>All Categories</div>
+            <div className='header-catSelectList' style={{height:'100%'}}>
+              <div onClick={() => setCategoryToogle((prev) => !prev)} style={{cursor:'pointer'}}>
+                <MenuOutlinedIcon/>
+              </div>
+              <div style={{marginLeft:'10px'}}>All Categories</div>
               <div></div>
             </div>
-            <div>
-
+            <div className={`header-dropdown ${categoryToggle ? 'show' : ''}`}>
+              {categories.map((obj) => (
+                <div className='header-catBlock'>
+                  <div className='header-catImgBlock'>
+                    {/* <img src={obj.pic} alt={obj.cat} loading='lazy' style={{width:'100%', height:'100%'}} /> */}
+                    {showImages && <img src={obj.pic} alt={obj.cat} />}
+                  </div>
+                  <div className='header-catNameBlock'>
+                    {obj.cat}
+                  </div>  
+                </div>
+              ))}
             </div>
           </div>
         </div>

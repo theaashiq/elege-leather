@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './products.css'
-import data from '../../../services/data'
+// import { data }   from '../../../services/data'
+import data from '../../../services/data';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Carousel from './carousel';

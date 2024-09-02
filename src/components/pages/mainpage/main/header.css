@@ -520,15 +520,94 @@ nav {
     background-color: #fbe9ee;
     height: 34px;
     font-family: Lexend;
+    position: relative;
 }
 
-.header-categories div:first-child {
+.header-catSelectList {
     display: flex;
     align-items: center;
-    padding: 0px 10px;
+    padding: 0px 22px;
     font-weight: 300;
+    color: #250e16;
 }
 
+.header-dropdown {
+    position: absolute;
+    z-index: 20;
+    top: 32px;
+    left: 0px;
+    right: 0px;
+    overflow: auto;
+    max-height: 0px;
+    transition: max-height 0.2s, box-shadow 0.2s ease-out;
+    background-color: #fbe9ee;
+    display: flex;
+    box-sizing: content-box; 
+    /* border: 1px solid; */
+}
+
+.header-dropdown.show {
+    padding: 14px;
+    max-height: 600px;
+    transition: max-height 0.2s ease-out;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+.header-catBlock {
+ margin: 0px 5px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 10px;
+ border-radius: 6px;
+ cursor: pointer;
+ transition: background-color 0.5s; 
+ 
+}
+
+.header-dropdown::-webkit-scrollbar {
+    width: 10px; /* width of the scrollbar */
+    height: 4px;
+}
+
+.header-dropdown::-webkit-scrollbar-track {
+  background: transparent; /* color of the scrollbar track */
+}
+
+.header-dropdown::-webkit-scrollbar-thumb {
+  background:  #dda1b5; /* color of the scrollbar handle */
+  border-radius: 10px; /* rounded scrollbar handle */
+}
+
+.header-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #d07c98; /* color on hover */
+  height: 4px;
+  width: 4px;
+}
+
+.header-catBlock:hover {
+ background-color: #eb93ac
+}
+
+.header-catNameBlock {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #250e16
+}
+
+.header-catImgBlock {
+ width: 150px;
+ height: 100px;
+ background-color: #fff;
+ border-radius: 6px;
+}
+
+.header-catImgBlock img {
+   width: 100%;
+   height: 100%;
+   border-radius: 6px; 
+}
 
 @media (max-width: 998px) {
     .header-navMainSection {
@@ -579,12 +658,28 @@ nav {
         margin: 14px 0px 6px 0px;
     }
 
-    .header-categories div:first-child {
+    .header-catSelectList {
         font-size: 14px;
     }
 
     .header-mainBtns {
         padding: 0px 0px 0px 0px;
     }
+
+    .header-catBlock {
+        padding: 7px;
+    }
+
+    .header-catImgBlock {
+        width: 100px;
+        height: 70px;
+    }
+
+    .header-dropdown.show  {
+        padding: 7px;
+    }
     
+    .header-catNameBlock {
+        font-size: 12px;
+    }
 }
