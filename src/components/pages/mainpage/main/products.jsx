@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './products.css'
 // import { data }   from '../../../services/data'
 import data from '../../../services/data';
@@ -9,9 +9,14 @@ import { productView } from '../../../services/handlingProducts'
 import { useNavigate } from 'react-router-dom';
 import { FormatPrice } from '../../../services/formatPrice';
 import scrollDown from '../../../../images/icons/scroll-down.png'
+import { AddCartContext } from '../cart/addtocartContext';
 
 const Products = () => {
+
 const [products, setProducts] = useState(data)
+
+const { posterToogle, selectedCat }  = useContext(AddCartContext)
+
 const navigate = useNavigate()
 
 console.log(products)
@@ -19,17 +24,40 @@ const handleProductView = (id) => {
  navigate(`/mainPage/productView/${id}`)
 }
 
+// console.log(posterToogle, 'Toogle')
+
+
+
+useEffect(() => {
+  if(selectedCat.length !== 0) {
+    console.log('AAs')
+    const lowerCaseSelectedCat = selectedCat.map(cat => cat.toLowerCase());
+    const filteredProducts = data.filter((product) => {
+      return lowerCaseSelectedCat.includes(product.category.toLowerCase())
+    })
+    console.log(selectedCat, "cat")
+    const filteredProducts1 = data.map(product =>
+      
+      console.log(lowerCaseSelectedCat.includes(product.category.toLowerCase()), product.category, 'Aashiq')
+    )
+    setProducts(filteredProducts)
+  } else {
+    setProducts(data)
+  }
+
+},[selectedCat])
 
   return (
     <>
       <section className='productSection'>
-        <div className='products-carousel'>
+
+        {posterToogle && <div className='products-carousel'>
           <Carousel/>
 
           <button className='products-swipeBtn'>Swipe down to start shopping now </button>
           <img src={scrollDown} />
         
-        </div>
+        </div>}
         {/* <main className='grid'>  
           {products.map((currElem) => {
             return(

@@ -4,6 +4,7 @@ import data from "../../../services/data"
 export const AddCartContext = createContext()
 
 export const AddCartItems = ({children}) => {
+
     const [cartItems, setCartItems] = useState([])
     const [proceedToBuyIds, setProceedToBuyIds] = useState([])
     const [buyItems, setBuyItems] = useState([])
@@ -11,6 +12,8 @@ export const AddCartItems = ({children}) => {
         total_amount: '',
         total_discount: '',
     })
+    const [selectedCat, setSelectedCat] = useState([])
+    const [posterToogle, setPosterToogle] = useState(true)
 
   return (
         <AddCartContext.Provider 
@@ -21,7 +24,9 @@ export const AddCartItems = ({children}) => {
                 setBuyItems,
                 proceedToBuyIds, 
                 setProceedToBuyIds,
-                total, setTotal
+                total, setTotal,
+                selectedCat, setSelectedCat,
+                posterToogle, setPosterToogle
             }}>
           {children}      
         </AddCartContext.Provider>

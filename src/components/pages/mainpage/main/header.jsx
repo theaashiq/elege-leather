@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import LoginIcon from '@mui/icons-material/Login';
@@ -23,10 +23,12 @@ import shoe from '../../../../images/category/shoe.jpg'
 import jacket from '../../../../images/category/jacket.jpg'
 import accessories from '../../../../images/category/accessories.jpg'
 import allCat from '../../../../images/category/allCat.jpg'
-
+import { AddCartContext } from '../cart/addtocartContext';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 
 const Header = ({name, email, localId}) => {
+
 const [listToggle, setListToggle] = useState(false)
 const [category, setCategory] = useState(false)
 const [searchBarToggle, setSearchBarToggle] = useState(false)
@@ -103,7 +105,8 @@ const handleHomePage = () => {
 const [categoryToggle, setCategoryToogle] = useState(false)
 const [showImages, setShowImages] = useState(false);
 
-console.log(categoryToggle, 'To')
+const { selectedCat, setSelectedCat, setPosterToogle } = useContext(AddCartContext)
+
 const categories = [
   {
     cat: "Wallet",
@@ -148,6 +151,22 @@ useEffect(() => {
 
   return () => clearTimeout(timer); // Cleanup the timer
 }, [categoryToggle]);
+
+const handleSelectCat = (cat) => {
+  setPosterToogle(false)
+  if(cat === 'All Categories') {
+    setSelectedCat([])
+    setCategoryToogle(false)
+  } else {
+    setSelectedCat(prevSelectedCat => {
+      if (prevSelectedCat.includes(cat)) {
+        return prevSelectedCat.filter(item => item !== cat);
+      } else {
+        return [...prevSelectedCat, cat];
+      }
+    });
+  }
+};
 
 return (
     
@@ -240,15 +259,26 @@ return (
               <div onClick={() => setCategoryToogle((prev) => !prev)} style={{cursor:'pointer'}}>
                 <MenuOutlinedIcon/>
               </div>
-              <div style={{marginLeft:'10px'}}>All Categories</div>
-              <div></div>
+              {selectedCat.length === 0 && <div style={{marginLeft:'10px', width:'100%'}}>All Categories</div> }
+              <div className='header-selectedCat'>
+                {selectedCat?.map((cat) => (
+                  <div className='header-selectedCat-item'>
+                    <div>{cat}</div>
+                    <div style={{margin:'2px 0px 0px 5px'}}>
+                      <HighlightOffIcon style={{fontSize: '12px'}} onClick={() => handleSelectCat(cat)}/>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className={`header-dropdown ${categoryToggle ? 'show' : ''}`}>
+            <div className={`header-dropdown ${categoryToggle ? 'show' : '#eb93ac'}`}>
               {categories.map((obj) => (
-                <div className='header-catBlock'>
+                <div
+                    style={{backgroundColor: selectedCat.includes(obj.cat) && '#eb93ac'}} 
+                    className='header-catBlock' 
+                    onClick={() => handleSelectCat(obj.cat)}>
                   <div className='header-catImgBlock'>
-                    {/* <img src={obj.pic} alt={obj.cat} loading='lazy' style={{width:'100%', height:'100%'}} /> */}
-                    {showImages && <img src={obj.pic} alt={obj.cat} />}
+                    {showImages && <img src={obj.pic} alt={obj.cat} loading='lazy'/>}
                   </div>
                   <div className='header-catNameBlock'>
                     {obj.cat}

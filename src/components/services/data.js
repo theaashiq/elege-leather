@@ -32,7 +32,7 @@ const data = [
   {
     id: 12,
     product_name: "Fashionable High-Heel Boots",
-    category: "shoes",
+    category: "shoe",
     price: 1499,
     offer_price: 1199,
     image: shoe4,
@@ -42,7 +42,7 @@ const data = [
   {
     id: 22,
     product_name: "Canvas Backpack",
-    category: "bags",
+    category: "bag",
     price: 799,
     offer_price: 599,
     image: bag2,
@@ -82,7 +82,7 @@ const data = [
   {
     id: 10,
     product_name: "Sporty White Sneakers",
-    category: "shoes",
+    category: "shoe",
     price: 899,
     offer_price: 649,
     image: shoe2,
@@ -92,7 +92,7 @@ const data = [
   {
     id: 11,
     product_name: "Formal Black Oxford Shoes",
-    category: "shoes",
+    category: "shoe",
     price: 1299,
     offer_price: 999,
     image: shoe3,
@@ -113,7 +113,7 @@ const data = [
   {
     id: 25,
     product_name: "Luxury Leather Backpack",
-    category: "bags",
+    category: "bag",
     price: 1499,
     offer_price: 1299,
     image: bag5,
@@ -123,7 +123,7 @@ const data = [
   {
     id: 17,
     product_name: "Denim Jacket with Hood",
-    category: "jackets",
+    category: "jacket",
     price: 999,
     offer_price: 799,
     image: jacket3,
@@ -153,7 +153,7 @@ const data = [
   {
     id: 13,
     product_name: "Casual Slip-On Canvas Shoes",
-    category: "shoes",
+    category: "shoe",
     price: 1799,
     offer_price: 1599,
     image: shoe5,
@@ -184,7 +184,7 @@ const data = [
   {
     id: 16,
     product_name: "Quilted Puffer Jacket",
-    category: "jackets",
+    category: "jacket",
     price: 1199,
     offer_price: 999,
     image: jacket2,
@@ -194,7 +194,7 @@ const data = [
   {
     id: 9,
     product_name: "Classic Brown Leather Loafers",
-    category: "shoes",
+    category: "shoe",
     price: 999,
     offer_price: 799,
     image: shoe1,
@@ -204,7 +204,7 @@ const data = [
   {
     id: 23,
     product_name: "Chic Tote Bag",
-    category: "bags",
+    category: "bag",
     price: 699,
     offer_price: 499,
     image: bag3,
@@ -214,7 +214,7 @@ const data = [
   {
     id: 18,
     product_name: "Classic Black Blazer",
-    category: "jackets",
+    category: "jacket",
     price: 1299,
     offer_price: 1099,
     image: jacket4,
@@ -224,7 +224,7 @@ const data = [
   {
     id: 21,
     product_name: "Leather Messenger Bag",
-    category: "bags",
+    category: "bag",
     price: 899,
     offer_price: 699,
     image: bag1,
@@ -234,7 +234,7 @@ const data = [
   {
     id: 14,
     product_name: "Hiking Adventure Boots",
-    category: "shoes",
+    category: "shoe",
     price: 1099,
     offer_price: 899,
     image: shoe6,
@@ -254,7 +254,7 @@ const data = [
   {
     id: 24,
     product_name: "Travel Duffel Bag",
-    category: "bags",
+    category: "bag",
     price: 1299,
     offer_price: 1099,
     image: bag4,
@@ -306,7 +306,7 @@ const data = [
   {
     id: 15,
     product_name: "Leather Biker Jacket",
-    category: "jackets",
+    category: "jacket",
     price: 1499,
     offer_price: 1199,
     image: jacket1,
