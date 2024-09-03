@@ -154,6 +154,7 @@ useEffect(() => {
 
 const handleSelectCat = (cat) => {
   setPosterToogle(false)
+  navigate('/mainPage/products')
   if(cat === 'All Categories') {
     setSelectedCat([])
     setCategoryToogle(false)
