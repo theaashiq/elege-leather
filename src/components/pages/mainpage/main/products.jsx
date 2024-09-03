@@ -22,7 +22,7 @@ const handleProductView = (id) => {
 
   return (
     <>
-      <section>
+      <section className='productSection'>
         <div className='products-carousel'>
           <Carousel/>
 
@@ -60,7 +60,7 @@ const handleProductView = (id) => {
      </main>    */}
       <div className='products-container'>
         {products?.map((pro, index) => (
-          <div className='products-block'>
+          <div className='products-block' onClick={() => handleProductView(pro.id)}>
             <div className='products-blockA'>
               <img src={pro.image} alt={pro.product_name}/>
               <div className='products-name'>{pro.product_name}</div>

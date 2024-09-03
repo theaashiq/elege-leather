@@ -2,7 +2,7 @@
 
 
 .productView-container{
-    margin-top: 100px;
+    margin-top: 130px;
     display: grid;
     grid-template-columns: 45% 55%;
     //border: 1px solid;
@@ -230,14 +230,15 @@
     border-color: #ff0000;
     color: #fff
   }
-@media screen and (max-width: 1323px) {
+/* @media screen and (max-width: 1323px) {
     .productView-container{
         margin-top: 110px
     }
-}
+} */
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 998px) {
     .productView-container{
+        margin-top: 145px;
         grid-template-columns: 55% 45%;
     }
 
@@ -274,7 +275,7 @@
     }
 
     .productView-container{
-        margin-top: 155px;
+        /* margin-top: 155px; */
         grid-template-columns: 100%
     }
 

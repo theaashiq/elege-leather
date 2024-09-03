@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Header from './header'
+import { useLocation } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import LoginIcon from '@mui/icons-material/Login';
@@ -17,7 +18,11 @@ import { getUserData } from '../../../services/localStorage'
 import { logout } from '../../../services/authentication';
 
 const MainPage = ({children}) => {
+
 const [user, setUser] = useState({name:"", email:"", localId:""})
+const [footerToogle, setFooterToogle] = useState(window.location.pathname.split('/')[3])
+
+const location = useLocation();
 
 useEffect(() =>{
   if(getUserData()!== null){
@@ -32,6 +37,14 @@ useEffect(() =>{
   
   console.log(user.name)
 
+  useEffect(() => {
+    const pathSegment = window.location.pathname.split('/')[3];
+    // console.log(window.location.pathname.split('/')[3] , 'Location')
+    setFooterToogle(pathSegment)
+  },[location])
+
+  // /elege-leather/mainPage/addToCart
+ 
 return (
     <>
       <div className="mainPage-container">
@@ -41,9 +54,13 @@ return (
         <div className='outlet-container'>
             <Outlet/>
         </div>
-        <div className='mainPage-footer-container' style={{marginTop:'auto'}}>
+        {footerToogle !== 'addToCart'
+          && 
+        <div 
+          className='mainPage-footer-container' 
+          style={{marginTop:'auto'}}>
             <Footer/>
-        </div>
+        </div> }
       </div> 
     </>
   )

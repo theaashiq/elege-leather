@@ -1,9 +1,9 @@
 .cart-container{
- margin-top: 200px
+ /* margin-top: 200px */
 }
 
 .cart-container{
-    margin-top: 80px;
+    margin-top: 114px;
     display: flex;
     justify-content: space-between;
     background-color: #f2f2f2;

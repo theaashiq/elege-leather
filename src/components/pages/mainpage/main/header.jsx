@@ -212,7 +212,7 @@ return (
         </div>
           
         </nav> */}
-        <div>
+        <div style={{position:'fixed', width:'100%', zIndex:'25'}}>
           <div className='header-navBlock'>
             <div className='header-navMainSection'>
               <div className='header-heading'>

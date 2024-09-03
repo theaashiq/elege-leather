@@ -214,6 +214,7 @@ section{
     cursor: pointer;
     border: 2px solid transparent;
     transition: box-shadow 0.5s, border-color 0.5s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .products-block:hover {
@@ -280,12 +281,12 @@ section{
 
 .products-carousel button {
     width: fit-content;
-    margin: 30px auto 10px auto;
+    margin: 16px auto 10px auto;
     background: rgb(210,4,45);
     background: linear-gradient(130deg, rgba(210,4,45,1) 45%, rgba(222,49,99,1) 78%);
-    padding: 5px 20px;
+    padding: 10px 20px;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     font-family: Lexend;
     border: none;
     border-radius: 20px;
@@ -301,7 +302,15 @@ section{
     margin: auto;
 }
 
+.productSection {
+    margin-top: 120px;
+}
+
 @media (max-width: 998px) {
+    .productSection {
+        margin-top: 160px;
+    }
+
     .products-carousel {
         display: none;
     }
