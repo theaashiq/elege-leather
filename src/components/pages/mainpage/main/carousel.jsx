@@ -13,7 +13,7 @@ import carousel5 from '../../../../images/carosel5.webp'
 const Carousel = () => {
   return (
     <>
-        {/* <div className='carousel-container'>
+        <div className='carousel-container'>
             <Swiper 
                 loop={true}
                 navigation={true}
@@ -38,7 +38,11 @@ const Carousel = () => {
                 <img src={carousel5} alt="/"/>
                </SwiperSlide>
             </Swiper>
-        </div> */}
+        </div>
+
+        <div>
+
+        </div>
     </>
   )
 }

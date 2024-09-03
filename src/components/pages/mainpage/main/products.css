@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Open+Sans&family=Roboto:wght@100;300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Open+Sans&family=Roboto:wght@100;300&display=swap');
 
 *{
     margin: 0px;
@@ -119,7 +119,7 @@ section{
 
 @media screen and (max-width: 950px) {
     section{
-        margin-top: 8px;
+        /* margin-top: 8px;
     }
 
     .grid{
@@ -146,8 +146,8 @@ section{
     }
 
     .product-view-btn{
-        /* margin-top: 15px; */
-        /* width; */
+        /* margin-top: 15px; 
+        /* width; 
         margin-bottom: 10px;
         display: flex;
         justify-content: center;
@@ -178,7 +178,7 @@ section{
 
 @media screen and (max-width: 578px) {
     section{
-        margin-top: 54px;
+        /* margin-top: 54px;
     }
 
     .grid{
@@ -188,5 +188,134 @@ section{
 
     .product-view-btn{
         display: none;
+    }
+} */
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 20px auto;
+    justify-content: center;
+    /* width: 100%; */
+    padding: 20px 2%;
+    /* border: 1px solid; */
+
+}
+
+.products-block {
+    /* border: 1px solid ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 250px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: box-shadow 0.5s, border-color 0.5s;
+}
+
+.products-block:hover {
+    border-color:  #ff6666;
+    box-shadow: none;
+}
+
+.products-blockA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    /* margin-top: 5px; */
+}
+
+.products-blockA img {
+    width: 95%;
+    margin: 5px;
+    text-align: center;
+    height: 85%;
+    object-fit: cover;
+    /* border: 1px solid; */
+}
+
+.products-name {
+    font-family: Lexend;
+    padding: 0px 5%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.products-price {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: Lexend;
+}
+
+.products-actual-price {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.products-actual-price span {
+    font-size: 12px;
+    margin-right: 5px;
+    color: #a6a6a6;
+    text-decoration: line-through;
+    text-decoration-color: #e60000;
+}
+
+.products-offer-price {
+    color: #e60000;
+}
+
+.products-carousel {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.products-carousel button {
+    width: fit-content;
+    margin: 30px auto 10px auto;
+    background: rgb(210,4,45);
+    background: linear-gradient(130deg, rgba(210,4,45,1) 45%, rgba(222,49,99,1) 78%);
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 20px;
+    font-family: Lexend;
+    border: none;
+    border-radius: 20px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.products-carousel img {
+    width: 25px;
+    height: 20px;
+    margin-left: 20px;
+    margin: auto;
+}
+
+@media (max-width: 998px) {
+    .products-carousel {
+        display: none;
+    }
+
+    .products-block {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .products-name {
+        font-size: 14px;
+    }
+
+    .products-container {
+        gap: 20px;
     }
 }

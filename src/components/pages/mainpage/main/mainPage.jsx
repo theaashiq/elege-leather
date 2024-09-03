@@ -41,7 +41,7 @@ return (
         <div className='outlet-container'>
             <Outlet/>
         </div>
-        <div className='mainPage-footer-container'>
+        <div className='mainPage-footer-container' style={{marginTop:'auto'}}>
             <Footer/>
         </div>
       </div> 

@@ -141,7 +141,7 @@ useEffect(() => {
     // Delay rendering images by 2 seconds
     timer = setTimeout(() => {
       setShowImages(true);
-    }, 1000);
+    }, 500);
   } else {
     setShowImages(false); // Hide images if the category component is hidden
   }

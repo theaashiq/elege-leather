@@ -3,7 +3,9 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-    <h1>Footer</h1>
+      <div style={{border:'1px solid'}}>
+        <h1>Footer</h1>
+      </div>
     </>
   )
 }

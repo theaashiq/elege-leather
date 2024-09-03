@@ -9,3 +9,8 @@
     background: linear-gradient(187deg, rgba(246,245,244,1) 0%, rgba(220,225,221,1) 86%); */
 }
 
+.mainPage-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
+}
