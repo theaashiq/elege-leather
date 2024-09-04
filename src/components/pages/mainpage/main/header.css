@@ -516,6 +516,7 @@ nav {
     margin-left: 16px;
     transition: background-color 0.5s;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header-categories {
@@ -531,6 +532,7 @@ nav {
     padding: 0px 22px;
     font-weight: 300;
     color: #250e16;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header-dropdown {
@@ -669,7 +671,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100px
+    width: 100px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header-logOutBtn:hover {
@@ -717,10 +720,12 @@ nav {
 
 .header-suggestingName {
     font-size: 14px;
+    
 }
 
 .header-suggestingCat {
     font-size: 10px;
+    text-transform: capitalize;
 }
 
 @keyframes fadeIn {
