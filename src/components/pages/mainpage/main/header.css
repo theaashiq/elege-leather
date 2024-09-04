@@ -482,6 +482,7 @@ nav {
     margin: 0px 14px;
     outline: none;
     font-family: Lexend;
+    appearance: none;
 }
 
 .header-mainBtns {
@@ -681,6 +682,7 @@ nav {
     z-index: 28;
     top: 70px;
     right: 50%;
+    text-align: start;
     background-color: #fbe9ee;
     transform: translateX(50%);
     overflow: auto;
@@ -688,15 +690,26 @@ nav {
     width: 38%;
     border-radius:4px;
     font-family: Lexend;
-    color: #250e16
+    color: #250e16;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    /* visibility: hidden; */
     /* padding: 10px */
 }
+
+/* .header-searchBlock input:focus-within .header-suggestingList {
+    opacity: 1;
+    visibility: visible;
+  } */
 
 .header-suggestingNameBlock {
     /* margin: 0px 10px 0px 10px; */
     border-bottom: 1px solid #f4bdcd;
     padding: 5px;
 }
+
+.header-suggestingNameBlock:last-child {
+    border-bottom: none; /* Remove border from the last item */
+  }
 
 .header-suggestingNameBlock:hover {
     background-color:#f4bdcd

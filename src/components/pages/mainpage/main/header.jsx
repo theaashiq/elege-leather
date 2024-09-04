@@ -108,8 +108,9 @@ const [showImages, setShowImages] = useState(false);
 const [logOutBtnToggle, setLogOutBtnToggle] = useState(false)
 const [suggestingList, setSuggestingList] = useState([])
 const [searchInput, setSearchInput] = useState('')
+const [suggestingToggle, setSuggestingToggle] = useState(false)
 
-const { selectedCat, setSelectedCat, setPosterToogle } = useContext(AddCartContext)
+const { selectedCat, setSelectedCat, setPosterToogle, products, setProducts } = useContext(AddCartContext)
 
 const logOutBtnRef = useRef(null)
 
@@ -229,8 +230,22 @@ useEffect(() => {
 //   }
 // }, [searchInput])
 // console.log(logOutBtnToggle, 'Test BTn')
+const handleKeyDown = (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault(); // Prevent default form submission behavior
+    handleSuggesting(searchInput); // Call your search function
+  }
+};
 
-console.log(searchInput, 'Input')
+const handleSuggesting = (productName) => {
+    setSearchInput(productName)
+    setSuggestingToggle(false)
+    const pro = data.filter((obj) => 
+      obj.product_name.toLowerCase().includes(productName.toLowerCase())||
+      obj.category.toLowerCase().includes(productName.toLowerCase()))
+    setProducts(pro)
+    setPosterToogle(false)
+}
 return (
     
     <>
@@ -305,16 +320,20 @@ return (
                   type='text' 
                   style={{width:'90%'}} 
                   placeholder='Search'
-                  onChange={(e) => setSearchInput(e.target.value)}/>
-                <SearchOutlinedIcon style={{marginRight:'14px'}}/>
-              </div>
-              <div className='header-suggestingList'>
-                {suggestingList?.map((obj) => (
-                  <div className='header-suggestingNameBlock'>
-                    <div className='header-suggestingName'>{obj.name}</div>
-                    <div className='header-suggestingCat'>{obj.cat}</div>
-                  </div>
-                ))}
+                  value={searchInput}
+                  onChange={(e) => {
+                    setSearchInput(e.target.value)
+                    setSuggestingToggle(true)}}
+                  onKeyDown={handleKeyDown}/>
+                <SearchOutlinedIcon style={{marginRight:'14px'}} onClick={() => handleSuggesting(searchInput)}/>
+                {suggestingToggle && 
+                  <div className='header-suggestingList'>
+                  {suggestingList?.map((obj) => (
+                    <div className='header-suggestingNameBlock' onClick={() => handleSuggesting(obj.name)}>
+                      <div className='header-suggestingName'>{obj.name}</div>
+                      <div className='header-suggestingCat'>{obj.cat}</div>
+                    </div>))}
+                  </div>}
               </div>
               <div className='header-mainBtns'>
                 {name 

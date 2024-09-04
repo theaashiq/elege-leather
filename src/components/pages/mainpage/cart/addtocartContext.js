@@ -8,6 +8,7 @@ export const AddCartItems = ({children}) => {
     const [cartItems, setCartItems] = useState([])
     const [proceedToBuyIds, setProceedToBuyIds] = useState([])
     const [buyItems, setBuyItems] = useState([])
+    const [products, setProducts] = useState(data)
     const [total, setTotal] = useState({
         total_amount: '',
         total_discount: '',
@@ -26,7 +27,8 @@ export const AddCartItems = ({children}) => {
                 setProceedToBuyIds,
                 total, setTotal,
                 selectedCat, setSelectedCat,
-                posterToogle, setPosterToogle
+                posterToogle, setPosterToogle,
+                products, setProducts
             }}>
           {children}      
         </AddCartContext.Provider>

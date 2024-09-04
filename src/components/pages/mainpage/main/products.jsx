@@ -13,9 +13,7 @@ import { AddCartContext } from '../cart/addtocartContext';
 
 const Products = () => {
 
-const [products, setProducts] = useState(data)
-
-const { posterToogle, selectedCat }  = useContext(AddCartContext)
+const { posterToogle, selectedCat, products, setProducts }  = useContext(AddCartContext)
 
 const navigate = useNavigate()
 
