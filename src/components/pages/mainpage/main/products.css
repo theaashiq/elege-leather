@@ -195,11 +195,12 @@ section{
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    margin: 20px auto;
+    margin: 50px auto;
     justify-content: center;
     /* width: 100%; */
-    padding: 20px 2%;
-    min-height: 100vh;
+    padding: 50px 2%;
+    min-height: 58vh;
+    /* margin-top: 50px; */
     /* border: 1px solid; */
 
 }
@@ -327,5 +328,6 @@ section{
 
     .products-container {
         gap: 20px;
+        padding-top: 30px
     }
 }

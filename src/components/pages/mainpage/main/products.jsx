@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, useRef } from 'react'
 import './products.css'
 // import { data }   from '../../../services/data'
 import data from '../../../services/data';
@@ -17,7 +17,8 @@ const { posterToogle, selectedCat, products, setProducts }  = useContext(AddCart
 
 const navigate = useNavigate()
 
-console.log(products)
+const targetRef = useRef(null);
+
 const handleProductView = (id) => {
  navigate(`/mainPage/productView/${id}`)
 }
@@ -28,22 +29,31 @@ const handleProductView = (id) => {
 
 useEffect(() => {
   if(selectedCat.length !== 0) {
-    console.log('AAs')
     const lowerCaseSelectedCat = selectedCat.map(cat => cat.toLowerCase());
     const filteredProducts = data.filter((product) => {
       return lowerCaseSelectedCat.includes(product.category.toLowerCase())
     })
-    console.log(selectedCat, "cat")
-    const filteredProducts1 = data.map(product =>
-      
-      console.log(lowerCaseSelectedCat.includes(product.category.toLowerCase()), product.category, 'Aashiq')
-    )
     setProducts(filteredProducts)
+    scrollToTarget()
   } else {
     setProducts(data)
+    scrollToTarget()
   }
 
 },[selectedCat])
+
+const scrollToTarget = () => {
+  if (targetRef.current) {
+    const offsetTop = targetRef.current.offsetTop;
+    const viewportHeight = window.innerHeight;
+    const scrollToPosition = offsetTop - viewportHeight / 4;
+
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth',
+    });
+  }
+};
 
   return (
     <>
@@ -52,8 +62,8 @@ useEffect(() => {
         {posterToogle && <div className='products-carousel'>
           <Carousel/>
 
-          <button className='products-swipeBtn'>Swipe down to start shopping now </button>
-          <img src={scrollDown} />
+          <button className='products-swipeBtn' onClick={scrollToTarget}>Swipe down to start shopping now </button>
+          <img src={scrollDown} onClick={scrollToTarget} />
         
         </div>}
         {/* <main className='grid'>  
@@ -84,7 +94,7 @@ useEffect(() => {
             )
           })}   
      </main>    */}
-      <div className='products-container'>
+      <div ref={targetRef} className='products-container'>
         {products?.map((pro, index) => (
           <div className='products-block' onClick={() => handleProductView(pro.id)}>
             <div className='products-blockA'>
