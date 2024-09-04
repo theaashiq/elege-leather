@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useState, useRef } from "react"
 import data from "../../../services/data"
 
 export const AddCartContext = createContext()
@@ -16,6 +16,21 @@ export const AddCartItems = ({children}) => {
     const [selectedCat, setSelectedCat] = useState([])
     const [posterToogle, setPosterToogle] = useState(true)
 
+    const targetRef = useRef(null);
+
+    const scrollToTarget = () => {
+        if (targetRef.current) {
+          const offsetTop = targetRef.current.offsetTop;
+          const viewportHeight = window.innerHeight;
+          const scrollToPosition = offsetTop - viewportHeight / 4;
+      
+          window.scrollTo({
+            top: scrollToPosition,
+            behavior: 'smooth',
+          });
+        }
+      };
+
   return (
         <AddCartContext.Provider 
             value={{
@@ -28,7 +43,9 @@ export const AddCartItems = ({children}) => {
                 total, setTotal,
                 selectedCat, setSelectedCat,
                 posterToogle, setPosterToogle,
-                products, setProducts
+                products, setProducts,
+                scrollToTarget,
+                targetRef
             }}>
           {children}      
         </AddCartContext.Provider>

@@ -13,11 +13,16 @@ import { AddCartContext } from '../cart/addtocartContext';
 
 const Products = () => {
 
-const { posterToogle, selectedCat, products, setProducts }  = useContext(AddCartContext)
+const { posterToogle, 
+        selectedCat, 
+        products, 
+        setProducts,
+        targetRef,
+        scrollToTarget }  = useContext(AddCartContext)
 
 const navigate = useNavigate()
 
-const targetRef = useRef(null);
+// const targetRef = useRef(null);
 
 const handleProductView = (id) => {
  navigate(`/mainPage/productView/${id}`)
@@ -37,23 +42,23 @@ useEffect(() => {
     scrollToTarget()
   } else {
     setProducts(data)
-    scrollToTarget()
+    // scrollToTarget()
   }
 
 },[selectedCat])
 
-const scrollToTarget = () => {
-  if (targetRef.current) {
-    const offsetTop = targetRef.current.offsetTop;
-    const viewportHeight = window.innerHeight;
-    const scrollToPosition = offsetTop - viewportHeight / 4;
+// const scrollToTarget = () => {
+//   if (targetRef.current) {
+//     const offsetTop = targetRef.current.offsetTop;
+//     const viewportHeight = window.innerHeight;
+//     const scrollToPosition = offsetTop - viewportHeight / 4;
 
-    window.scrollTo({
-      top: scrollToPosition,
-      behavior: 'smooth',
-    });
-  }
-};
+//     window.scrollTo({
+//       top: scrollToPosition,
+//       behavior: 'smooth',
+//     });
+//   }
+// };
 
   return (
     <>

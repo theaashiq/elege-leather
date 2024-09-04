@@ -110,7 +110,12 @@ const [suggestingList, setSuggestingList] = useState([])
 const [searchInput, setSearchInput] = useState('')
 const [suggestingToggle, setSuggestingToggle] = useState(false)
 
-const { selectedCat, setSelectedCat, setPosterToogle, products, setProducts } = useContext(AddCartContext)
+const { selectedCat, 
+        setSelectedCat, 
+        setPosterToogle, 
+        products, 
+        setProducts,
+        scrollToTarget } = useContext(AddCartContext)
 
 const logOutBtnRef = useRef(null)
 
@@ -190,6 +195,7 @@ const handleSelectCat = (cat) => {
   if(cat === 'All Categories') {
     setSelectedCat([])
     setCategoryToogle(false)
+    scrollToTarget()
   } else {
     setSelectedCat(prevSelectedCat => {
       if (prevSelectedCat.includes(cat)) {
@@ -245,6 +251,7 @@ const handleSuggesting = (productName) => {
       obj.category.toLowerCase().includes(productName.toLowerCase()))
     setProducts(pro)
     setPosterToogle(false)
+    scrollToTarget()
 }
 return (
     
