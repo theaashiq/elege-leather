@@ -281,7 +281,7 @@ section{
 
 .products-carousel button {
     width: fit-content;
-    margin: 16px auto 10px auto;
+    margin: 10px auto 10px auto;
     background: rgb(210,4,45);
     background: linear-gradient(130deg, rgba(210,4,45,1) 45%, rgba(222,49,99,1) 78%);
     padding: 10px 20px;

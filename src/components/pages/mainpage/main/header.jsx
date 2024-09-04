@@ -104,6 +104,7 @@ const handleHomePage = () => {
 
 const [categoryToggle, setCategoryToogle] = useState(false)
 const [showImages, setShowImages] = useState(false);
+const [logOutBtnToggle, setLogOutBtnToggle] = useState(false)
 
 const { selectedCat, setSelectedCat, setPosterToogle } = useContext(AddCartContext)
 
@@ -168,6 +169,8 @@ const handleSelectCat = (cat) => {
     });
   }
 };
+
+console.log(logOutBtnToggle, 'Test BTn')
 
 return (
     
@@ -243,11 +246,21 @@ return (
                 <SearchOutlinedIcon style={{marginRight:'14px'}}/>
               </div>
               <div className='header-mainBtns'>
-                  <Link to='/signIn'>
-                    <div className='header-loginBtn'>
-                      Login
-                    </div>
-                  </Link>
+                {name 
+                  ? <>
+                      <div className='headerUserName' onClick={() => setLogOutBtnToggle(!logOutBtnToggle)}>
+                        <div>Welcome</div>
+                        <div>{name.split(' ')[0]}</div>
+                      </div> 
+                      {logOutBtnToggle && <div className='header-logOutBtn' onClick={logOutUser}>
+                        Log Out
+                      </div> }
+                    </>
+                  : <Link to='/signIn'>
+                      <div className='header-loginBtn'>
+                        Login
+                      </div>
+                    </Link>}
                   <div onClick={handleCartPage} className='header-cartBtn'>
                     <ShoppingCartOutlinedIcon className='header-cartBtnIcon'/>
                     <div style={{marginTop:'8px'}}>Cart</div>
