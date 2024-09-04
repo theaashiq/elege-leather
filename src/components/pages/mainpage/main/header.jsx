@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useEffect, useContext, useRef} from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import LoginIcon from '@mui/icons-material/Login';
@@ -25,7 +25,8 @@ import accessories from '../../../../images/category/accessories.jpg'
 import allCat from '../../../../images/category/allCat.jpg'
 import { AddCartContext } from '../cart/addtocartContext';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import data from '../../../services/data';
 
 const Header = ({name, email, localId}) => {
 
@@ -105,9 +106,38 @@ const handleHomePage = () => {
 const [categoryToggle, setCategoryToogle] = useState(false)
 const [showImages, setShowImages] = useState(false);
 const [logOutBtnToggle, setLogOutBtnToggle] = useState(false)
+const [suggestingList, setSuggestingList] = useState([])
+const [searchInput, setSearchInput] = useState('')
 
 const { selectedCat, setSelectedCat, setPosterToogle } = useContext(AddCartContext)
 
+const logOutBtnRef = useRef(null)
+
+// const handleClickOutside = (event) => {
+//   console.log("Aashiq5")
+//   if(logout.current && !logOutBtnRef.current.contains(event.target)) {
+//     console.log("Aashiq4")
+//     setLogOutBtnToggle(false)
+//   }
+// }
+
+// console.log(logOutBtnRef, 'REF')
+
+// useEffect(() => {
+//   console.log("Aashiq")
+//   if(logOutBtnToggle) {
+//     document.addEventListener('mousedown', handleClickOutside)
+//     console.log("Aashiq1")
+//   } else {
+//     document.removeEventListener('mousedown', handleClickOutside)
+//     console.log("Aashiq2")
+//   }
+//   return () => {
+//     document.removeEventListener('mousedown', handleClickOutside)
+//     console.log("Aashiq3")
+//   }
+// })
+ 
 const categories = [
   {
     cat: "Wallet",
@@ -170,8 +200,37 @@ const handleSelectCat = (cat) => {
   }
 };
 
-console.log(logOutBtnToggle, 'Test BTn')
+useEffect(() => {
+  if (searchInput) {
+    const suggestList = data.filter((obj) => 
+      obj.product_name.toLowerCase().includes(searchInput.toLowerCase())||
+      obj.category.toLowerCase().includes(searchInput.toLowerCase())
+    ).map((obj) => ({
+      name: obj.product_name,
+      cat: obj.category,
+    }));
+    
+    setSuggestingList(suggestList); // Update the state with the suggestions
+    console.log(suggestList, 'Suggesting');
+  } else {
+    setSuggestingList([]); // Clear the suggestions if there's no input
+  }
+},[searchInput])
+// useEffect(() => {
+//   if(searchInput) {
+//     const suggestList = data.filter((obj) => {
+//       if(searchInput.toLowerCase() === obj.product_name.toLowerCase()) {
+//         return {name: obj.product_name, cat:obj.category}
+//       }
+//     })
+//     console.log(suggestList, 'Suggesting')
+//   } else {
+//     setSuggestingList([])
+//   }
+// }, [searchInput])
+// console.log(logOutBtnToggle, 'Test BTn')
 
+console.log(searchInput, 'Input')
 return (
     
     <>
@@ -242,8 +301,20 @@ return (
                 Elega Leather
               </div>
               <div className='header-searchBlock'>
-                <input type='text' style={{width:'90%'}} placeholder='Search'/>
+                <input 
+                  type='text' 
+                  style={{width:'90%'}} 
+                  placeholder='Search'
+                  onChange={(e) => setSearchInput(e.target.value)}/>
                 <SearchOutlinedIcon style={{marginRight:'14px'}}/>
+              </div>
+              <div className='header-suggestingList'>
+                {suggestingList?.map((obj) => (
+                  <div className='header-suggestingNameBlock'>
+                    <div className='header-suggestingName'>{obj.name}</div>
+                    <div className='header-suggestingCat'>{obj.cat}</div>
+                  </div>
+                ))}
               </div>
               <div className='header-mainBtns'>
                 {name 
@@ -252,9 +323,10 @@ return (
                         <div>Welcome</div>
                         <div>{name.split(' ')[0]}</div>
                       </div> 
-                      {logOutBtnToggle && <div className='header-logOutBtn' onClick={logOutUser}>
-                        Log Out
-                      </div> }
+                      {logOutBtnToggle 
+                        && <div className='header-logOutBtn' onClick={logOutUser} ref={logOutBtnRef}>
+                            Log Out <ExitToAppIcon/>
+                          </div> }
                     </>
                   : <Link to='/signIn'>
                       <div className='header-loginBtn'>

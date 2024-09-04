@@ -567,24 +567,28 @@ nav {
 }
 
 .header-dropdown::-webkit-scrollbar,
-.header-selectedCat::-webkit-scrollbar {
+.header-selectedCat::-webkit-scrollbar,
+.header-suggestingList::-webkit-scrollbar {
     width: 10px; /* width of the scrollbar */
     height: 4px;
 }
 
 .header-dropdown::-webkit-scrollbar-track,
-.header-selectedCat::-webkit-scrollbar-track {
+.header-selectedCat::-webkit-scrollbar-track,
+.header-suggestingList::-webkit-scrollbar-track {
   background: transparent; /* color of the scrollbar track */
 }
 
 .header-dropdown::-webkit-scrollbar-thumb,
-.header-selectedCat::-webkit-scrollbar-thumb {
+.header-selectedCat::-webkit-scrollbar-thumb,
+.header-suggestingList::-webkit-scrollbar-thumb {
   background:  #dda1b5; /* color of the scrollbar handle */
   border-radius: 10px; /* rounded scrollbar handle */
 }
 
 .header-dropdown::-webkit-scrollbar-thumb:hover,
-.header-selectedCat::-webkit-scrollbar-thumb:hover {
+.header-selectedCat::-webkit-scrollbar-thumb:hover,
+.header-suggestingList::-webkit-scrollbar-thumb:hover {
   background: #d07c98; /* color on hover */
   height: 4px;
   width: 4px;
@@ -636,6 +640,7 @@ nav {
 .headerUserName {
  margin-right: 10px;
  cursor: pointer;
+ -webkit-tap-highlight-color: transparent;
 }
 
 .headerUserName div:first-child {
@@ -649,7 +654,7 @@ nav {
 .header-logOutBtn {
     position: absolute;
     top: 70px;
-    right: 120px;
+    right: 100px;
     background-color: #fff;
     z-index: 30;
     color: #000;
@@ -660,13 +665,50 @@ nav {
     border-radius: 6px;
     transform: translateY(-10px);
     animation: fadeIn 0.3s ease-in-out forwards;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px
 }
 
 .header-logOutBtn:hover {
     color: rgba(222,49,99,1)
 }
 
+.header-suggestingList {
+    position: absolute;
+    max-height: 364px;
+    z-index: 28;
+    top: 70px;
+    right: 50%;
+    background-color: #fbe9ee;
+    transform: translateX(50%);
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 38%;
+    border-radius:4px;
+    font-family: Lexend;
+    color: #250e16
+    /* padding: 10px */
+}
 
+.header-suggestingNameBlock {
+    /* margin: 0px 10px 0px 10px; */
+    border-bottom: 1px solid #f4bdcd;
+    padding: 5px;
+}
+
+.header-suggestingNameBlock:hover {
+    background-color:#f4bdcd
+}
+
+.header-suggestingName {
+    font-size: 14px;
+}
+
+.header-suggestingCat {
+    font-size: 10px;
+}
 
 @keyframes fadeIn {
     from {
@@ -680,6 +722,27 @@ nav {
 }
 
 @media (max-width: 998px) {
+    .header-suggestingList {
+        max-height: 292px;
+        top: 105px;
+        width: 90%;
+        /* padding: 10px */
+    }
+    
+    .header-suggestingNameBlock {
+        /* margin: 0px 10px 0px 10px; */
+        border-bottom: 1px solid #f4bdcd;
+        padding: 5px;
+    }
+    
+    .header-suggestingNameBlock:hover {
+        background-color:#f4bdcd
+    }
+    
+    .header-suggestingName {
+        font-size: 14px;
+    }
+    
     .headerUserName {
         margin: 10px 10px 10px 0px;
        }
@@ -688,10 +751,10 @@ nav {
            font-size: 14px
        }
        
-       
        .header-logOutBtn {
            top: 50px;
-           right: 80px;
+           right: 65px;
+           width: 80px;
            font-size: 12px;
        }       
 
