@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Fira+Sans:wght@300&family=Martian+Mono&family=Montserrat&family=Mooli&family=Young+Serif&display=swap');
+/* 
 
 *{
     margin:0;
@@ -9,12 +9,12 @@
 .poster{
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100%;
 }
 
 .poster img{
     width: 100%;
-    height: 90dvh;
+    height: 90vh;
     object-fit: cover;
 }
 
@@ -108,5 +108,89 @@
     .btn-shop{
         font-size: 22px;
         
+    }
+} */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Fira+Sans:wght@300&family=Martian+Mono&family=Montserrat&family=Mooli&family=Young+Serif&display=swap');
+
+.poster-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: Lexend;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+}
+
+.poster-container img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    filter: brightness(30%);
+    z-index: -1;
+}
+
+.poster-brand {
+    background: linear-gradient(130deg, rgba(210,4,45,1) 45%, rgba(222,49,99,1) 78%);
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 6px;
+    margin-top: 60px;
+    font-size: 32px;
+    font-family: 'Martian Mono', monospace;
+}
+
+.poster-motive {
+    text-align: center;
+    margin: 5px ;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.poster-disclaimer {
+    text-align: center;
+    padding: 5px 40px;
+    color: white;
+    font-weight: 200;
+}
+
+.poster-container a {
+    background: rgba(222,49,99,1);
+    text-decoration:none;
+    color: #fff;
+    font-weight: 300;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: background-color 0.5s, color 0.5s, font-weight 0.5s, transform 0.3s;
+
+}
+
+.poster-container a:hover {
+    background-color: #fff;
+    color: rgba(222,49,99,1);
+    font-weight: 500;
+    transform: scale(1.1);
+}
+
+@media (max-width: 998px)  {
+    .poster-brand {
+        font-size: 20px;
+    }
+
+    .poster-motive, .poster-disclaimer { 
+        font-size: 12px
+    }
+
+    .poster-container a {
+        font-size: 14px;
+        width: 70px;
     }
 }

@@ -498,6 +498,7 @@ nav {
     padding: 8px;
     border-radius: 8px;
     transition: background-color 0.5s;
+    text-decoration: none;
 }
 
 .header-loginBtn:hover,

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Martian+Mono&family=Mooli&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Martian+Mono&family=Mooli&display=swap');
 
 *{
     margin: 0px;
@@ -32,16 +32,59 @@ header{
 @media screen and (max-width: 780px){
     /* header{
         height: 10vh;
-    } */
+    } 
 }
 
 @media screen and (max-width: 560px){
     /* header{
         height: 40px;
-    } */
+    } 
 
     .item{
         margin: 10px;
         font-size: 14px;
     }
+} */
+/* body {
+    margin: 0;
+  }
+   */
+header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: Lexend;
+}
+
+header a {
+    margin: 0px 30px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 16px;
+    text-decoration:none;
+    transition: background-color 0.5s
+}
+
+header a:hover {
+    background-color: #960320;
+}
+
+@media (max-width: 998px) {
+
+    header {
+        justify-content: center;
+    }
+    
+    header a {
+        margin: 0px 10px;
+        font-size: 14px;
+        width: 120px;
+        text-align: center;
+    }
+    
+
+        
 }

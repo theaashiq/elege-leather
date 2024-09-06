@@ -7,7 +7,7 @@ import banner from '../../../images/banner2.jpg'
 const Banner = () => {
   return (
     <>
-    <main>
+    {/* <main>
        <div className='poster'>
         <img className='banner' src={banner} alt='banner'/>
           <div className='info-container'>
@@ -24,7 +24,26 @@ const Banner = () => {
             </NavLink>
           </div>
         </div>
-    </main>    
+    </main>     */}
+      <div className='poster-container'>
+          <img src={banner} />
+          <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <div className='poster-brand'>Elega Leather</div>
+            <div className='poster-motive'>Where Craftsmanship Meets Luxury, and Style Speaks Elegance.</div>
+          </div>
+          <div className='poster-disclaimer'>
+            Elega Leather is a distinguished brand renowned for its commitment 
+            to crafting high-quality leather goods. With a passion for excellence 
+            and a dedication to precision, Elega Leather creates products that 
+            blend timeless elegance with modern sophistication. Elevate your style 
+            with their exquisite range of leather accessories, where every piece 
+            embodies the essence of luxury and craftsmanship
+          </div>
+
+          <NavLink to='mainPage/products'>
+            Shop now
+          </NavLink>
+      </div>
     </>
   )
 }

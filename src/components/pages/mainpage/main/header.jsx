@@ -354,7 +354,7 @@ return (
                             Log Out <ExitToAppIcon/>
                           </div> }
                     </>
-                  : <Link to='/signIn'>
+                  : <Link to='/signIn' style={{textDecoration:'none'}}>
                       <div className='header-loginBtn'>
                         Login
                       </div>
