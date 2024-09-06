@@ -75,13 +75,14 @@ header a:hover {
 @media (max-width: 998px) {
 
     header {
-        justify-content: center;
+        
+        /* justify-content: center; */
     }
     
     header a {
         margin: 0px 10px;
-        font-size: 14px;
-        width: 120px;
+        font-size: 12px;
+        width: 100px;
         text-align: center;
     }
     

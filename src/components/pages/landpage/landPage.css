@@ -2,11 +2,22 @@
     width: 100%;
     height: 15%;
     background: rgb(210,4,45);
+
     /* background: linear-gradient(130deg, rgba(210,4,45,1) 45%, rgba(222,49,99,1) 78%); */
 }
 
 .landPage-banner {
     width: 100%;
     height: 85%;
+    cursor: pointer;
 }
 
+@media (max-width: 998px) {
+    .landPage-header {
+        height: 10%;
+    }
+    
+    .landPage-banner {
+        height: 90%;
+    }
+}

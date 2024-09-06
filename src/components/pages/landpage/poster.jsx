@@ -27,7 +27,7 @@ const Banner = () => {
     </main>     */}
       <div className='poster-container'>
           <img src={banner} />
-          <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{display:'flex', flexDirection:'column', alignItems:'center',height:'fit-content'}}>
             <div className='poster-brand'>Elega Leather</div>
             <div className='poster-motive'>Where Craftsmanship Meets Luxury, and Style Speaks Elegance.</div>
           </div>
