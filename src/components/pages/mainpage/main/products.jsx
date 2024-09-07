@@ -14,18 +14,21 @@ import { AddCartContext } from '../cart/addtocartContext';
 const Products = () => {
 
 const { posterToogle, 
+        setPosterToogle,
         selectedCat, 
         products, 
         setProducts,
         targetRef,
-        scrollToTarget }  = useContext(AddCartContext)
+        scrollToTarget,
+        searchInput }  = useContext(AddCartContext)
 
 const navigate = useNavigate()
 
 // const targetRef = useRef(null);
 
 const handleProductView = (id) => {
- navigate(`/mainPage/productView/${id}`)
+  setPosterToogle(false)
+  navigate(`/mainPage/productView/${id}`)
 }
 
 // console.log(posterToogle, 'Toogle')
@@ -33,16 +36,18 @@ const handleProductView = (id) => {
 
 
 useEffect(() => {
-  if(selectedCat.length !== 0) {
-    const lowerCaseSelectedCat = selectedCat.map(cat => cat.toLowerCase());
-    const filteredProducts = data.filter((product) => {
-      return lowerCaseSelectedCat.includes(product.category.toLowerCase())
-    })
-    setProducts(filteredProducts)
-    scrollToTarget()
-  } else {
-    setProducts(data)
-    // scrollToTarget()
+  if(searchInput === '') {
+    if(selectedCat.length !== 0) {
+      const lowerCaseSelectedCat = selectedCat.map(cat => cat.toLowerCase());
+      const filteredProducts = data.filter((product) => {
+        return lowerCaseSelectedCat.includes(product.category.toLowerCase())
+      })
+      setProducts(filteredProducts)
+      scrollToTarget()
+    } else {
+      setProducts(data)
+      // scrollToTarget()
+    }
   }
 
 },[selectedCat])

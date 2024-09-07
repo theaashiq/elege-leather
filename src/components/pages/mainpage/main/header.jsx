@@ -102,12 +102,10 @@ const handleHomePage = () => {
   navigate('/mainPage/products')
 }
 
-
 const [categoryToggle, setCategoryToogle] = useState(false)
 const [showImages, setShowImages] = useState(false);
 const [logOutBtnToggle, setLogOutBtnToggle] = useState(false)
 const [suggestingList, setSuggestingList] = useState([])
-const [searchInput, setSearchInput] = useState('')
 const [suggestingToggle, setSuggestingToggle] = useState(false)
 
 const { selectedCat, 
@@ -115,7 +113,8 @@ const { selectedCat,
         setPosterToogle, 
         products, 
         setProducts,
-        scrollToTarget } = useContext(AddCartContext)
+        scrollToTarget,
+        searchInput, setSearchInput } = useContext(AddCartContext)
 
 const logOutBtnRef = useRef(null)
 
@@ -215,8 +214,8 @@ useEffect(() => {
     ).map((obj) => ({
       name: obj.product_name,
       cat: obj.category,
+      id: obj.id
     }));
-    
     setSuggestingList(suggestList); // Update the state with the suggestions
     console.log(suggestList, 'Suggesting');
   } else {
@@ -244,6 +243,7 @@ const handleKeyDown = (e) => {
 };
 
 const handleSuggesting = (productName) => {
+    navigate('/mainPage/products')
     setSearchInput(productName)
     setSuggestingToggle(false)
     const pro = data.filter((obj) => 

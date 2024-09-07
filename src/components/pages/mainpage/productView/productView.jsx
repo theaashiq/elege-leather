@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, useRef } from 'react'
 import './productView.css'
 import { useParams } from 'react-router-dom'
 import data from '../../../services/data'
@@ -16,12 +16,32 @@ import { Modal } from '../../../services/notification'
 import { useNotification } from '../../../services/notification'
 import { AddCartContext } from '../cart/addtocartContext'
 import { FormatPrice } from '../../../services/formatPrice'
+import SuggestingProducts from './SuggestingProducts'
 
 
 const ProductView = () => {
 
 const [modalToggle, setModalToggle] = useState(false)  
 const [prodQty, setprodQty] = useState(1)
+
+const containerRef = useRef(null)
+
+useEffect(() => {
+  handleFocus()
+},[])
+
+const handleFocus = () => {
+  if(containerRef.current) {
+    const offsetTop = containerRef.current.offsetTop;
+    const viewportHeight = window.innerHeight;
+    const scrollToPosition = offsetTop - viewportHeight / 4;
+
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth',
+    });
+  }
+}
 
 const { productId } = useParams()
 
@@ -142,19 +162,20 @@ useEffect(() => {
 discount = priceDetails.price - priceDetails.offerPrice 
 },[prodQty])
 
-console.log(discount, 'Discount')
-console.log(cartItems, 'Items')
+console.log(foundProduct, 'FOund')
+
 return (
   <>
     {modalToggle && <Modal close={setModalToggle}/>}
-        <div className='productView-container'>
+        <div className='productView-container' ref={containerRef}>
           <div className='productView-image-block'>
             <img 
               src={foundProduct.image} 
               alt={foundProduct.product_name} 
             />
             <div style={{display:'grid',
-                         gridTemplateColumns: '50% 50%',}}>
+                         gridTemplateColumns: '50% 50%',
+                         marginTop:'12px'}}>
               <button className='productView-addToCart-btn' onClick={handleAddToCart}>Add to cart</button>
               <button className='productView-buy-btn'>Buy Now</button>
           </div>
@@ -183,12 +204,15 @@ return (
                   </p>
                   <p style={{
                     marginBottom: '0px',
-                    fontSize:'12px', 
+                    fontSize:'12px',
+                    fontWeight:'400', 
                             }}>Inclusive of all taxes</p>
                   <p className='productView-discountPercentage'>{roundDiscountPercentage}% offer</p>          
                   <p style={{
                     color:'#007185',
                     marginTop: '5px',
+                    fontSize: '14px',
+                    fontWeight: '400'
                     }}>
                   Save upto {priceDetails.saveUpTo}</p>
                   <p className='productView-inStock'>In stock</p>
@@ -215,12 +239,19 @@ return (
                         borderRadius: '30px',
                       }}>
                         {currElem.icon}</div>
-                      <div style={{color:'#007185'}}>{currElem.label}</div>
+                      <div style={{color:'#007185', marginTop:'5px'}}>{currElem.label}</div>
                     </div> 
                   )
                 })}
               </div>
           </div>
+        </div>
+
+        <div>
+          <SuggestingProducts 
+            category={foundProduct?.category}
+            handleFocus={handleFocus}
+            productName={foundProduct?.product_name}/>
         </div>
   </>
   

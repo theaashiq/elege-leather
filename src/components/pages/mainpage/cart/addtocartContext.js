@@ -15,6 +15,7 @@ export const AddCartItems = ({children}) => {
     })
     const [selectedCat, setSelectedCat] = useState([])
     const [posterToogle, setPosterToogle] = useState(true)
+    const [searchInput, setSearchInput] = useState('')
 
     const targetRef = useRef(null);
 
@@ -45,7 +46,8 @@ export const AddCartItems = ({children}) => {
                 posterToogle, setPosterToogle,
                 products, setProducts,
                 scrollToTarget,
-                targetRef
+                targetRef,
+                searchInput, setSearchInput
             }}>
           {children}      
         </AddCartContext.Provider>
