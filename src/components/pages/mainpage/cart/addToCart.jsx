@@ -5,9 +5,10 @@ import  { AddCartContext }  from './addtocartContext'
 import CartProductGridBlock from './cartProductGridBlock'
 import { FormatPrice } from '../../../services/formatPrice'
 import { useNavigate } from 'react-router-dom'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const AddToCart = () => {
-  const { cartItems, buyItems, total, setTotal } = useContext(AddCartContext)
+  const { cartItems, buyItems, total, setTotal, setPosterToogle } = useContext(AddCartContext)
   
   const [ proceedToggle, setProceedToggle ] = useState(false)
 
@@ -24,6 +25,11 @@ const AddToCart = () => {
 
   const handleCheckout = () => {
     navigate('/checkout')
+  }
+
+  const handleMainPage = () => {
+    setPosterToogle(false)
+    navigate('/mainPage/products')
   }
     return (
     <>
@@ -92,31 +98,34 @@ const AddToCart = () => {
           </div>
         </div> 
       )} */}
-      <div className='addToCart-container'>
-        <div className='addToCart-cardBlock'>
-          <CartProductBlock />
-        </div>
-        <div className='addToCart-cardDetails'>
-          <div className='addToCart-selectedItems'>
-            {buyItems.length} items has been selected
-          </div>
-          <div className='addToCart-detailsBlock'>
-            <div>
-              <div className='addToCart-amount'>Total amount</div>
-              <div className='addToCart-amount' style={{textAlign:'center'}}><FormatPrice price={total.total_amount}/></div>
+      {cartItems.length <= 0 
+        ? <div className='addToCart-noCartBlock'>
+            <div>Your cart is currently empty</div>
+            <div onClick={() => handleMainPage()}>Continue Shopping <ArrowForwardIcon style={{marginLeft:'10px'}}/></div>
+          </div> 
+        : <div className='addToCart-container'>
+            <div className='addToCart-cardBlock'>
+              <CartProductBlock />
             </div>
-            <div>
-              <button className='addToCart-placeOrderBtn'>Place Order</button>
+            <div className='addToCart-cardDetails'>
+              <div className='addToCart-selectedItems'>
+                {buyItems.length} items has been selected
+              </div>
+              <div className='addToCart-detailsBlock'>
+                <div>
+                  <div className='addToCart-amount' style={{textAlign:'center'}}>Total amount</div>
+                  <div className='addToCart-amount' style={{textAlign:'center'}}><FormatPrice price={total.total_amount}/></div>
+                </div>
+                <div>
+                  <button className='addToCart-placeOrderBtn' onClick={() => handleCheckout()}>Place Order</button>
+                </div>
+              </div>
+              {/* <hr/> */}
+              <div className='addToCart-product'>
+                <CartProductGridBlock/>
+              </div>
             </div>
-          </div>
-          
-          
-          {/* <hr/> */}
-          <div className='addToCart-product'>
-            <CartProductGridBlock/>
-          </div>
-        </div>
-      </div>
+          </div> }
     </>
   )
 }

@@ -55,8 +55,60 @@
     font-family: Lexend;
 }
 
+.addToCart-noCartBlock {
+    display: flex;
+    flex-direction: column;
+    padding-top: 240px;
+    width: 100%;
+    align-items: center;
+    font-family: Lexend;
+}
+
+.addToCart-noCartBlock div:first-child {
+    font-size: 24px;
+    color: #ed91ab;
+}
+
+.addToCart-noCartBlock div:last-child {
+    font-size: 16px;
+    color: #fff;
+    background-color: #de3163;
+    margin-top: 20px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 300;
+    transition: 
+        background-color 0.5s, 
+        color 0.5s, 
+        border-color 0.5s, 
+        transform 0.5s,
+        box-shadow 0.5s,
+        font-weight 0.5s,
+}
+
+.addToCart-noCartBlock div:last-child:hover {
+    background-color: #fff;
+    color: #de3163;
+    border-color: #de3163;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    font-weight: 500;
+}
 
 @media (max-width: 998px) {
+    .addToCart-noCartBlock div:first-child {
+        font-size: 20px;
+    }
+    
+    .addToCart-noCartBlock div:last-child {
+        font-size: 14px;
+        padding: 2px 10px;
+    }
+        
     .addToCart-container {
         flex-direction: column;
         justify-content: flex-start;
@@ -96,7 +148,7 @@
         display: flex; 
         justify-content: space-around;
         align-items: center;
-        width: 90%;
+        width: 100%;
     }
 
     .addToCart-amount {
@@ -108,7 +160,7 @@
         margin-bottom: 10px;
         margin-right: auto;
         font-size: 12px;
-        margin-top: 5px;
+        margin-top: 8px;
         /* width: 100px; */
     }
 

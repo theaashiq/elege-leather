@@ -41,7 +41,7 @@
 }
 
 .orderSummary-qty{
-    font-size: 14px;
+    font-size: 12px;
     border-radius: 8px;
     padding: 0px 6px;
     margin-top: 15px;
@@ -53,7 +53,7 @@
 .orderSummary-seller,
 .orderSummary-delivery{
     color: #666666;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .orderSummary-container-item-blockB{
@@ -63,7 +63,7 @@
 }
 
 .orderSummary-savedUpTo{
- font-size: 14px;
+ font-size: 12px;
  color: #666666;
 }
 

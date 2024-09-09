@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './css/deliveryDetails.css'
+import './deliveryDetails.css'
 
 const DeliveryDetails = () => {
 

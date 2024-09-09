@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { UserDetailsApi } from '../../../services/authentication'
 import { getUserData } from '../../../services/localStorage'
-import './css/customerDetails.css'
+import './customerDetails.css'
 
 const CustomerDetails = () => {
 

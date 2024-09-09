@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/orderSummary.css'
+import './orderSummary.css'
 import pic from '../../../../images/jacket2.jpg'
 import { FormatPrice } from '../../../services/formatPrice'
 

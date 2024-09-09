@@ -79,7 +79,7 @@ const handleAddToCart = (id) => {
                 <div className='cartProductGridBlock-details'>{obj.product_name}</div>
                 <div className='cartProductGridBlock-details'>Rating: <span>{obj.rating}</span></div>
                 <div className='cartProductGridBlock-details'><span><FormatPrice price={obj.offer_price}/></span></div>
-                <button className='cartProductGridBlock-ViewBtn'>View</button>
+                <button className='cartProductGridBlock-ViewBtn' onClick={() => handleAddToCart(obj.id)}>View</button>
               </div>
             </div>
           ))}

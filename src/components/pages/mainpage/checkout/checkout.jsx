@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/checkout.css'
+import './checkout.css'
 import OrderSummary from './orderSummary'
 import DeliveryDetails from './deliveryDetails'
 import CustomerDetails from './customerDetails'

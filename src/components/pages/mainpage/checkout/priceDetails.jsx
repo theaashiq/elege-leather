@@ -1,5 +1,5 @@
 import React from 'react'
-import "./css/priceDetails.css"
+import "./priceDetails.css"
 import { FormatPrice } from '../../../services/formatPrice'
 
 const PriceDetails = () => {
