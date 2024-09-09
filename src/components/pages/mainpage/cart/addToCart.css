@@ -66,7 +66,7 @@
 
     .addToCart-cardBlock {
         width: 100%;
-        height: 72%;
+        height: 80%;
         margin-top: 0px;
         /* background-color: red; */
     }
@@ -74,7 +74,7 @@
     .addToCart-cardDetails {
         position: absolute;
         bottom: 0px;
-        margin: auto;
+        /* margin: auto; */
         width: 96%;
         left: 50%;
         z-index: 4;
