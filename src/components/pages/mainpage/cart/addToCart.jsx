@@ -6,9 +6,13 @@ import CartProductGridBlock from './cartProductGridBlock'
 import { FormatPrice } from '../../../services/formatPrice'
 import { useNavigate } from 'react-router-dom'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useDispatch } from 'react-redux'
+import { removeAllBuyProducts, setBuyProduct } from '../../../services/reduxStore/slice/buyProductsSlice'
 
 const AddToCart = () => {
+  
   const { cartItems, buyItems, total, setTotal, setPosterToogle } = useContext(AddCartContext)
+  const dispatch = useDispatch()
   
   const [ proceedToggle, setProceedToggle ] = useState(false)
 
@@ -24,6 +28,10 @@ const AddToCart = () => {
   const navigate = useNavigate()
 
   const handleCheckout = () => {
+    dispatch(removeAllBuyProducts())
+    buyItems.map(item => (
+      dispatch(setBuyProduct(item))
+    ))
     navigate('/checkout')
   }
 
@@ -117,7 +125,12 @@ const AddToCart = () => {
                   <div className='addToCart-amount' style={{textAlign:'center'}}><FormatPrice price={total.total_amount}/></div>
                 </div>
                 <div>
-                  <button className='addToCart-placeOrderBtn' onClick={() => handleCheckout()}>Place Order</button>
+                  <button 
+                    disabled={!proceedToggle}
+                    className='addToCart-placeOrderBtn' 
+                    onClick={() => handleCheckout()}>
+                      Place Order
+                  </button>
                 </div>
               </div>
               {/* <hr/> */}

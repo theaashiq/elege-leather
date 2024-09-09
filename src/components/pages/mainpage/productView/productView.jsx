@@ -17,9 +17,14 @@ import { useNotification } from '../../../services/notification'
 import { AddCartContext } from '../cart/addtocartContext'
 import { FormatPrice } from '../../../services/formatPrice'
 import SuggestingProducts from './SuggestingProducts'
-
+import { removeAllBuyProducts, setBuyProduct } from '../../../services/reduxStore/slice/buyProductsSlice'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const ProductView = () => {
+
+const dispatch = useDispatch()
+const navigate = useNavigate()
 
 const [modalToggle, setModalToggle] = useState(false)  
 const [prodQty, setprodQty] = useState(1)
@@ -45,7 +50,7 @@ const handleFocus = () => {
 
 const { productId } = useParams()
 
-const foundProduct = data.find(currElem => parseFloat(currElem.id) === parseFloat(productId)) 
+const [foundProduct, setFoundProduct] = useState(data.find(currElem => parseFloat(currElem.id) === parseFloat(productId))) 
 
 let discount = foundProduct.price - foundProduct.offer_price
 const discountPercentage = (discount/foundProduct.price)*100
@@ -140,6 +145,7 @@ const handleProductQty = (state) => {
       if (prodQty < 10){
         let qty = prodQty + 1 
         setprodQty(qty)
+        setFoundProduct({...foundProduct, quantity: qty})
       } else {
         notifyWarning(`Quantity limit exceeded. You can't add more than 10`)
       }
@@ -148,6 +154,7 @@ const handleProductQty = (state) => {
       if (prodQty > 1){
         let qty = prodQty - 1
         setprodQty(qty)
+        setFoundProduct({...foundProduct, quantity: qty})
       }
       break  
   }
@@ -160,9 +167,25 @@ useEffect(() => {
     saveUpTo: (prodQty * foundProduct.price) - (foundProduct.offer_price * prodQty)
 })
 discount = priceDetails.price - priceDetails.offerPrice 
+setFoundProduct({...foundProduct,
+  disOffer_price: foundProduct.offer_price * prodQty,
+  disPrice: prodQty * foundProduct.price,
+  savedUpTo: (prodQty * foundProduct.price) - (foundProduct.offer_price * prodQty),
+  discount: priceDetails.price - priceDetails.offerPrice 
+ })
 },[prodQty])
 
 console.log(foundProduct, 'FOund')
+
+const handleBuyProduct = () => {
+  if(isAuthenticated()) {
+    dispatch(removeAllBuyProducts())
+    dispatch(setBuyProduct(foundProduct))
+    navigate('/checkout')
+  } else {
+    setModalToggle(true)
+  }
+}
 
 return (
   <>
@@ -177,7 +200,7 @@ return (
                          gridTemplateColumns: '50% 50%',
                          marginTop:'12px'}}>
               <button className='productView-addToCart-btn' onClick={handleAddToCart}>Add to cart</button>
-              <button className='productView-buy-btn'>Buy Now</button>
+              <button className='productView-buy-btn' onClick={handleBuyProduct}>Buy Now</button>
           </div>
           </div>
           <div className='productView-details-block'>

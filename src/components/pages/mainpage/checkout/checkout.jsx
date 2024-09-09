@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './checkout.css'
 import OrderSummary from './orderSummary'
 import DeliveryDetails from './deliveryDetails'
 import CustomerDetails from './customerDetails'
 import Payment from './payment'
 import PriceDetails from './priceDetails'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Checkout = () => {
+
+const buyProducts = useSelector((state) => state.buyProductsInfo.buyProducts)
+const navigate = useNavigate()
+
+useEffect(() => {
+ if(buyProducts.length === 0) {
+    navigate('/mainPage/products')
+ }
+},[buyProducts])
+
   return (
     <div style={{minHeight:'100vh'}}>
         <div className='checkout-nav'>
