@@ -51,7 +51,11 @@ return (
         <div className='mainPage-header-container'>
             <Header name={user.name} email={user.email} localId={user.localId}/>
         </div>
-        <div className='outlet-container'>
+        <div 
+          className='outlet-container' 
+          style={{
+            width: footerToogle === 'addToCart' && '100%',
+            height: footerToogle === 'addToCart' && '100vh'}}>
             <Outlet/>
         </div>
         {footerToogle !== 'addToCart'

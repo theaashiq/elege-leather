@@ -572,27 +572,31 @@ nav {
 
 .header-dropdown::-webkit-scrollbar,
 .header-selectedCat::-webkit-scrollbar,
-.header-suggestingList::-webkit-scrollbar {
+.header-suggestingList::-webkit-scrollbar,
+.CartProductBlock::-webkit-scrollbar {
     width: 10px; /* width of the scrollbar */
     height: 4px;
 }
 
 .header-dropdown::-webkit-scrollbar-track,
 .header-selectedCat::-webkit-scrollbar-track,
-.header-suggestingList::-webkit-scrollbar-track {
+.header-suggestingList::-webkit-scrollbar-track,
+.CartProductBlock::-webkit-scrollbar-track {
   background: transparent; /* color of the scrollbar track */
 }
 
 .header-dropdown::-webkit-scrollbar-thumb,
 .header-selectedCat::-webkit-scrollbar-thumb,
-.header-suggestingList::-webkit-scrollbar-thumb {
+.header-suggestingList::-webkit-scrollbar-thumb,
+.CartProductBlock::-webkit-scrollbar-thumb {
   background:  #dda1b5; /* color of the scrollbar handle */
   border-radius: 10px; /* rounded scrollbar handle */
 }
 
 .header-dropdown::-webkit-scrollbar-thumb:hover,
 .header-selectedCat::-webkit-scrollbar-thumb:hover,
-.header-suggestingList::-webkit-scrollbar-thumb:hover {
+.header-suggestingList::-webkit-scrollbar-thumb:hover,
+.CartProductBlock::-webkit-scrollbar-thumb:hover {
   background: #d07c98; /* color on hover */
   height: 4px;
   width: 4px;

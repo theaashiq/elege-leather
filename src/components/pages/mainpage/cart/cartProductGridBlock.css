@@ -1,0 +1,66 @@
+.cartProductGridBlock {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 120px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  margin: 10px 0px;
+}
+
+.cartProductGridBlock-Youmightalsolikethis {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0px;
+}
+
+.cartProductGridBlock-imgBlock {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartProductGridBlock-imgBlock img{
+  width: 95%;
+  height: 95%;
+  object-fit: cover;
+}
+
+.cartProductGridBlock-detailsBlock {
+  width: 70%;
+  height: 95%; 
+  display: flex; 
+  align-items: flex-start;
+  /* border: 1px solid; */
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.cartProductGridBlock-details {
+  font-size: 14px;
+}
+
+.cartProductGridBlock-details span {
+  color: #d2042d;
+}
+
+.cartProductGridBlock-ViewBtn {
+   height: fit-content;
+   margin-top: auto;
+   border: 1.5px solid #d2042d;
+   background-color: transparent;
+   padding: 0px 5px;
+   color: #d2042d;
+   font-family: Lexend;
+   border-radius: 2px;
+   font-weight: 500;
+   font-size: 14px;
+   transition: background-color 0.5s, color 0.5s
+}
+
+.cartProductGridBlock-ViewBtn:hover {
+  background-color: #d2042d;
+  color: #fff;
+}

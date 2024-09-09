@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from 'react'
 import { AddCartContext } from './addtocartContext'
 import data from '../../../services/data'
-import './css/cartProductBlock.css' 
+import './cartProductBlock.css' 
 import { useNotification } from '../../../services/notification'
 import { FormatPrice } from '../../../services/formatPrice'
 
@@ -168,7 +168,7 @@ useEffect(() => {
 //console.log(total, 'Total Amount')
 return (
     <>
-      <div className='CartProductBlock'>
+      {/* <div className='CartProductBlock'>
         {selectedItems.map((obj, index) => {
           return (
             <>
@@ -249,7 +249,78 @@ return (
               <div className='deleteConformationModal-removeBtn' onClick={() => handledelete("remove",deleteProductDetails)}>Remove</div>
             </div>
         </div> 
-      }   
+      }    */}
+      <div className='CartProductBlock'>
+      {selectedItems.map((obj, index) => {
+          return (
+            <>
+              <div
+                style={{
+                  display: 'flex', 
+                  alignItems:'center',
+                  borderColor: proceedToBuyIds.includes(obj.id)  && 'green'}}
+                className='CartProductBlock-container' 
+                key={obj.id}>
+                <div className='CartProductBlock-container-checkBox'>  
+                  <input
+                    type="checkbox" 
+                    id='cartProductBlock-checkbox'
+                    checked={proceedToBuyIds.includes(obj.id)}
+                    onChange={() => handleChecked(obj.id)}/>
+                </div>
+                <div style={{display:'flex', height:'100%', alignItems:'center'}}>
+                  <img src={obj.image} alt={obj.name}/>
+                </div>
+                <div className='CartProduct'>
+                  <div className='CartProductBlock-blockDetails'>
+                    <div>
+                      <p>{obj.product_name}</p>
+                      <p className='CartProductBlock-rating'><span>Rating: </span>{obj.rating}</p>
+                      <p className='CartProductBlock-inStock'>In stock</p>
+                      <p className='CartProductBlock-EligibleShipping'>Eligible for FREE shipping</p>
+                    </div>
+                    <div className='CartProductBlock-blockDetails-bottom'>
+                      <div className='CartProductBlock-QtyBlock'>
+                        <p className='CartProductBlock-Qty'>Qty</p>
+                        <p className='CartProductBlock-QtyController'>
+                          <button onClick={() => handleProductQty('min', obj.id)}>-</button>
+                          <div className='CartProductBlock-QtyData'>
+                            {obj.quantity}
+                          </div>
+                          <button onClick={() => handleProductQty('add', obj.id)}>+</button>
+                        </p>
+                      </div>
+                      <div
+                        onClick={() => initiateDelete(obj.id, obj.product_name)} 
+                        className='CartProductBlock-delete'>
+                        Delete
+                      </div>
+                    </div>
+                  </div>
+                  <div className='CartProductBlock-container-priceBlock'>
+                    <p className='CartProductBlock-container-discount'>
+                      {obj.discount}% Off
+                    </p>
+                    <p className='CartProductBlock-container-Limitedtimedeal'>
+                      Limited time deal
+                    </p>
+                    <div>
+                      <p className='CartProductBlock-container-price'>
+                        Price
+                      </p>
+                      <p className='CartProductBlock-container-OfferPriceData'>
+                        <FormatPrice price={obj.disOffer_price}/>
+                      </p>
+                      <p className='CartProductBlock-container-priceData'>
+                        M.R.P: <span>{obj.disPrice}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          )})}
+      </div>
     </>
   )
 }

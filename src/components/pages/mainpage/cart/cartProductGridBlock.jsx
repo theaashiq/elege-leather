@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { AddCartContext } from './addtocartContext';
 import data from '../../../services/data'
-import './css/cartProductGridBlock.css'
+import './cartProductGridBlock.css'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { FormatPrice } from '../../../services/formatPrice';
@@ -43,11 +43,11 @@ const handleAddToCart = (id) => {
 
   return (
     <>
-      <p className='cartProductGrid-Paragraph'>
+      {/* <p className='cartProductGrid-Paragraph'>
         You might also like this
       </p>
       <div className='cartProductGridBlock-container'>
-        {products.slice(0, 4).map((obj, index) => (
+        {products.slice(0, 2).map((obj, index) => (
           <div 
             key={index} 
             className='cartProductGrid'>
@@ -66,7 +66,25 @@ const handleAddToCart = (id) => {
               </div>
           </div>
         ))}
-      </div>    
+      </div>     */}
+      <div>
+        <div className='cartProductGridBlock-Youmightalsolikethis'>You might also like this</div>
+        <div>
+          {products.slice(0, 2).map((obj) => (
+            <div className='cartProductGridBlock'>
+              <div className='cartProductGridBlock-imgBlock'>
+                <img src={obj.image}/>
+              </div>
+              <div className="cartProductGridBlock-detailsBlock">
+                <div className='cartProductGridBlock-details'>{obj.product_name}</div>
+                <div className='cartProductGridBlock-details'>Rating: <span>{obj.rating}</span></div>
+                <div className='cartProductGridBlock-details'><span><FormatPrice price={obj.offer_price}/></span></div>
+                <button className='cartProductGridBlock-ViewBtn'>View</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </> 
 
   )

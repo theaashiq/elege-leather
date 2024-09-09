@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import './css/addToCart.css'
+import './addToCart.css'
 import CartProductBlock from './cartProductBlock'
 import  { AddCartContext }  from './addtocartContext'
 import CartProductGridBlock from './cartProductGridBlock'
@@ -27,7 +27,7 @@ const AddToCart = () => {
   }
     return (
     <>
-      {cartItems.length <= 0 ? (
+      {/* {cartItems.length <= 0 ? (
         <div className='no-items-in-cart'>
           <p>Your cart is currently empty</p>
         </div> ) : (
@@ -65,7 +65,7 @@ const AddToCart = () => {
                     <td>8500</td>
                   </tr>
                 </table>
-              </div> */}
+              </div> 
               <div className='addToCart-totalAmountBlock'>
                 <div className='addToCart-totalAmount'>
                  Total amount 
@@ -91,7 +91,32 @@ const AddToCart = () => {
               </div>
           </div>
         </div> 
-      )}
+      )} */}
+      <div className='addToCart-container'>
+        <div className='addToCart-cardBlock'>
+          <CartProductBlock />
+        </div>
+        <div className='addToCart-cardDetails'>
+          <div className='addToCart-selectedItems'>
+            {buyItems.length} items has been selected
+          </div>
+          <div className='addToCart-detailsBlock'>
+            <div>
+              <div className='addToCart-amount'>Total amount</div>
+              <div className='addToCart-amount' style={{textAlign:'center'}}><FormatPrice price={total.total_amount}/></div>
+            </div>
+            <div>
+              <button className='addToCart-placeOrderBtn'>Place Order</button>
+            </div>
+          </div>
+          
+          
+          {/* <hr/> */}
+          <div className='addToCart-product'>
+            <CartProductGridBlock/>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
