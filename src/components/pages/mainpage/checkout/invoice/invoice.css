@@ -1,0 +1,33 @@
+.invoiceBtn a {
+    text-decoration: none;
+    font-family: Lexend;
+    color: #fff;
+    background-color: #067c67;
+    padding: 4px 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 
+        background-color 0.5s, 
+        color 0.5s, 
+        border-color 0.5s, 
+        transform 0.5s,
+        box-shadow 0.5s,
+        font-weight 0.5s,
+}
+
+.invoiceBtn a:hover {
+    background-color: #fff;
+    color: #067c67;
+    border-color: #067c67;
+    /* transform: scale(1.1); */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    font-weight: 500;
+}
+
+@media (max-width: 998px) {
+    .invoiceBtn a {
+        font-size: 14px;
+    }
+}

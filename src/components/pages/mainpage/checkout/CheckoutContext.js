@@ -30,6 +30,7 @@ const CheckoutContext = ({children}) => {
     })
     const [buttonToggle, setButtonToggle] = useState(true)
     const [customerToggle, setCustomerToggle] = useState(true)
+    const [InvoicePage, setInvoicePage] = useState(true)
     
     return (
         <CheckoutContextData.Provider 
@@ -38,7 +39,8 @@ const CheckoutContext = ({children}) => {
                 deliveryDetails, setDeliveryDetails,
                 customerToggle, setCustomerToggle,
                 buttonToggle, setButtonToggle,
-                priceDetails, setPriceDetails}}>
+                priceDetails, setPriceDetails,
+                InvoicePage, setInvoicePage}}>
             {children}
         </CheckoutContextData.Provider>
     )

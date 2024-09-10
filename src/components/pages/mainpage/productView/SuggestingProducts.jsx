@@ -6,7 +6,7 @@ import './suggestingProducts.css'
 
 const SuggestingProducts = (props) => {
 
-const { category, handleFocus, productName } = props 
+const { category, handleFocus, productName, setFoundProduct } = props 
 
 const [sugPro, setSugPro ] = useState([])
 
@@ -25,6 +25,7 @@ const handleProductView = (id) => {
     // setPosterToogle(false)
     navigate(`/mainPage/productView/${id}`)
     handleFocus()
+    setFoundProduct(data.find(currElem => parseFloat(currElem.id) === parseFloat(id))) 
   }
 
 console.log(sugPro, 'PRo')

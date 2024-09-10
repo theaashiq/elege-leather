@@ -52,6 +52,7 @@ const { productId } = useParams()
 
 const [foundProduct, setFoundProduct] = useState(data.find(currElem => parseFloat(currElem.id) === parseFloat(productId))) 
 
+
 let discount = foundProduct.price - foundProduct.offer_price
 const discountPercentage = (discount/foundProduct.price)*100
 const roundDiscountPercentage = discountPercentage.toFixed(0)
@@ -274,7 +275,8 @@ return (
           <SuggestingProducts 
             category={foundProduct?.category}
             handleFocus={handleFocus}
-            productName={foundProduct?.product_name}/>
+            productName={foundProduct?.product_name}
+            setFoundProduct={setFoundProduct}/>
         </div>
   </>
   
