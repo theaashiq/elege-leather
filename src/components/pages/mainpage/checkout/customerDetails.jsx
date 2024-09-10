@@ -1,40 +1,49 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { UserDetailsApi } from '../../../services/authentication'
 import { getUserData } from '../../../services/localStorage'
 import './customerDetails.css'
+import { CheckoutContextData } from './CheckoutContext'
 
 const CustomerDetails = () => {
 
-  const [customerDetails, setCustomerDetails] = useState({
-    name:'',
-    email: '',
-    localId: '',
-    phoneNumber: '',
-  })
+const { customerDetails, setCustomerDetails, customerToggle, setCustomerToggle } = useContext(CheckoutContextData)
 
-  const [buttonToggle, setButtonToggle] = useState(false)
+useEffect(() =>{
+  if(getUserData()!== null){
+  UserDetailsApi().then((response) => {
+    console.log(response)
+    setCustomerDetails({...customerDetails, 
+      name:response.data.users[0].displayName,
+      email:response.data.users[0].email,
+      localId:response.data.users[0].localId })
+    }) 
+  }
+}, [])
 
-  useEffect(() =>{
-    if(getUserData()!== null){
-    UserDetailsApi().then((response) => {
-      console.log(response)
-      setCustomerDetails({...customerDetails, 
-        name:response.data.users[0].displayName,
-        email:response.data.users[0].email,
-        localId:response.data.users[0].localId })
-      }) 
-    }
-    }, [])
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setCustomerToggle(false)
+  }
     
+  const handleCustmerInput = (event) => {
+    const { name, value } = event.target
+    setCustomerDetails(currElement => (
+      {...currElement, [name]: value}
+    ))
+  }
+
+  console.log(customerDetails, "Details")
+
   return (
     <React.Fragment>
+      <form onSubmit={handleSubmit}>
       <div className='customerDetails-container'>
           <p style={{
-                backgroundColor:'#ff99a3',
-                color: '#b20012',
-                border: '1px solid #b20012'}} 
+                transition: 'background-color 0.5s, color 0.5s',
+                backgroundColor: customerToggle ? '#ff99a3' : '#c1fec1',
+                color: customerToggle ? '#b20012' : '#017001'}} 
           className='customerDetails-heading'>Customer Details</p>
-          {!buttonToggle 
+          {!customerToggle 
             ? ( <div className='customerDetails-details' style={{borderBottom:'1px solid #e6e6e6', padding:'5px 0px'}}>
                  <div>
                   {customerDetails.name 
@@ -57,27 +66,37 @@ const CustomerDetails = () => {
                   <p>Name</p>
                   <input 
                     value={customerDetails.name}
-                    type='text'/>
+                    onChange={handleCustmerInput}
+                    type='text'
+                    name='name'
+                    required/>
                 </div>
                 <div>
                   <p>Email</p>
                   <input
-                    value={customerDetails.email} 
-                    type='text'/>
+                    value={customerDetails.email}
+                    onChange={handleCustmerInput} 
+                    name='email'
+                    type='text'
+                    required/>
                 </div>
                 <div>
                   <p>Phone number</p>
                   <input
                     value={customerDetails.phoneNumber} 
-                    type='text'/>
+                    onChange={handleCustmerInput} 
+                    name='phoneNumber'
+                    required
+                    type='number'/>
                 </div>
               </div> )}
         <div style={{display:'flex'}}> 
-          {buttonToggle 
-            ? <button onClick={() => setButtonToggle(false)}>Done</button> 
-            : <button onClick={() => setButtonToggle(true)}>Change</button> }
+          {customerToggle 
+            ? <input type='submit' value='Done' /> 
+            : <button onClick={() => setCustomerToggle(true)}>Change</button> }
         </div>
-    </div>  
+      </div>
+      </form>  
     </React.Fragment>
   )
 }

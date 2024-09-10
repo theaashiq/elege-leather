@@ -1,20 +1,14 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useContext, useEffect} from 'react'
 import "./priceDetails.css"
 import { FormatPrice } from '../../../services/formatPrice'
 import { useSelector } from 'react-redux'
+import { CheckoutContextData } from './CheckoutContext'
 
 const PriceDetails = () => {
 
 const buyProducts = useSelector((state) => state.buyProductsInfo.buyProducts)
 
-const [priceDetails, setPriceDetails] = useState({
-    price: '',
-    items: '',
-    delivery: 200,
-    packing: 50,
-    totalPay: '',
-    savedUpTo: ''
-})
+const { priceDetails, setPriceDetails } = useContext(CheckoutContextData)
 
 useEffect(() => {
     const totalPrice = buyProducts.reduce((total, product) => total + product.disOffer_price, 0);

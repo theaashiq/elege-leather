@@ -6,15 +6,15 @@ const Payment = () => {
     <React.Fragment>
         <div className='payment-container'>
             <p style={{
-                backgroundColor:'#ff99a3',
-                color: '#b20012',
-                border: '1px solid #b20012'}}
+                backgroundColor:'#c1fec1',
+                color: '#017001'}}
                 className='payment-heading'>Payments</p>
             <div className='payment-options'>
                 <div>
                     <input
                         type='radio'
-                        name='COD' />
+                        name='COD'
+                        checked />
                     <label name='COD'>Cash on Delivery</label>
                 </div>
                 <div>

@@ -4,17 +4,32 @@
     background-color: #fff;
 }
 
-.deliveryDetails-container button{
+.deliveryDetails-container button,
+.deliveryDetails-container input[type='submit'] {
     margin: 8px 12px 8px auto;
-    font-family: 'lexend';
-    background-color: #d6e0f5;
-    color: #193167;
-    width: 100px;
-    font-size: 16px;
+    font-family: 'Lexend';
+    background-color: #d2042d;
+    color: #fff;
+    font-size: 14px;
     border: none;
-    padding: 4px;
-    //outline: 1px solid #193167;
-    //border-radius: 5px;    
+    width: 100px;
+    padding: 2px;
+    border: 2px solid transparent;
+    transition: 
+        background-color 0.5s, 
+        color 0.5s, 
+        border-color 0.5s, 
+        transform 0.5s,
+        box-shadow 0.5s,
+        font-weight 0.5s,   
+}
+
+.deliveryDetails-container button:hover,
+.deliveryDetails-container input[type='submit']:hover {
+    background-color: #fff;
+    color: #d2042d;
+    border-color: #d2042d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
 }
 
 .deliveryDetails-heading{
