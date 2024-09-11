@@ -111,6 +111,7 @@ const [suggestingToggle, setSuggestingToggle] = useState(false)
 const { selectedCat, 
         setSelectedCat, 
         setPosterToogle, 
+        cartItems,
         products, 
         setProducts,
         scrollToTarget,
@@ -254,6 +255,8 @@ const handleSuggesting = (productName) => {
     setPosterToogle(false)
     scrollToTarget()
 }
+
+console.log(cartItems?.length)
 return (
     
     <>
@@ -363,6 +366,7 @@ return (
                   <div onClick={handleCartPage} className='header-cartBtn'>
                     <ShoppingCartOutlinedIcon className='header-cartBtnIcon'/>
                     <div style={{marginTop:'8px'}}>Cart</div>
+                    <div className='header-cartNum'>{cartItems.length}</div>
                   </div>
               </div>
             </div>

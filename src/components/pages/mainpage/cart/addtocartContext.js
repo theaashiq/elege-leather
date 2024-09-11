@@ -32,11 +32,16 @@ export const AddCartItems = ({children}) => {
         }
       };
 
+      const [foundProduct, setFoundProduct] = useState({})
+
+      const handleFound = (productId) => {
+        setFoundProduct(data.find(currElem => parseFloat(currElem.id) === parseFloat(productId)))
+      }
+
   return (
         <AddCartContext.Provider 
             value={{
-                cartItems,
-                setCartItems,
+                cartItems, setCartItems,
                 buyItems, 
                 setBuyItems,
                 proceedToBuyIds, 
@@ -47,7 +52,9 @@ export const AddCartItems = ({children}) => {
                 products, setProducts,
                 scrollToTarget,
                 targetRef,
-                searchInput, setSearchInput
+                searchInput, setSearchInput,
+                foundProduct, setFoundProduct,
+                handleFound,
             }}>
           {children}      
         </AddCartContext.Provider>

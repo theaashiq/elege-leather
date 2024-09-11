@@ -23,9 +23,9 @@ export const Modal = ({close}) => {
                         </p>
                     </div>
                     <p className='modal-container-content'>
-                        Please Sign In to Add This Product to Your Cart
+                        Please sign in to add this product to your cart or to purchase it.
                     </p>
-                    <Link to='/signIn'>
+                    <Link to='/signIn' style={{textDecoration:"none"}}>
                         <div className='modal-sign-btn'>
                             Sign In
                         </div>   

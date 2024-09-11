@@ -161,6 +161,19 @@ const handleProductQty = (state) => {
   }
 }
 
+
+console.log(foundProduct, 'FOund')
+
+const handleBuyProduct = () => {
+  if(isAuthenticated()) {
+    dispatch(removeAllBuyProducts())
+    dispatch(setBuyProduct(foundProduct))
+    navigate('/checkout')
+  } else {
+    setModalToggle(true)
+  }
+}
+
 useEffect(() => {
   setPriceDetails({
     offerPrice: foundProduct.offer_price * prodQty,
@@ -174,19 +187,7 @@ setFoundProduct({...foundProduct,
   savedUpTo: (prodQty * foundProduct.price) - (foundProduct.offer_price * prodQty),
   discount: priceDetails.price - priceDetails.offerPrice 
  })
-},[prodQty])
-
-console.log(foundProduct, 'FOund')
-
-const handleBuyProduct = () => {
-  if(isAuthenticated()) {
-    dispatch(removeAllBuyProducts())
-    dispatch(setBuyProduct(foundProduct))
-    navigate('/checkout')
-  } else {
-    setModalToggle(true)
-  }
-}
+},[prodQty, handleAddToCart, handleBuyProduct])
 
 return (
   <>

@@ -127,9 +127,10 @@ const AddToCart = () => {
                 <div>
                   <button 
                     disabled={!proceedToggle}
+                    style={{opacity: !proceedToggle && '0.5', transition: 'opacity 0.5s'}}
                     className='addToCart-placeOrderBtn' 
                     onClick={() => handleCheckout()}>
-                      Place Order
+                      Checkout
                   </button>
                 </div>
               </div>

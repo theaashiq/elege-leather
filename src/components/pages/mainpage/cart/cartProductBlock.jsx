@@ -153,7 +153,7 @@ const fetchBuyingItemsData = () => {
   setBuyItems(buyItemsDetails)
 }
 
-//console.log(selectedItems, 'Selected')
+console.log(selectedItems, 'Selected')
 //console.log(buyItems, "buy Items")
   
 useEffect(() => {

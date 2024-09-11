@@ -28,8 +28,8 @@ const handleProductView = (id) => {
     setFoundProduct(data.find(currElem => parseFloat(currElem.id) === parseFloat(id))) 
   }
 
-console.log(sugPro, 'PRo')
-console.log(productName, "PROD")
+// console.log(sugPro, 'PRo')
+// console.log(productName, "PROD")
 
   return (
     <>

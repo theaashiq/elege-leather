@@ -75,7 +75,7 @@ const formattedDate = futureDate.toLocaleDateString('en-US', options);
                     <div className='orderSummary-container-item-blockB'>
                         <div>
                             <p className='orderSummary-name'>{obj.product_name}</p>
-                            <p className='orderSummary-cat'>{obj.category}</p>
+                            <p className='orderSummary-cat' style={{textTransform:'capitalize'}}>{obj.category}</p>
                             <p className='orderSummary-seller'>Seller: Elega Leather</p>
                             <p className='orderSummary-price'><FormatPrice price={obj.disOffer_price}/></p>
                             {obj.savedUpTo && <p className='orderSummary-savedUpTo'>Saved up to <FormatPrice price={obj.savedUpTo}/></p>}
