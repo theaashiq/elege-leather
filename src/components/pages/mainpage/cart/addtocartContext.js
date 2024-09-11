@@ -5,7 +5,10 @@ export const AddCartContext = createContext()
 
 export const AddCartItems = ({children}) => {
 
-    const [cartItems, setCartItems] = useState([])
+    const [cartItems, setCartItems] = useState(() => {
+      const savedCartItems = localStorage.getItem('cartItems');
+      return savedCartItems ? JSON.parse(savedCartItems) : [];
+    });
     const [proceedToBuyIds, setProceedToBuyIds] = useState([])
     const [buyItems, setBuyItems] = useState([])
     const [products, setProducts] = useState(data)
@@ -32,11 +35,12 @@ export const AddCartItems = ({children}) => {
         }
       };
 
-      const [foundProduct, setFoundProduct] = useState({})
+      useEffect(() => {
+        
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      }, [cartItems]);
+    
 
-      const handleFound = (productId) => {
-        setFoundProduct(data.find(currElem => parseFloat(currElem.id) === parseFloat(productId)))
-      }
 
   return (
         <AddCartContext.Provider 
@@ -52,9 +56,7 @@ export const AddCartItems = ({children}) => {
                 products, setProducts,
                 scrollToTarget,
                 targetRef,
-                searchInput, setSearchInput,
-                foundProduct, setFoundProduct,
-                handleFound,
+                searchInput, setSearchInput
             }}>
           {children}      
         </AddCartContext.Provider>

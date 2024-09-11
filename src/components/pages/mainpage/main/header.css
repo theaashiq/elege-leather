@@ -514,7 +514,7 @@ nav {
     /* border: 1px solid; */
     position: relative;
     border-radius: 6px;
-    padding: 2px 5px;
+    padding: 10px 8px;
     margin-left: 16px;
     transition: background-color 0.5s;
     cursor: pointer;
@@ -530,8 +530,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -5px;
-    left: 16px;
+    top: 2px;
+    left: 18px;
     border-radius: 50%;
     padding: 2px;
     color: rgb(210,4,45)
@@ -784,7 +784,7 @@ nav {
     }
     
     .headerUserName {
-        margin: 10px 10px 10px 0px;
+        margin: 16px 10px 10px 0px;
        }
        
        .headerUserName div:first-child {
@@ -841,7 +841,7 @@ nav {
 
     .header-loginBtn { 
         font-size: 14px;
-        margin: 14px 0px 0px 0px;
+        margin: 22px 0px 0px 0px;
     }
 
     .header-cartBtn {

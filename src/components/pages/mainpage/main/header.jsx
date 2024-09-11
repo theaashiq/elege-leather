@@ -58,11 +58,6 @@ const closeDropdown = () => setListToggle(false)
 
 const handleCategory = () => setCategory(!category) 
 
-const logOutUser = () => {
-  //setListToggle(false)
-  logout()
-  window.location.reload();
-}
 
 const handleSearchBarFocus = () => {
     if(screenSize <= 450) {
@@ -113,11 +108,19 @@ const { selectedCat,
         setPosterToogle, 
         cartItems,
         products, 
+        setCartItems,
         setProducts,
         scrollToTarget,
         searchInput, setSearchInput } = useContext(AddCartContext)
 
 const logOutBtnRef = useRef(null)
+
+const logOutUser = () => {
+  //setListToggle(false)
+  setCartItems([])
+  logout()
+  window.location.reload();
+}
 
 // const handleClickOutside = (event) => {
 //   console.log("Aashiq5")
