@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/elege-leather/static/css/main.7cd0e1de.css",
-    "main.js": "/elege-leather/static/js/main.0f8f4df8.js",
+    "main.css": "/elege-leather/static/css/main.275620d2.css",
+    "main.js": "/elege-leather/static/js/main.109a0a40.js",
     "static/js/498.5bc1b5ba.chunk.js": "/elege-leather/static/js/498.5bc1b5ba.chunk.js",
     "static/js/703.2429c6d1.chunk.js": "/elege-leather/static/js/703.2429c6d1.chunk.js",
     "static/js/513.a542d376.chunk.js": "/elege-leather/static/js/513.a542d376.chunk.js",
@@ -45,14 +45,14 @@
     "static/media/wallet1.avif": "/elege-leather/static/media/wallet1.3f019b8fef8b7a53e208.avif",
     "static/media/belt1.avif": "/elege-leather/static/media/belt1.77934532f1fa4caf22b5.avif",
     "index.html": "/elege-leather/index.html",
-    "main.7cd0e1de.css.map": "/elege-leather/static/css/main.7cd0e1de.css.map",
-    "main.0f8f4df8.js.map": "/elege-leather/static/js/main.0f8f4df8.js.map",
+    "main.275620d2.css.map": "/elege-leather/static/css/main.275620d2.css.map",
+    "main.109a0a40.js.map": "/elege-leather/static/js/main.109a0a40.js.map",
     "498.5bc1b5ba.chunk.js.map": "/elege-leather/static/js/498.5bc1b5ba.chunk.js.map",
     "703.2429c6d1.chunk.js.map": "/elege-leather/static/js/703.2429c6d1.chunk.js.map",
     "513.a542d376.chunk.js.map": "/elege-leather/static/js/513.a542d376.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cd0e1de.css",
-    "static/js/main.0f8f4df8.js"
+    "static/css/main.275620d2.css",
+    "static/js/main.109a0a40.js"
   ]
 }
