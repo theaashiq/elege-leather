@@ -8,11 +8,11 @@ import store from './components/services/reduxStore/store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <React.Fragment>
     <PopUpNotificationProvider>
       <Provider store={store}>
         <App />    
       </Provider>
     </PopUpNotificationProvider>
-  </React.StrictMode>
+  </React.Fragment>
 );

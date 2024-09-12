@@ -78,11 +78,10 @@ const handledelete = (state, itemDetails) => {
       setDeleteConformationModalToggle(false)
       break ;
     case 'remove' :
-      const updatedCartItems = cartItems.filter(obj => parseFloat(obj) !== parseFloat(itemDetails.id))
+      const updatedCartItems = cartItems.filter(item => item.prodId !== itemDetails.id)
       setCartItems(updatedCartItems)
       setDeleteProductDetails('')
       setDeleteConformationModalToggle(false)
-      //fetchData()
       notify('Removed successfully')
       break ;
   }
@@ -238,7 +237,7 @@ return (
               </div>
             </>
           )})}
-      </div>
+      </div>*/}
       {deleteConformationModalToggle && 
         <div 
           ref={deleteConformationModalRef} 
@@ -248,8 +247,7 @@ return (
               <div className='deleteConformationModal-cancelBtn' onClick={() => handledelete("cancel",deleteProductDetails)}>Cancel</div>
               <div className='deleteConformationModal-removeBtn' onClick={() => handledelete("remove",deleteProductDetails)}>Remove</div>
             </div>
-        </div> 
-      }    */}
+        </div> }    
       <div className='CartProductBlock'>
       {selectedItems.map((obj, index) => {
           return (

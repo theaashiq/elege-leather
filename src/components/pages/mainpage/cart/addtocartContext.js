@@ -36,7 +36,6 @@ export const AddCartItems = ({children}) => {
       };
 
       useEffect(() => {
-        
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
       }, [cartItems]);
     

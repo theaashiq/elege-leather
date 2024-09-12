@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import './logIn.css'
 
 //import { useState } from 'react'
@@ -6,11 +6,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { RegisterApi, isAuthenticated } from '../../services/authentication'
 import { BarLoader } from 'react-spinners'
 import { storeUserData } from '../../services/localStorage'
+import { useNotification } from '../../services/notification'
 //import SignIn from './signIn'
 
 const LogIn = () => {
 
 const navigate = useNavigate()
+const { notify } = useNotification()
 
 const [logIn, setlogIn] = useState({
   firstName: '',
@@ -123,11 +125,13 @@ const validateForm = () => {
   return success
 }
 
-if(isAuthenticated()){
-  navigate('/mainPage/products')
-} else {
-  console.log('Aashiq')
-}
+useEffect(() => {
+  if (isAuthenticated()) {
+    console.log('User is authenticated'); // Debugging
+    notify('You have already logged in');
+    navigate('/mainPage/products');
+  }
+}, []);
 
 return (
   <>

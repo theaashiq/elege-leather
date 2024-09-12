@@ -118,7 +118,7 @@ const handleAddToCart = () => {
         const updatedCartItems = cartItems.map((obj) => {
           if(obj.prodId === foundProduct.id){
               if(obj.prodQty === prodQty) {
-                notify('Already Added')
+                
                 return obj
               } else {
                 notify('Quantity is updated')
