@@ -764,7 +764,7 @@ nav {
 @media (max-width: 998px) {
     .header-suggestingList {
         max-height: 292px;
-        top: 105px;
+        top: 115px;
         width: 90%;
         /* padding: 10px */
     }
@@ -827,6 +827,7 @@ nav {
 
     .header-searchBlock {
         height: 34px;
+        /* top: 200px; */
     }
 
     .header-searchBlock input {

@@ -112,7 +112,7 @@
     .addToCart-container {
         flex-direction: column;
         justify-content: flex-start;
-        margin-top: 155px; 
+        margin-top: 170px; 
         height: calc(100vh - 155px);
     }
 
